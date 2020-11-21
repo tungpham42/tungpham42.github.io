@@ -22,7 +22,7 @@ linkedin_username: tungpham42
 
 # About Section
 # about_title: About Me
-about_profile_image: images/profile.jpg
+about_profile_image: images/tung.jpg
 about_content: | # this will include new lines to allow paragraphs
   - I have 8 years of experience in both Frontend and Backend stacks but is stronger at Frontend stack.
   - My Frontend stack is HTML5, CSS3, SASS/SCSS, Javascript, JQuery, and Bootstrap 4.

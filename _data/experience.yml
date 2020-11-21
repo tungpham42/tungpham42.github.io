@@ -1,9 +1,45 @@
 - layout: left
-  company: The Boring Company
-  link: boringcompany.com
-  job_title: Senior Network System Administrator
-  dates: November 2017 - Present
+  company: Kambria
+  link: https://kambria.io
+  job_title: Frontend developer and Webmaster
+  dates: August 2018 - Present
   quote: >
-   Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+   Kambria is the first decentralized open innovation platform for AI & Robotics. Using our platform, anyone can collaborate in researching, developing and commercializing innovative ideas and get rewarded fairly for their contributions.
   description: | # this will include new lines to allow paragraphs
-    Every company needs its networks properly administered and The Boring Compay is no exception. Digging holes is hard and I play my part making sure the whole company stays connected. I lead a team of 5 people and enjoy driving the company to try new technologies.
+    My roles are administering and maintaining the company's websites.
+- layout: left
+  company: PTS Saigon
+  link: https://ptssaigon.petrolimex.com.vn
+  job_title: IT Helpdesk
+  dates: August 2013 - Present
+  quote: >
+   PTS Saigon is a petroleum transportation and services which belongs to Petrolimex.
+  description: | # this will include new lines to allow paragraphs
+    My roles are fixing company’s PCs, Printers, Network, and Wifi.
+- layout: left
+  company: YouNet Group
+  link: https://www.younetgroup.com/
+  job_title: IT Helpdesk
+  dates: 2013 - 2013 
+  quote: >
+   Over 10 years of establishment and development, YouNet Group has always been a pioneer in applying social intelligence and technology into marketing activities and processes, in order to bring about comprehensive digital innovation to push the business performance in Vietnamese and international markets.
+  description: | # this will include new lines to allow paragraphs
+    My role is learning Social network PHP Scripts to deploy websites for overseas clients.
+- layout: left
+  company: RMIT Vietnam
+  link: https://www.rmit.edu.vn/
+  job_title: Research Assistant
+  dates: October 2012 - January 2013
+  quote: >
+   Research integrity means conducting research in a way which allows peers and the public to have trust and confidence in the university, its methods and the results of the research.
+  description: | # this will include new lines to allow paragraphs
+    My role is to analyse, design, implement and evaluate an online knowledge management system that allows academic staff to gather learning problems from students. The system also allows students to view, extend and evaluate knowledge related to learning problems.
+- layout: left
+  company: TRG International
+  link: https://www.trginternational.com/
+  job_title: Web Developer Intern
+  dates: June 2011 - June 2012
+  quote: >
+   Passion is a key to success. Passion for excellence: we aspire for excellence in all we do.
+  description: | # this will include new lines to allow paragraphs
+    My role is to work with Web CMS (content management systems) such as Drupal or Wordpress.
