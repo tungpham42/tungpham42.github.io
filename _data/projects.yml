@@ -1,4 +1,4 @@
-- layout: top-middle
+- layout: left
   name: Chess Room
   link: https://chessroom.top
   # github: sproogen/resume-theme
@@ -8,7 +8,7 @@
     A Chess game with AI and Room Hosting.
 
     My roles are programming, maintaining, and developing.
-- layout: top-middle
+- layout: left
   name: Cờ tướng (Xiangqi)
   link: https://cotuong.top
   github: tungpham42/CoTuong
@@ -18,7 +18,7 @@
     A Xiangqi game with AI and Room Hosting.
 
     My roles are programming, maintaining, and developing.
-- layout: top-middle
+- layout: left
   name: Nhịp sinh học (Biorhythm)
   link: https://nhipsinhhoc.vn
   # github: sproogen/resume-theme
@@ -26,7 +26,7 @@
     Biorhythm Chart that provides your physical, emotional and intellectual values based on your Date of Birth.
   description: | # this will include new lines to allow paragraphs
     My roles are programming, maintaining, and developing.
-- layout: top-middle
+- layout: left
   name: Biorhythm . XYZ
   link: https://biorhythm.xyz
   # github: sproogen/resume-theme
@@ -34,7 +34,7 @@
     This is a Biorhythm Calculator.
   description: | # this will include new lines to allow paragraphs
     My roles are programming, maintaining, and developing.
-- layout: top-middle
+- layout: left
   name: Cùng rao (Advertising forum)
   link: https://cungrao.net
   # github: sproogen/resume-theme
@@ -42,7 +42,7 @@
     This is an advertising forum for Vietnamese.
   description: | # this will include new lines to allow paragraphs
     My roles are programming, maintaining, and developing.
-- layout: top-middle
+- layout: left
   name: Yoga Khỏe (Healthy Yoga)
   link: https://yogakhoe.com
   # github: sproogen/resume-theme
