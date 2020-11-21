@@ -2,6 +2,9 @@
 repository: tungpham42/tungpham42.github.io
 favicon: images/favicon.ico
 
+# Dark Mode (true/false/never)
+darkmode: true
+
 # Personal info
 name: Tung Pham
 title: Webmaster and Frontend Developer
