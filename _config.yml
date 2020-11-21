@@ -29,11 +29,11 @@ about_content: | # this will include new lines to allow paragraphs
   - My Backend stack is PHP 7, Laravel 8, MySQL/MariaDB, Wordpress 5.5, and Xenforo 2.2.
   - I can also work with Git, Composer, NPM, CPanel, DirectAdmin, CentOS, Ubuntu, Slack, Trello, and Jira. 
 
-# Projects Section
-# projects_title: Projects
-
 # Experience Section
 # experience_title: Experience
+
+# Projects Section
+# projects_title: Projects
 
 # Education Section
 # educaton_title: Education
