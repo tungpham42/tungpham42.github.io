@@ -51,9 +51,9 @@ about_content: | # this will include new lines to allow paragraphs
 # More Section
 # more_title: A Little More About Me
 more_content: | # this will include new lines to allow paragraphs
-  Alongside my interests in networks and software engineering some of my other interests and hobbies are:
+  Alongside my interests in administrating and developing websites, some of my other interests and hobbies are:
    - Practicing Yoga
-   - Playing board games
+   - Playing board games such as Xiangqi, Uno, Splendor, and Reversi.
 
 # Footer
 footer_show_references: false
