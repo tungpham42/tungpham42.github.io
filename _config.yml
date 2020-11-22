@@ -56,7 +56,7 @@ more_content: | # this will include new lines to allow paragraphs
    - Playing board games
 
 # Footer
-footer_show_references: true
+footer_show_references: false
 
 # Build settings
 remote_theme: tungpham42/modern-resume-theme
