@@ -23,6 +23,12 @@ github_username:  tungpham42
 # youtube_username: globalmtb
 # googleplus_username: +jekyll
 
+# Google Analytics and Tag Manager
+# Using more than one of these may cause issues with reporting
+# gtm: "GTM-0000000"
+gtag: "G-50HKXL041G"
+# google_analytics: "UA-00000000-0"
+
 # About Section
 # about_title: About Me
 about_profile_image: images/tung.jpg
