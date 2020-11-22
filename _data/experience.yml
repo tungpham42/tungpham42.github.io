@@ -1,4 +1,4 @@
-- layout: left
+- layout: right
   company: Kambria
   link: https://kambria.io
   job_title: Frontend developer and Webmaster
@@ -7,7 +7,7 @@
    Kambria is the first decentralized open innovation platform for AI & Robotics. Using our platform, anyone can collaborate in researching, developing and commercializing innovative ideas and get rewarded fairly for their contributions.
   description: | # this will include new lines to allow paragraphs
     My roles are administering and maintaining the company's websites.
-- layout: left
+- layout: right
   company: PTS Saigon
   link: https://ptssaigon.petrolimex.com.vn
   job_title: IT Helpdesk
@@ -16,7 +16,7 @@
    PTS Saigon is a petroleum transportation and services which belongs to Petrolimex.
   description: | # this will include new lines to allow paragraphs
     My roles are fixing company’s PCs, Printers, Network, and Wifi.
-- layout: left
+- layout: right
   company: YouNet Group
   link: https://www.younetgroup.com/
   job_title: Associate Engineer
@@ -25,7 +25,7 @@
    Over 10 years of establishment and development, YouNet Group has always been a pioneer in applying social intelligence and technology into marketing activities and processes, in order to bring about comprehensive digital innovation to push the business performance in Vietnamese and international markets.
   description: | # this will include new lines to allow paragraphs
     My role is learning Social network PHP Scripts to deploy websites for overseas clients.
-- layout: left
+- layout: right
   company: RMIT Vietnam
   link: https://www.rmit.edu.vn/
   job_title: Research Assistant
@@ -34,7 +34,7 @@
    Research integrity means conducting research in a way which allows peers and the public to have trust and confidence in the university, its methods and the results of the research.
   description: | # this will include new lines to allow paragraphs
     My role is to analyse, design, implement and evaluate an online knowledge management system that allows academic staff to gather learning problems from students. The system also allows students to view, extend and evaluate knowledge related to learning problems.
-- layout: left
+- layout: right
   company: TRG International
   link: https://www.trginternational.com/
   job_title: Web Developer Intern
