@@ -46,3 +46,11 @@
     This is the blog about Yoga.
   description: | # this will include new lines to allow paragraphs
     It features many Yoga poses.
+- layout: left
+  name: Samula Yoga
+  link: https://samulayoga.com
+  # github: sproogen/resume-theme
+  quote: >
+    This is the official website of Samula Yoga studio in District 10.
+  description: | # this will include new lines to allow paragraphs
+    It contains an online shop of Yoga and introduction of Samula Yoga studio.
