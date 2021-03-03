@@ -1,0 +1,27 @@
+body {
+	font-family: sans-serif;
+}
+body * {
+	box-sizing: border-box;
+}
+ul li {
+	margin-bottom: 10px;
+}
+/*.starting-bar,
+.contribution-bar,
+.return-bar,
+.final-bar {
+	height: 10px;
+}*/
+.starting-bar {
+	background-color: blue !important;
+}
+.contribution-bar {
+	background-color: gold !important;
+}
+.return-bar {
+	background-color: yellowgreen !important;
+}
+.final-bar {
+	background-color: green !important;
+}

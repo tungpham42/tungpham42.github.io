@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Máy tính lãi kép</title>
+	<meta name="description" content="Máy tính lãi kép">
+	<link rel="stylesheet" href="calculator.css?v=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/spacelab/bootstrap.min.css" integrity="sha384-F1AY0h4TrtJ8OCUQYOzhcFzUTxSOxuaaJ4BeagvyQL8N9mE4hrXjdDsNx249NpEc" crossorigin="anonymous">
+	<!--[if lt IE 9]>
+	<script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <h1 class="d-block mx-auto navbar-brand mb-0 h1">Máy tính lãi kép</h1>
+  </nav>
+  <div class="container mt-5 p-0">
+    <div class="row w-100 mx-0 mb-3 mt-0 p-0">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="form-group">
+          <label for="amount">Số tiền ban đầu(₫)*:</label>
+          <input class="form-control form-control-lg" type="number" name="amount" id="amount" value="2000000" onchange="calculate()" onkeyup="calculate()">
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="form-group">
+          <label for="interest">Lãi suất(%)*:</label>
+          <input class="form-control form-control-lg" type="number" name="interest" id="interest" value="2" onchange="calculate()" onkeyup="calculate()">
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="form-group">
+          <label for="contribution">Đóng góp hàng năm(₫):</label>
+          <input class="form-control form-control-lg" type="number" name="contribution" id="contribution" value="0" onchange="calculate()" onkeyup="calculate()">
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="form-group">
+          <label for="duration">Thời gian(Năm)*:</label>
+          <input class="form-control form-control-lg" type="number" name="duration" id="duration" value="10" onchange="calculate()" onkeyup="calculate()">
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn-primary btn btn-lg mx-auto d-block" onclick="calculate()">Tính</button>
+    <section class="p-3">
+      <h2>Kết quả</h2>
+      <p>
+        Số tiền ban đầu: <strong class="starting-val"></strong>
+        <div class="progress">
+         <div class="starting-bar progress-bar progress-bar-striped progress-bar-animated" role="progressbar"></div>
+        </div>
+      </p>
+      <p>
+        Tổng số tiền đóng góp: <strong class="contribution-val"></strong>
+        <div class="progress">
+         <div class="contribution-bar progress-bar progress-bar-striped progress-bar-animated" role="progressbar"></div>
+        </div>
+      </p>
+      <p>
+        Số dư: <strong class="return-val"></strong>
+        <div class="progress">
+         <div class="return-bar progress-bar progress-bar-striped progress-bar-animated" role="progressbar"></div>
+        </div>
+      </p>
+      <p>
+        Tổng cộng trong <strong class="duration-val"></strong> năm: <strong class="final-val"></strong>
+        <div class="progress">
+         <div class="final-bar progress-bar progress-bar-striped progress-bar-animated" role="progressbar"></div>
+        </div>
+      </p>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- cungrao_res -->
+      <ins class="adsbygoogle w-100 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 p-0"
+        style="display:block"
+        data-ad-client="ca-pub-3585118770961536"
+        data-ad-slot="1049870883"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </section>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="calculator.js?v=6"></script>
+</body>
+</html>
