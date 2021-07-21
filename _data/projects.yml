@@ -1,11 +1,11 @@
 - layout: left
-  name: Chess Việt
-  link: https://chessviet.com
-  github: tungpham42/ChessViet
+  name: Cờ tướng (Xiangqi)
+  link: https://cotuong.top
+  github: tungpham42/CoTuong
   quote: >
-    A Dual languages Online Chess Game with AI and Game Set up feature
+    A Xiangqi game with AI and Room Hosting.
   description: | # this will include new lines to allow paragraphs
-    There is AI feature with 5 levels: Newbie, Easy, Normal, Hard, and Insane. Players can also set up board and capture. This Game is built with NodeJS and ExpressJS.
+    This is a dual languages Xiangqi Game With AI and Room Host. This Game is built with Laravel.
 - layout: left
   name: Chess Room
   link: https://chessroom.top
@@ -15,13 +15,21 @@
   description: | # this will include new lines to allow paragraphs
     There is AI feature with 4 levels: Newbie, Easy, Normal, and Hard. The AI is based on Minimax Alpha Beta algorithm. Player can host new room with a password. Set up board with Board Capture. Player can Share the board with others. This Game is built with Laravel.
 - layout: left
-  name: Cờ tướng (Xiangqi)
-  link: https://cotuong.top
-  github: tungpham42/CoTuong
+  name: Kambria
+  link: https://kambria.io
+  # github: sproogen/resume-theme
   quote: >
-    A Xiangqi game with AI and Room Hosting.
+    Accelerating Open Innovation.
   description: | # this will include new lines to allow paragraphs
-    This is a dual languages Xiangqi Game With AI and Room Host. This Game is built with Laravel.
+    Home page of Kambria.
+- layout: left
+  name: Kambria Blog
+  link: https://kambria.io/blog
+  # github: sproogen/resume-theme
+  quote: >
+    Accelerating Open Innovation.
+  description: | # this will include new lines to allow paragraphs
+    Blog of Kambria.
 - layout: left
   name: Nhịp sinh học (Biorhythm)
   link: https://nhipsinhhoc.vn
@@ -38,27 +46,3 @@
     This is a Biorhythm Calculator.
   description: | # this will include new lines to allow paragraphs
     Use this tool to get to know more about yourself.
-- layout: left
-  name: Cùng rao (Advertising forum)
-  link: https://cungrao.net
-  # github: sproogen/resume-theme
-  quote: >
-    This is an advertising forum for Vietnamese.
-  description: | # this will include new lines to allow paragraphs
-    It is based on XenForo - a PHP, MySQL based forum platform.
-- layout: left
-  name: Yoga Khỏe (Healthy Yoga)
-  link: https://yogakhoe.com
-  # github: sproogen/resume-theme
-  quote: >
-    This is the blog about Yoga.
-  description: | # this will include new lines to allow paragraphs
-    It features many Yoga poses.
-- layout: left
-  name: Samula Yoga
-  link: https://samulayoga.com
-  # github: sproogen/resume-theme
-  quote: >
-    This is the official website of Samula Yoga studio in District 10.
-  description: | # this will include new lines to allow paragraphs
-    It contains an online shop of Yoga and introduction of Samula Yoga studio.
