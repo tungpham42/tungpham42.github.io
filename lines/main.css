@@ -1,0 +1,56 @@
+body {
+    background-color: #2a2a2a;
+    text-align: center;
+    overflow-y: hidden;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#footer {
+    height: 40px;
+    position: relative;
+    margin: 30px auto;
+    visibility: hidden;
+}
+
+a {
+    border-radius: 6px;
+    background-color: #666;
+    color: white;
+    font-family: Lucida Console, monospace;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+}
+
+#restart {  
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#score {
+    float: right;
+    text-align: right;
+}
+
+#playground {
+    width: 400px;
+    height: 400px;
+}
+
+#nextballs-container {
+    display: flex;
+    float: left;
+    position: absolute;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 40px;
+}
+
+#scoreboard-container, #restart-container {
+    display: flex;
+    float: right;
+    flex-direction: column;
+    justify-content: center;
+    height: 40px;
+}
