@@ -85,5 +85,20 @@
 	<script src="./js/local_storage_manager.js"></script>
 	<script src="./js/game_manager.js"></script>
 	<script src="./js/application.js"></script>
+	<script>
+	window.onload = () => {
+		'use strict';
+		if ('serviceWorker' in navigator) {
+			console.log("Will the service worker register?");
+			navigator.serviceWorker
+			.register('./js/serviceWorker.js')
+			.then(function(reg) {
+				console.log("Yes, it did.");
+			}).catch(function(err) {
+				console.log("No it didn't. This happened:", err)
+			});
+		}
+	}
+	</script>
 </body>
 </html>
