@@ -1,0 +1,17 @@
+{
+"short_name": "2048",
+"name": "2048 Game",
+"description": "2048 Game!",
+"lang": "en_US",
+"theme_color": "#ff0028",
+"background_color": "#ff0028",
+"display": "fullscreen",
+"icons": [
+    {
+    "src": "/img/icon.png",
+    "type": "image/png",
+    "sizes": "512x512"
+    }
+],
+"start_url": "/?utm_source=homescreen"
+}
