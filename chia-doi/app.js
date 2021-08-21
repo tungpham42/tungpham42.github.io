@@ -70,7 +70,7 @@ function Randomize() {
 */
 function renderTeam(arr) {
   // reset
-  Form.reset();
+  //Form.reset();
   Group.innerHTML = "";
 
   // Loop make elements & Fill the value from array
@@ -96,7 +96,7 @@ function renderTeam(arr) {
 SubmitButton.addEventListener("click", (e) => {
   e.preventDefault();
   if (MemberGroupInput.value == "" || MemberListInput.value == "") {
-    Form.reset();
+    //Form.reset();
     Group.innerHTML = "";
 
     Alert.classList.remove("d-none");
