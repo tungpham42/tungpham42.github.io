@@ -88,7 +88,7 @@ function renderTeam(arr) {
     div.appendChild(p);
 
     h2.innerText = `Đội ${index + 1}`;
-    p.innerText = item;
+    p.innerText = item.join(", ");
   });
 }
 
