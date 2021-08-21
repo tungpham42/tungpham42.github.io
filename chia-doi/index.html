@@ -15,7 +15,18 @@
       integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
       crossorigin="anonymous"
     />
-
+    <script>
+    function enforceMinMax(el){
+      if(el.value != ""){
+        if(parseInt(el.value) < parseInt(el.min)){
+          el.value = el.min;
+        }
+        if(parseInt(el.value) > parseInt(el.max)){
+          el.value = el.max;
+        }
+      }
+    }
+    </script>
     <title>Ứng dụng chia đội</title>
   </head>
   <body>
@@ -39,6 +50,7 @@
             required
             placeholder="2"
             value="2"
+            onkeyup="enforceMinMax(this)"
           />
         </div>
         <div class="mb-3">
