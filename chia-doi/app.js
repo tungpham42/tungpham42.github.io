@@ -101,17 +101,19 @@ function renderTeam(arr) {
 // EVENT LISTENER
 SubmitButton.addEventListener("click", (e) => {
   e.preventDefault();
-  if (MemberGroupInput.value == "" || MemberListInput.value == "") {
+  if (MemberGroupInput.value == "" || MemberListInput.value == "" || Delimiter.value == "") {
     //Form.reset();
     Group.innerHTML = "";
 
     Alert.classList.remove("d-none");
     MemberGroupInput.classList.add("is-invalid");
     MemberListInput.classList.add("is-invalid");
+    Delimiter.classList.add("is-invalid");
   } else {
     Alert.classList.add("d-none");
     MemberGroupInput.classList.remove("is-invalid");
     MemberListInput.classList.remove("is-invalid");
+    Delimiter.classList.remove("is-invalid");
 
     renderTeam(Randomize());
   }
