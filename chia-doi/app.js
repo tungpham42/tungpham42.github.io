@@ -6,6 +6,7 @@ const MemberGroupInput = document.getElementById("MemberGroupInput");
 const MemberListInput = document.getElementById("MemberListInput");
 const SubmitButton = document.getElementById("SubmitButton");
 const Group = document.getElementById("Group");
+const Delimiter = document.getElementById("Delimiter");
 const Alert = document.querySelector(".alert");
 
 // FUNCTIONS
@@ -49,6 +50,10 @@ function Randomize() {
     .replace(/^\s+|\s+$/gm, "")
     .split("\n");
 
+  console.log('MemberListInput.value: ' + MemberListInput.value);
+  console.log('MemberListInput.value.replace(/^\s+|\s+$/gm, ""): ' + MemberListInput.value.replace(/^\s+|\s+$/gm, ""));
+  console.log('arrMemberList: ' + arrMemberList);
+
   // Convert from array lenght divide group input and Math Ceil them
   let MemberGroup = Math.ceil(
     parseFloat(arrMemberList.length / MemberGroupInput.value)
@@ -58,9 +63,10 @@ function Randomize() {
 
   // Suffle the Arrays
   let shuffledArr = shuffleArray(arrMemberList);
-
+  console.log('shuffledArr: ' + shuffledArr);
   // chunk the Arrays
   let slicedArr = chunkArray(shuffledArr, MemberGroup);
+  console.log('slicedArr: ' + slicedArr);
 
   return slicedArr;
 }
@@ -88,7 +94,7 @@ function renderTeam(arr) {
     div.appendChild(p);
 
     h2.innerText = `Đội ${index + 1}`;
-    p.innerText = item.join(", ");
+    p.innerText = item.join(Delimiter.value);
   });
 }
 
