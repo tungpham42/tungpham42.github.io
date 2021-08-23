@@ -106,9 +106,15 @@ SubmitButton.addEventListener("click", (e) => {
     Group.innerHTML = "";
 
     Alert.classList.remove("d-none");
-    MemberGroupInput.classList.add("is-invalid");
-    MemberListInput.classList.add("is-invalid");
-    Delimiter.classList.add("is-invalid");
+    if (MemberGroupInput.value == "") {
+      MemberGroupInput.classList.add("is-invalid");
+    }
+    if (MemberListInput.value == "") {
+      MemberListInput.classList.add("is-invalid");
+    }
+    if (Delimiter.value == "") {
+      Delimiter.classList.add("is-invalid");
+    }
   } else {
     Alert.classList.add("d-none");
     MemberGroupInput.classList.remove("is-invalid");
