@@ -6,7 +6,7 @@
   quote: >
    Kambria is the first decentralized open innovation platform for AI & Robotics. Using our platform, anyone can collaborate in researching, developing and commercializing innovative ideas and get rewarded fairly for their contributions.
   description: | # this will include new lines to allow paragraphs
-    My roles are administering and maintaining the company's websites using Wordpress. The websites are https://kambria.io and https://kambria.io/blog
+    My roles are administering and maintaining the company's websites using Wordpress. The websites are <a href="https://kambria.io" target="_blank">https://kambria.io</a> and <a href="https://kambria.io/blog" target="_blank">https://kambria.io/blog</a>
 - layout: left
   company: PTS Saigon
   link: https://ptssaigon.petrolimex.com.vn
