@@ -1,4 +1,13 @@
 - layout: left
+  company: Chessroom
+  link: https://chessroom.top
+  job_title: PHP Developer - Self employed
+  dates: May 2020 - Present
+  quote: >
+   Chess for everyone
+  description: | # this will include new lines to allow paragraphs
+    I am the main PHP Developer of this website. There is AI feature with 4 levels: Newbie, Easy, Normal, and Hard. The AI is based on Minimax Alpha Beta algorithm. Player can host new room with a password. Set up board with Board Capture. Player can Share the board with others. This Game is built with Laravel.
+- layout: left
   company: Kambria
   link: https://kambria.io
   job_title: Frontend developer and Webmaster
@@ -7,15 +16,6 @@
    Kambria is the first decentralized open innovation platform for AI & Robotics. Using our platform, anyone can collaborate in researching, developing and commercializing innovative ideas and get rewarded fairly for their contributions.
   description: | # this will include new lines to allow paragraphs
     My roles are administering and maintaining the company's websites using Wordpress. The websites are <a href="https://kambria.io" target="_blank">https://kambria.io</a> and <a href="https://kambria.io/blog" target="_blank">https://kambria.io/blog</a>
-- layout: left
-  company: PTS Saigon
-  link: https://ptssaigon.petrolimex.com.vn
-  job_title: IT Helpdesk
-  dates: August 2013 - Present
-  quote: >
-   PTS Saigon is a petroleum transportation and services firm which belongs to Petrolimex.
-  description: | # this will include new lines to allow paragraphs
-    My role is fixing company’s PCs, Printers, Network, and Wifi.
 - layout: left
   company: YouNet Group
   link: https://www.younetgroup.com/
