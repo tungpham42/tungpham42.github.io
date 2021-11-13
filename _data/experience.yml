@@ -1,4 +1,13 @@
 - layout: left
+  company: Cờ tướng
+  link: https://cotuong.top
+  job_title: PHP Developer - Self employed
+  dates: January 2020 - Present
+  quote: >
+   Xiangqi for everyone
+  description: | # this will include new lines to allow paragraphs
+    I am the main PHP Developer of this website. It has 2 languages: Vietnamese and English. There is AI feature with 4 levels: Newbie, Easy, Normal, and Hard. The AI is based on Minimax Alpha Beta algorithm. Player can host new room with a password. Set up board with Board Capture. Player can Share the board with others. This Game is built with Laravel.
+- layout: left
   company: Chessroom
   link: https://chessroom.top
   job_title: PHP Developer - Self employed
