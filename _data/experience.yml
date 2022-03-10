@@ -26,6 +26,15 @@
   description: | # this will include new lines to allow paragraphs
     My roles are administering and maintaining the company's websites using Wordpress. The websites are <a href="https://kambria.io" target="_blank">https://kambria.io</a> and <a href="https://kambria.io/blog" target="_blank">https://kambria.io/blog</a>
 - layout: left
+  company: PTS Saigon
+  link: https://ptssaigon.petrolimex.com.vn/
+  job_title: IT Support
+  dates: 2013 - Present 
+  quote: >
+   Petrolimex holds a key position in the domestic petroleum market
+  description: | # this will include new lines to allow paragraphs
+    My role is managing and fixing PCs, printers, and other machines in the company.
+- layout: left
   company: YouNet Group
   link: https://www.younetgroup.com/
   job_title: Associate Engineer
