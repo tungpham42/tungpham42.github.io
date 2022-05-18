@@ -33,7 +33,7 @@
   quote: >
    Great way to gain experience
   description: | # this will include new lines to allow paragraphs
-    I developed websites for many clients, such as: https://nhipsinhhoc.vn, https://cungrao.net, https://longanshare.club, https://filos.vn, https://hololab.vn
+    I developed websites for many clients, such as: <a href="https://nhipsinhhoc.vn" target="_blank">https://nhipsinhhoc.vn</a>, <a href="https://cungrao.net" target="_blank">https://cungrao.net</a>, <a href="https://longanshare.club" target="_blank">https://longanshare.club</a>, <a href="https://filos.vn" target="_blank">https://filos.vn</a>, <a href="https://hololab.vn" target="_blank">https://hololab.vn</a>
 - layout: left
   company: YouNet Group
   link: https://www.younetgroup.com/
