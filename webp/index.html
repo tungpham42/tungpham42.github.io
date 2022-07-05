@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="webp, convert, converter, png, jpeg, gif, web">
+	<meta name="description" content="Convert from and to WebP fast and easily from your browser">
+	<title>WebP Converter</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+	<style>
+		body {
+
+			display: flex;
+			min-height: 100vh;
+			flex-direction: column;
+		}
+		section {
+
+			flex: 1 0 auto;
+		}
+		.drop-target {
+
+			border: 1px dashed #CCC;
+			background: #FAFAFA;
+			text-align: center;
+			color: #999;
+			padding: 60px 0;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-bottom: 10px;
+		}
+		.drop-target.active {
+
+			border-color: #80BDFF;
+			background: #F2F8FF;
+		}
+		.info {
+
+			padding: 15px;
+			border: 1px solid #DDD;
+			border-radius: 5px;
+			background: #FAFAFA;
+		}
+	</style>
+
+</head>
+<body>
+	<section>
+		<div class="py-1">
+			<div class="m-3">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-md-8 col-lg-6">
+							<div class="text-center">
+								<h3>WebP Converter</h3>
+								<p class="text-muted"><em>Convert from and to WebP fast and easily from your browser.</em></p>
+								<p class="text-muted"><small>Drag and drop your image file or click below to pick it, adjust the format or quality and hit the save button &mdash; WebP files will be converted to PNG/JPEG/GIF and viceversa.</small></p>
+							</div>
+							<form action="">
+								<div class="form-group">
+									<label class="control-label">Source file</label>
+									<div class="drop-target">
+										<span>Drag and drop your image or click here</span>
+									</div>
+									<input type="file" name="file" id="" accept=".webp,.jpg,.jpeg,.png" class="d-none">
+									<div class="info d-none"></div>
+								</div>
+								<div class="form-group">
+									<label class="control-label">Image format</label>
+									<select class="form-control input-block" name="format" id="">
+										<option value="jpeg">JPEG</option>
+										<option value="png">PNG</option>
+										<option value="gif">GIF</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label class="control-label">WebP quality</label>
+									<select class="form-control input-block" name="quality" id="">
+										<option value="100">Lossless</option>
+										<option value="85">Lossy</option>
+									</select>
+								</div>
+								<div class="text-right">
+									<a href="" class="btn btn-light disabled js-clear">Clear image</a>
+									<a href="#" class="btn btn-primary disabled js-save">Save image</a>
+								</div>
+							</form>
+						</div>
+					</div>
+					<canvas id="converter" class="d-none"></canvas>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="py-1">
+			<div class="m-3">
+				<div class="container">
+					<div class="text-center">
+						<div class="text-muted"><small>Copyright 2020 biohzrdmx. All rights reserved.</small></div>
+						<div class="text-muted"><small><a href="https://github.com/biohzrdmx/webp-converter">View on GitHub</a></small></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script type="text/template" id="partial-info">
+		<div class="media">
+			<img src="<%= image %>" class="mr-3" alt="" width="96">
+			<div class="media-body">
+			<h5 class="my-0"><%= file.name %></h5>
+			<div class="text-muted"><%= file.type %></div>
+			<div class="text-muted"><%= bytesToSize(file.size) %></div>
+			</div>
+		</div>
+	</script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.11.0/underscore-min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			var input = $('[name=file]'),
+				info = $('.info'),
+				dropTarget = $('.drop-target'),
+				clear = $('.js-clear'),
+				button = $('.js-save'),
+				canvas = document.getElementById('converter'),
+				info = $('.info'),
+				partialInfo = _.template( $('#partial-info').html() );
+			input.on('change', function(e) {
+				var el = input.get(0);
+				e.preventDefault();
+				if ( el.files ) {
+					loadFile( el.files[0] );
+				}
+			});
+			dropTarget.on('click', function(e) {
+				input.trigger('click');
+			});
+			dropTarget.on('dragover', function(e) {
+				var ev = e.originalEvent;
+				e.preventDefault();
+				dropTarget.addClass('active');
+			});
+			dropTarget.on('dragleave', function(e) {
+				var ev = e.originalEvent;
+				e.preventDefault();
+				dropTarget.removeClass('active');
+			});
+			dropTarget.on('drop', function(e) {
+				var ev = e.originalEvent;
+				e.preventDefault();
+				dropTarget.removeClass('active');
+				if (ev.dataTransfer.items) {
+					for (var i = 0; i < ev.dataTransfer.items.length; i++) {
+						if (ev.dataTransfer.items[i].kind === 'file') {
+							var file = ev.dataTransfer.items[i].getAsFile();
+							loadFile(file);
+						}
+					}
+				} else {
+					for (var i = 0; i < ev.dataTransfer.files.length; i++) {
+						var file = ev.dataTransfer.files[i];
+						loadFile(file);
+					}
+				}
+			});
+			button.on('click', function(e) {
+				var el = $(this),
+					format = $('[name=format]').val(),
+					quality = $('[name=quality]').val(),
+					file = el.data('file');
+				e.preventDefault();
+				//
+				switch (file.type) {
+					case 'image/jpeg':
+					case 'image/png':
+					case 'image/gif':
+						// Convert to webp
+						var dest = file.name.replace(/\.(jpe?g|png|gif)/ig, '.webp');
+						console.log(quality);
+						// Convert to image
+						var a = document.createElement('a');
+						canvas.toBlob(function(blob) {
+							var url = URL.createObjectURL(blob);
+							a.setAttribute('download', dest);
+							a.setAttribute('href', url);
+							a.click();
+						}, 'image/webp', quality / 100);
+					break;
+					case 'image/webp':
+						// Convert to image
+						var dest = file.name.replace(/\.webp/ig, '.') + format;
+						// Convert to image
+						var a = document.createElement('a');
+						canvas.toBlob(function(blob) {
+							var url = URL.createObjectURL(blob);
+							a.setAttribute('download', dest);
+							a.setAttribute('href', url);
+							a.click();
+						}, 'image/' + format, 0.85);
+					break;
+				}
+			});
+			var loadFile = function(file) {
+				if (FileReader && file) {
+					var fr = new FileReader(),
+						image = new Image();
+					fr.onload = function () {
+						image.src = fr.result;
+					}
+					image.onload = function() {
+						canvas.width = image.width;
+						canvas.height = image.height;
+						var ctx = canvas.getContext('2d');
+						ctx.drawImage(image, 0, 0);
+						button.data('file', file);
+						button.removeClass('disabled');
+						clear.removeClass('disabled');
+						//
+						info.html( partialInfo({ file: file, image: image.src }) ).removeClass('d-none');
+					}
+					fr.readAsDataURL(file);
+				}
+			}
+			window.bytesToSize = function (bytes) {
+				var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+				if (bytes == 0) return '0 Byte';
+				var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+				return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+			}
+		});
+	</script>
+</body>
+</html>
