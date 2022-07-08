@@ -52,7 +52,7 @@ function getDaily(sign) {
   fetch("https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=" + sign + "&day=today", {
       "method": "POST",
       "headers": {
-        "x-rapidapi-key": "39f44714f4mshfeb6e4d795b7955p1c3112jsn82a3035351ec",
+        "x-rapidapi-key": "OvEezA3997msh66qZgNJ66YsAWs0p13mlOMjsnO4L2P0BG7sM4",
         "x-rapidapi-host": "sameer-kumar-aztro-v1.p.rapidapi.com"
       }
     })
