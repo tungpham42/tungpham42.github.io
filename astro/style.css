@@ -1,0 +1,151 @@
+h1 {
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    text-align:center;
+	border-bottom: 2px solid rgb(136, 136, 136);
+}
+
+.sign::after {
+	content: '';
+	clear: both;
+}
+
+.sign div {
+	position: relative;
+	float: left;
+	padding: 0;
+}
+
+.sign div:first-child {
+	margin-left: 0;
+}
+.sign div span {
+	font-family: 'Caveat', cursive;
+	position: absolute;
+	bottom: -10px;
+	text-align: center;
+	left: 5%;
+	display: block;
+	width: 10px;
+	color: rgb(252, 252, 252);
+	font-size: 1vw;
+	text-decoration: none;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+	opacity: 0;
+	white-space: nowrap;
+	font-size: 2rem;
+}
+
+img{
+    width: 60%;
+	height: 60%;
+	z-index:-10;
+	margin:1px
+}
+
+figure:hover+span {
+	opacity: 1;
+	position: absolute;
+
+}
+
+  .pulse a:hover{ 
+	animation: pulse 1s infinite;
+	animation-timing-function: linear;   
+  }
+  
+  @keyframes pulse {
+	0% { transform: scale(1.5); }
+	50% { transform: scale(1.8);}
+	100% { transform: scale(1.5); }
+	}
+  
+  body {
+	margin:3%;
+	background: rgb(43,43,43);
+	background: linear-gradient(0deg, rgba(43,43,43,1) 0%, rgba(195,195,195,1) 100%);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	overflow-x: hidden;
+	padding-bottom:2%;
+  }
+  
+  a{
+	margin: auto;
+	text-align: center;
+	display: block;
+	text-decoration: none;
+  }
+
+  .bottom{
+	border-bottom: 2px solid black;
+	padding-bottom: 2%;
+  }
+
+	html{
+		border: 10px double;
+		border-radius:12px;
+		margin:1%
+	}
+
+	#newDiv{
+		display:none;
+		font-size: 3em;
+		margin: inherit;
+		padding: 2%;
+		color: white;
+		font-family: 'Caveat', cursive;
+		background: rgb(255 255 255 / 15%);
+		border-radius: 12px;
+	}
+	
+	#dailyDiv{
+		display:none;
+		font-size: 3em;
+		margin: inherit;
+		padding: 2%;
+		color: white;
+		font-family: 'Caveat', cursive;
+		background: rgb(255 255 255 / 15%);
+		border-radius: 12px;
+		   }
+	   
+  #today {
+	  font-weight:bolder;
+	  font-family: 'Caveat', cursive;
+	  text-align: center;
+	  font-size: 2.5em;
+	  border-bottom: solid 3px black;
+	  padding-bottom:-5%;
+	  color:white;
+	  margin:inherit;
+  }
+
+  #title {
+	font-weight:bolder;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	text-align: center;
+	font-size: 3.5em;
+	margin:inherit;
+	color:white;
+	padding:1%;
+}
+
+  h3 {
+	  display:none;
+	  margin:inherit;
+	  color:white;  
+	  font-family: 'Libre Baskerville', serif;
+	  font-size: 4em;
+	}
+  
+  header {
+	background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(13,89,130,1) 52%);
+  }
+
+  #dailyDivTitle{
+	font-size: 2.4em;
+    font-weight: bold;
+  }
