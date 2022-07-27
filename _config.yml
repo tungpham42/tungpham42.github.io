@@ -36,7 +36,7 @@ about_profile_image: images/tung.jpg
 about_content: | # this will include new lines to allow paragraphs
   - I have 8 years of experience in both Frontend and Backend stacks.
   - My Frontend stack is HTML5, CSS3, SASS/SCSS, Javascript, jQuery, and Bootstrap 4.
-  - My Backend stack is PHP 8, Laravel 8, MySQL/MariaDB, Wordpress 5.6, and Xenforo 2.2.
+  - My Backend stack is PHP 8, Laravel 9, MySQL/MariaDB, Wordpress 6, and Xenforo 2.
   - I am familiar with Git, Composer, NPM, CPanel, DirectAdmin, CentOS, Ubuntu, Slack, Trello, and Jira. 
   - I am currently open for Part-time and Remote or Freelance jobs.
 # Projects Section
