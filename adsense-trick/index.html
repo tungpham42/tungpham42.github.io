@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdSense Trick demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" integrity="sha512-XWTTruHZEYJsxV3W/lSXG1n3Q39YIWOstqvmFsdNEEQfHoZ6vm6E9GK2OrF6DSJSpIbRbi+Nn0WDPID9O7xB2Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>AdSense Trick</h1>
+      <p class="lead">
+        To apply this trick, just add "showPromotion" class to the links you want to show Advertisement Modal.
+      </p>
+      <a class="btn btn-primary showPromotion" href="https://www.google.com">Google</a>
+      <a class="btn btn-danger showPromotion" href="https://cotuong.top">Cờ tướng</a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/js/bootstrap.bundle.min.js" integrity="sha512-9GacT4119eY3AcosfWtHMsT5JyZudrexyEVzTBWV3viP/YfB9e2pEy3N7WXL3SV6ASXpTU0vzzSxsbfsuUH4sQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <div class="modal fade" id="AdSenseModal" tabindex="-1" aria-labelledby="AdSenseModalLabel" aria-hidden="true" data-url="">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="AdSenseModalLabel"><i class="fa-solid fa-rectangle-ad"></i> Advertisement</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <a class="kambriaLink" href="https://kambria.io/daos/?utm_source=cotuong.top&utm_medium=banner&utm_campaign=kambria_daos&utm_id=daos&utm_term=kambria+daos" target="_blank"><img src="https://cotuong.r.worldssl.net/img/kambria_300x300.png"  width="300" height="300" /></a>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    const AdSenseModal = document.getElementById('AdSenseModal');
+
+    let showPromotionElements = document.getElementsByClassName('showPromotion');
+    Array.prototype.forEach.call(showPromotionElements, function(showPromotionElement) {
+        showPromotionElement.addEventListener('click', function(e) {
+        e.preventDefault();
+        AdSenseModal.setAttribute('data-url', showPromotionElement.getAttribute('href'));
+        let AdSenseModalTrigger = new bootstrap.Modal(AdSenseModal, {});
+        AdSenseModalTrigger.show();
+        });
+    });
+
+    AdSenseModal.addEventListener('hidden.bs.modal', event => {
+        window.location.href = AdSenseModal.getAttribute('data-url');
+    })
+    </script>
+  </body>
+</html>
