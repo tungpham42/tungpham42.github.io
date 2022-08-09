@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ripple Buttons</title>
+    <style>
+    a.button {
+      display: inline-block;
+      padding: 6px 12px;
+      margin: 2px;
+      line-height: 30px;
+      border-radius: 6px;
+      -webkit-border-radius: 6px;
+      -o-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-width: 1px;
+      border-style: solid;
+      text-decoration: none;
+      font-family: Roboto, sans-serif;
+      font-size: 12px;
+      color: #000;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.09);
+      text-decoration: none !important;
+      cursor: pointer;
+      outline: none;
+      background-color: #D2D2D2;
+      border-color: #D2D2D2;
+      background-image: -webkit-linear-gradient(center top, #D2D2D2 0%, #E4E4E4 50%, #EDEDED 50%, #FFFFFF 100%);
+      background-image: -moz-linear-gradient(center top, #D2D2D2 0%, #E4E4E4 50%, #EDEDED 50%, #FFFFFF 100%);
+      background-image: -o-linear-gradient(center top, #D2D2D2 0%, #E4E4E4 50%, #EDEDED 50%, #FFFFFF 100%);
+      background-image: -ms-linear-gradient(center top, #D2D2D2 0%, #E4E4E4 50%, #EDEDED 50%, #FFFFFF 100%);
+      background-image: linear-gradient(to top, #D2D2D2 0%, #E4E4E4 50%, #EDEDED 50%, #FFFFFF 100%);
+    }
+    a.button:hover {
+      background-color: #4488ee;
+      border-color: #4488ee;
+      background-image: -webkit-linear-gradient(center top, #4488ee 0%, #5590ee 50%, #77a2ff 50%, #88aaff 100%);
+      background-image: -moz-linear-gradient(center top, #4488ee 0%, #5590ee 50%, #77a2ff 50%, #88aaff 100%);
+      background-image: -o-linear-gradient(center top, #4488ee 0%, #5590ee 50%, #77a2ff 50%, #88aaff 100%);
+      background-image: -ms-linear-gradient(center top, #4488ee 0%, #5590ee 50%, #77a2ff 50%, #88aaff 100%);
+      background-image: linear-gradient(to top, #4488ee 0%, #5590ee 50%, #77a2ff 50%, #88aaff 100%);
+      color: #FFF;
+    }
+    a.button:active {
+      background-color: #4488ee;
+      border-color: #4488ee;
+      background-image: -webkit-linear-gradient(center bottom, #4488ee 0%, #5590ee 50%, #77a2ff 50%, #88aaff 100%);
+      background-image: -moz-linear-gradient(center bottom, #4488ee 0%, #5590ee 50%, #77a2ff 50%, #88aaff 100%);
+      background-image: -o-linear-gradient(center bottom, #4488ee 0%, #5590ee 50%, #77a2ff 50%, #88aaff 100%);
+      background-image: -ms-linear-gradient(center bottom, #4488ee 0%, #5590ee 50%, #77a2ff 50%, #88aaff 100%);
+      background-image: linear-gradient(to bottom, #4488ee 0%, #5590ee 50%, #77a2ff 50%, #88aaff 100%);
+      color: #FFF;
+    }
+    .ripple {
+      overflow: hidden;
+      position: relative !important;
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+      -o-user-select: none;
+    }
+    .ripple .ripple-effect {
+      position: absolute !important;
+      pointer-events: none !important;
+      position: absolute !important;
+      border-radius: 100%;
+      -webkit-border-radius: 100%;
+      -o-border-radius: 100%;
+      -moz-border-radius: 100%;
+      width: 0px;
+      height: 0px;
+      float: left;
+      transition-property: border-radius, width, height, background-image, margin-left, margin-top;
+      transition-duration: 150ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-transition-property: border-radius, width, height, background-image, margin-left, margin-top;
+      -webkit-transition-duration: 150ms;
+      -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      -moz-transition-property: border-radius, width, height, background-image, margin-left, margin-top;
+      -moz-transition-duration: 150ms;
+      -moz-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      -o-transition-property: border-radius, width, height, background-image, margin-left, margin-top;
+      -o-transition-duration: 150ms;
+      -o-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .ripple .ripple-effect-out {
+      position: absolute !important;
+      pointer-events: none !important;
+      transition: background-image 150ms cubic-bezier(0.4, 0, 0.2, 1), opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-transition: background-image 150ms cubic-bezier(0.4, 0, 0.2, 1), opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      -moz-transition: background-image 150ms cubic-bezier(0.4, 0, 0.2, 1), opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      -o-transition: background-image 150ms cubic-bezier(0.4, 0, 0.2, 1), opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .ripple .ripple-stop {
+      position: absolute !important;
+      pointer-events: none !important;
+      -moz-transition: none !important;
+      -o-transition: none !important;
+      -webkit-transition: none !important;
+      transition: none !important;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a class="button">Link Button</a><br/>
+      <button>Pure Button</button>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js" integrity="sha512-VjRpiWhUqdNa9bwBV7LnlG8CwsCVPenFyOQTSRTOGHw/tjtME96zthh0Vv9Itf3i8w4CkUrdYaS6+dAt1m1YXQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script>
+      (function ($) {
+        $.fn.ripple = function (options) {
+          var settings = $.extend({
+            speed: 333, // ms
+            alpha: 0.333,
+            transitionEnd: function () {} // callback when transition ends.
+          }, options);
+          return this.each(function () {
+            var $this = $(this);
+            var supportEvent = ('ontouchstart' in window) ? 'touchstart' : 'mousedown';
+            $this.addClass('ripple').on(supportEvent, function (e) { //bind touch/click event
+              e.stopPropagation();
+              $this.append('<div class="ripple-effect"></div>');
+              // Fetch click position and size
+              var posX = $this.offset().left,
+                posY = $this.offset().top;
+              var w = $this.outerWidth(),
+                h = $this.outerHeight();
+              var d = Math.max(w, h) * 2;
+              var targetX = e.pageX - posX;
+              var targetY = e.pageY - posY;
+              var backColor = $this.css('color');
+
+              //Fix target position
+              if (!targetX || !targetY) {
+                targetX = e.originalEvent.touches[0].pageX - posX;
+                targetY = e.originalEvent.touches[0].pageY - posY;
+              }
+
+              var ratio = 0.5;
+              var $effectElem = $this.children(':last');
+
+              //Animate Start
+              $effectElem.addClass('ripple-stop').css({
+                'top': targetY,
+                'left': targetX,
+                'width': d,
+                'height': d,
+                'margin-left': -d * ratio,
+                'margin-top': -d * ratio,
+                'background-color': $.Color(backColor).alpha(settings.alpha).toRgbaString(),
+                'transition-duration': settings.speed + 'ms',
+                '-webkit-transition-duration': settings.speed + 'ms',
+                '-moz-transition-duration': settings.speed + 'ms',
+                '-o-transition-duration': settings.speed + 'ms'
+              }).removeClass('ripple-stop');
+
+              //Animate End
+              setTimeout(function () {
+                $effectElem.addClass('ripple-effect-out').css({
+                  'background-color': $.Color(backColor).alpha(0).toRgbaString(),
+                  'transition-duration': settings.speed + 'ms',
+                  '-webkit-transition-duration': settings.speed + 'ms',
+                  '-moz-transition-duration': settings.speed + 'ms',
+                  '-o-transition-duration': settings.speed + 'ms'
+                });
+                setTimeout(function () {
+                  $this.find('.ripple-effect').first().remove();
+                  settings.transitionEnd.call(this);
+                }, settings.speed);
+              }, settings.speed);
+            });
+          });
+        }
+      }(jQuery));
+      $('a.button, button').ripple();
+      </script>
+    </div>
+  </body>
+</html>
