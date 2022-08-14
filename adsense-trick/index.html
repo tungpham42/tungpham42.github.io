@@ -41,7 +41,6 @@
         showPromotionElement.addEventListener('click', function(e) {
         e.preventDefault();
         AdSenseModal.setAttribute('data-url', showPromotionElement.getAttribute('href'));
-        adModalCloseBtn.setAttribute('title', AdSenseModal.getAttribute('data-url'));
         adModalCloseBtn.setAttribute('data-bs-title', AdSenseModal.getAttribute('data-url'));
         let AdSenseModalTrigger = new bootstrap.Modal(AdSenseModal, {});
         let adModalCloseBtnTooltip = new bootstrap.Tooltip(adModalCloseBtn, {})
