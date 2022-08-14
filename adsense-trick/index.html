@@ -22,13 +22,12 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="AdSenseModalLabel"><i class="fa-solid fa-rectangle-ad"></i> Advertisement</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body text-center">
             <a class="kambriaLink" href="https://kambria.io/daos/?utm_source=cotuong.top&utm_medium=banner&utm_campaign=kambria_daos&utm_id=daos&utm_term=kambria+daos" target="_blank"><img src="https://cotuong.r.worldssl.net/img/kambria_300x300.png"  width="300" height="300" /></a>
           </div>
           <div class="modal-footer">
-            <button id="adModalCloseBtn" type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="tooltip" data-bs-placement="top">Redirect</button>
+            <button id="adModalCloseBtn" type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="tooltip" data-bs-placement="top" title="">Redirect</button>
           </div>
         </div>
       </div>
@@ -42,6 +41,7 @@
         showPromotionElement.addEventListener('click', function(e) {
         e.preventDefault();
         AdSenseModal.setAttribute('data-url', showPromotionElement.getAttribute('href'));
+        adModalCloseBtn.setAttribute('title', AdSenseModal.getAttribute('data-url'));
         adModalCloseBtn.setAttribute('data-bs-title', AdSenseModal.getAttribute('data-url'));
         let AdSenseModalTrigger = new bootstrap.Modal(AdSenseModal, {});
         AdSenseModalTrigger.show();
