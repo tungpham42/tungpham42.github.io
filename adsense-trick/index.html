@@ -44,12 +44,11 @@
         adModalCloseBtn.setAttribute('title', AdSenseModal.getAttribute('data-url'));
         adModalCloseBtn.setAttribute('data-bs-title', AdSenseModal.getAttribute('data-url'));
         let AdSenseModalTrigger = new bootstrap.Modal(AdSenseModal, {});
+        let adModalCloseBtnTooltip = new bootstrap.Tooltip(adModalCloseBtn, {})
         AdSenseModalTrigger.show();
+        adModalCloseBtnTooltip.show();
         });
     });
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-    tooltipList.show();
     AdSenseModal.addEventListener('hidden.bs.modal', event => {
         window.location.href = AdSenseModal.getAttribute('data-url');
     })
