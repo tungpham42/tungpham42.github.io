@@ -17,7 +17,7 @@
       <a class="btn btn-danger showPromotion" href="https://cotuong.top">Cờ tướng</a>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/js/bootstrap.bundle.min.js" integrity="sha512-9GacT4119eY3AcosfWtHMsT5JyZudrexyEVzTBWV3viP/YfB9e2pEy3N7WXL3SV6ASXpTU0vzzSxsbfsuUH4sQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <div class="modal fade" id="AdSenseModal" tabindex="-1" aria-labelledby="AdSenseModalLabel" aria-hidden="true" data-url="">
+    <div class="modal fade" id="AdSenseModal" tabindex="-1" aria-labelledby="AdSenseModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false" data-url="">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
@@ -28,24 +28,27 @@
             <a class="kambriaLink" href="https://kambria.io/daos/?utm_source=cotuong.top&utm_medium=banner&utm_campaign=kambria_daos&utm_id=daos&utm_term=kambria+daos" target="_blank"><img src="https://cotuong.r.worldssl.net/img/kambria_300x300.png"  width="300" height="300" /></a>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            <button id="adModalCloseBtn" type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="tooltip" data-bs-placement="top">Redirect</button>
           </div>
         </div>
       </div>
     </div>
     <script>
     const AdSenseModal = document.getElementById('AdSenseModal');
+    const adModalCloseBtn = document.getElementById('adModalCloseBtn');
 
     let showPromotionElements = document.getElementsByClassName('showPromotion');
     Array.prototype.forEach.call(showPromotionElements, function(showPromotionElement) {
         showPromotionElement.addEventListener('click', function(e) {
         e.preventDefault();
         AdSenseModal.setAttribute('data-url', showPromotionElement.getAttribute('href'));
+        adModalCloseBtn.setAttribute('data-bs-title', AdSenseModal.getAttribute('data-url'));
         let AdSenseModalTrigger = new bootstrap.Modal(AdSenseModal, {});
         AdSenseModalTrigger.show();
         });
     });
-
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
     AdSenseModal.addEventListener('hidden.bs.modal', event => {
         window.location.href = AdSenseModal.getAttribute('data-url');
     })
