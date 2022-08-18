@@ -41,20 +41,20 @@
       showPromotionElement.addEventListener('click', function(e) {
         e.preventDefault();
         AdSenseModal.setAttribute('data-url', showPromotionElement.getAttribute('href'));
-        adModalCloseBtn.setAttribute('data-bs-title', AdSenseModal.getAttribute('data-url'));
         let AdSenseModalTrigger = new bootstrap.Modal(AdSenseModal, {});
-        let adModalCloseBtnTooltip = new bootstrap.Tooltip(adModalCloseBtn, {})
         AdSenseModalTrigger.show();
       });
       showPromotionElement.addEventListener('auxclick', function(e) {
         e.preventDefault();
         AdSenseModal.setAttribute('data-url', showPromotionElement.getAttribute('href'));
-        adModalCloseBtn.setAttribute('data-bs-title', AdSenseModal.getAttribute('data-url'));
         let AdSenseModalTrigger = new bootstrap.Modal(AdSenseModal, {});
-        let adModalCloseBtnTooltip = new bootstrap.Tooltip(adModalCloseBtn, {})
         AdSenseModalTrigger.show();
       });
     });
+    AdSenseModal.addEventListener('shown.bs.modal', event => {
+      adModalCloseBtn.setAttribute('data-bs-title', AdSenseModal.getAttribute('data-url'));
+      let adModalCloseBtnTooltip = new bootstrap.Tooltip(adModalCloseBtn, {})
+    })
     AdSenseModal.addEventListener('hidden.bs.modal', event => {
       window.location.href = AdSenseModal.getAttribute('data-url');
     })
