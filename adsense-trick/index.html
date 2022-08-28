@@ -27,7 +27,7 @@
             <a class="kambriaLink" href="https://kambria.io/daos/?utm_source=cotuong.top&utm_medium=banner&utm_campaign=kambria_daos&utm_id=daos&utm_term=kambria+daos" target="_blank"><img src="https://cotuong.r.worldssl.net/img/kambria_300x300.png"  width="300" height="300" /></a>
           </div>
           <div class="modal-footer">
-            <button id="adModalCloseBtn" type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="tooltip" data-bs-placement="top"><i class="fa-solid fa-check"></i> Continue</button>
+            <button id="adModalCloseBtn" type="button" style="cursor: wait; pointer-events: all;" class="btn btn-primary disabled" data-bs-dismiss="modal" data-bs-toggle="tooltip" data-bs-placement="top"><i class="fa-solid fa-clock"></i> <span>3 seconds</span></button>
           </div>
         </div>
       </div>
@@ -51,9 +51,30 @@
         AdSenseModalTrigger.show();
       });
     });
+
+    AdSenseModal.addEventListener('show.bs.modal', event => {
+      if (!document.querySelector('#AdSenseModal ins').hasAttribute('data-ad-status')) {
+        document.querySelector('#AdSenseModal ins').setAttribute('data-ad-status', 'unfilled');
+      }
+    })
     AdSenseModal.addEventListener('shown.bs.modal', event => {
       adModalCloseBtn.setAttribute('data-bs-title', AdSenseModal.getAttribute('data-url'));
       let adModalCloseBtnTooltip = new bootstrap.Tooltip(adModalCloseBtn, {})
+      let i = 3;
+      let timer = setInterval(function() {
+        console.log(--i);
+        document.querySelector('#adModalCloseBtn span').innerHTML = i + ' giây';
+        if (i === -1) {
+          document.querySelector('#adModalCloseBtn span').innerHTML = 'Redirect now';
+          document.querySelector('#adModalCloseBtn i').classList.remove('fa-clock');
+          document.querySelector('#adModalCloseBtn i').classList.add('fa-link');
+          adModalCloseBtn.style.cursor = 'pointer';
+          adModalCloseBtn.classList.remove('disabled');
+          adModalCloseBtn.classList.add('pulse');
+          adModalCloseBtn.removeAttribute('disabled');
+          clearInterval(timer);
+        }
+      }, 1000);
     })
     AdSenseModal.addEventListener('hidden.bs.modal', event => {
       window.location.href = AdSenseModal.getAttribute('data-url');
