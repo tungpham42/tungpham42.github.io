@@ -63,7 +63,7 @@
       let i = 3;
       let timer = setInterval(function() {
         console.log(--i);
-        document.querySelector('#adModalCloseBtn span').innerHTML = i + ' giây';
+        document.querySelector('#adModalCloseBtn span').innerHTML = i + ' second' + (i > 1 ? 's': '');
         if (i === -1) {
           document.querySelector('#adModalCloseBtn span').innerHTML = 'Redirect now';
           document.querySelector('#adModalCloseBtn i').classList.remove('fa-clock');
