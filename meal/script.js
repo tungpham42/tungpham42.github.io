@@ -35,6 +35,34 @@ function searchMeal() {
             }
         });
 }
+function searchMealByFirstLetter(letter) {
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`)
+        .then(response => response.json())
+        .then(data => {
+            let html = "";
+            if (data.meals) {
+                // console.log(data.meals);
+                data.meals.forEach(meal => {
+                    html += `
+                    <div class="col-md-3 mb-3">
+                        <div class="card" data-id="${meal.idMeal}">
+                            <img src="${meal.strMealThumb}"
+                                class="card-img-top" alt="testing-image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">${meal.strMeal}</h5>
+                                <a href="#" class="btn btn-success recipe-btn">Get Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                    mealList.innerHTML = html;
+                })
+            } else {
+                html = 'Sorry, we didnt find any meal';
+                mealList.innerHTML = html;
+            }
+        });
+}
 
 function getMealRecipe(e) {
     e.preventDefault();
