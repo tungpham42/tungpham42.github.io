@@ -1,6 +1,7 @@
 const searchBtn = document.querySelector("#search-btn");
 const catList = document.querySelector("#cat");
 const mealList = document.querySelector("#meal");
+const areaList = document.querySelector("#areas");
 const catDetailsContent = document.querySelector("#cat-details-content");
 const mealDetailsContent = document.querySelector("#meal-details-content");
 const recipeCloseBtn = document.querySelector("#recipe-close-btn");
@@ -16,14 +17,15 @@ function listAllCategories() {
             if (data.categories) {
                 // console.log(data.meals);
                 data.categories.forEach(cat => {
+                    let catDesc = cat.strCategoryDescription.replace('\"', '&quot;');
                     html += `
                     <div class="col-md-3 mb-3">
                         <div class="card" data-id="${cat.idCategory}">
                             <img src="${cat.strCategoryThumb}"
-                                class="card-img-top" alt="testing-image">
+                                class="card-img-top" alt="${cat.strCategory}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${cat.strCategory}</h5>
-                                <button onclick="catModal(\`${cat.strCategory}\`, \`${cat.strCategoryDescription}\`);" class="btn btn-secondary btn-sm mb-3 w-100">More</button>
+                                <button onclick='catModal(\`${cat.strCategory}\`, \`${catDesc}\`);' class="btn btn-secondary btn-sm mb-3 w-100">Details</button>
                                 <a href="javascript:void(0);" onclick="searchMealByCategory('${cat.strCategory}')" class="btn btn-success recipe-btn w-100">Get Recipes</a>
                             </div>
                         </div>
@@ -35,6 +37,56 @@ function listAllCategories() {
                 html = 'Sorry, we didnt find any category';
                 catList.innerHTML = html;
             }
+        });
+}
+
+function listAllAreas() {
+    fetch(`https://www.themealdb.com/api/json/v1/1/list.php?a=list`)
+        .then(response => response.json())
+        .then(data => {
+            let html = "";
+            if (data.meals) {
+                // console.log(data.meals);
+                data.meals.forEach(area => {
+                    html += `
+                    <button onclick="filterMealByArea(\`${area.strArea}\`);" class="btn btn-sm btn-secondary mb-3">${area.strArea}</button>
+                    `;
+                    areaList.innerHTML = html;
+                })
+            } else {
+                html = 'Sorry, we didnt find any area';
+                areaList.innerHTML = html;
+            }
+        });
+}
+
+function filterMealByArea(area) {
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`)
+        .then(response => response.json())
+        .then(data => {
+            let html = "";
+            if (data.meals) {
+                // console.log(data.meals);
+                data.meals.forEach(meal => {
+                    html += `
+                    <div class="col-md-3 mb-3">
+                        <div class="card" data-id="${meal.idMeal}">
+                            <img src="${meal.strMealThumb}"
+                                class="card-img-top" alt="${meal.strMeal}">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">${meal.strMeal}</h5>
+                                <a href="javascript:void(0);" class="btn btn-success recipe-btn">Get Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                    mealList.innerHTML = html;
+                })
+            } else {
+                html = 'Sorry, we didnt find any meal';
+                mealList.innerHTML = html;
+            }
+            document.getElementById('meal').scrollIntoView();
         });
 }
 
@@ -51,7 +103,7 @@ function searchMeal() {
                     <div class="col-md-3 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
-                                class="card-img-top" alt="testing-image">
+                                class="card-img-top" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success recipe-btn">Get Recipe</a>
@@ -65,6 +117,7 @@ function searchMeal() {
                 html = 'Sorry, we didnt find any meal';
                 mealList.innerHTML = html;
             }
+            document.getElementById('meal').scrollIntoView();
         });
 }
 function searchMealByFirstLetter(letter) {
@@ -79,7 +132,7 @@ function searchMealByFirstLetter(letter) {
                     <div class="col-md-3 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
-                                class="card-img-top" alt="testing-image">
+                                class="card-img-top" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success recipe-btn">Get Recipe</a>
@@ -93,6 +146,7 @@ function searchMealByFirstLetter(letter) {
                 html = 'Sorry, we didnt find any meal';
                 mealList.innerHTML = html;
             }
+            document.getElementById('meal').scrollIntoView();
         });
 }
 function searchMealByCategory(cat) {
@@ -107,7 +161,7 @@ function searchMealByCategory(cat) {
                     <div class="col-md-3 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
-                                class="card-img-top" alt="testing-image">
+                                class="card-img-top" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success recipe-btn">Get Recipe</a>
@@ -121,6 +175,7 @@ function searchMealByCategory(cat) {
                 html = 'Sorry, we didnt find any meal';
                 mealList.innerHTML = html;
             }
+            document.getElementById('meal').scrollIntoView();
         });
 }
 

@@ -15,7 +15,7 @@
     <div class="container">
         <div class="meal-wrapper">
             <div class="meal-search text-center mt-5">
-                <h2>Meal Planet</h2>
+                <h1>Meal Planet</h1>
                 <blockquote>Real food doesn't have ingredients, real food is ingredients. <br>
                     <cite>- Jamie Oliver</cite>
                 </blockquote>
@@ -23,12 +23,12 @@
                 <div class="meal-search-box mx-auto d-flex justify-content-center flex-row" style="max-width: 500px">
                     <input type="text" class="serch-content form-control" id="search-input"
                         placeholder="Enter a keyword">
-                    <button class="btn btn-primary w-50 ms-2" id="search-btn">Search</button>
+                    <button class="btn btn-primary w-50 ms-2" id="search-btn">Find</button>
                 </div>
             </div>
 
             <div class="meal-result mt-4">
-                <div class="title text-center">Your Search Results:</div>
+                <h3 class="title text-center">Your Search Results:</h3>
                 <div id="meal" class="pt-4 row gx-3">
                     <!-- <div class="col-md-3">
                             <div class="card">
@@ -46,7 +46,7 @@
             </div>
 
             <div class="cat-result mt-4">
-                <div class="title text-center">All categories</div>
+                <h3 class="title text-center">All categories</h3>
                 <div id="cat" class="pt-4 row gx-3">
                     <!-- <div class="col-md-3">
                             <div class="card">
@@ -101,13 +101,17 @@
             </div>
         </div>
     </div>
+    <h4 class="text-center">All areas</h4>
+    <h5 id="areas" class="text-center">
+    </h5>
     <h5 class="text-center">
-        <a href="javascript:void(0);" onclick="searchMealByFirstLetter('a');">A</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('b');">B</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('c');">C</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('d');">D</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('e');">E</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('f');">F</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('g');">G</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('h');">H</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('i');">I</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('j');">J</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('k');">K</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('l');">L</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('m');">M</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('n');">N</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('o');">O</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('p');">P</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('q');">Q</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('r');">R</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('s');">S</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('t');">T</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('u');">U</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('v');">V</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('w');">W</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('x');">X</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('y');">Y</a> / <a href="javascript:void(0);" onclick="searchMealByFirstLetter('z');">Z</a>
+        <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('a');">A</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('b');">B</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('c');">C</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('d');">D</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('e');">E</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('f');">F</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('g');">G</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('h');">H</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('i');">I</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('j');">J</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('k');">K</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('l');">L</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('m');">M</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('n');">N</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('o');">O</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('p');">P</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('q');">Q</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('r');">R</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('s');">S</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('t');">T</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('u');">U</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('v');">V</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('w');">W</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('x');">X</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('y');">Y</a> / <a class="btn btn-sm btn-secondary mb-3"  href="javascript:void(0);" onclick="searchMealByFirstLetter('z');">Z</a>
     </h5>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.1/js/bootstrap.bundle.min.js" integrity="sha512-1TK4hjCY5+E9H3r5+05bEGbKGyK506WaDPfPe1s/ihwRjr6OtL43zJLzOFQ+/zciONEd+sp7LwrfOCnyukPSsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js?v=25"></script>
+    <script src="script.js?v=47"></script>
     <script>
+        listAllAreas();
         listAllCategories();
     </script>
 </body>
