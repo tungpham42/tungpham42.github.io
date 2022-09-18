@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal Planet</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.1/css/bootstrap.min.css" integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.1/materia/bootstrap.min.css" integrity="sha512-XteNgGvlggyWnUwg5eZsLmMWD1j7jzdlBZap2RG9mZLFdYAKQiFrTv6SFN4YT2IlNFl7m9cOcWv9HCZiTqhoQw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -43,11 +44,47 @@
                         </div> -->
                 </div>
             </div>
+
+            <div class="cat-result mt-4">
+                <div class="title text-center">All categories</div>
+                <div id="cat" class="pt-4 row gx-3">
+                    <!-- <div class="col-md-3">
+                            <div class="card">
+                                <img src="https://images.unsplash.com/photo-1617854818583-09e7f077a156?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                                    class="card-img-top" alt="testing-image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">
+                                        Testing Decription
+                                    </p>
+                                </div>
+                            </div>
+                        </div> -->
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Modal Detail Meal -->
-    <div class="modal fade" tabindex="-1" id="myModal">
+    <div class="modal fade" tabindex="-1" id="catModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" id="cat-details-content">
+                <!-- <div class="modal-header">
+                    <h5 class="modal-title">Modal title2</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- Modal Detail Meal -->
+    <div class="modal fade" tabindex="-1" id="mealModal">
         <div class="modal-dialog modal-lg">
             <div class="modal-content" id="meal-details-content">
                 <!-- <div class="modal-header">
@@ -69,7 +106,10 @@
     </h5>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.1/js/bootstrap.bundle.min.js" integrity="sha512-1TK4hjCY5+E9H3r5+05bEGbKGyK506WaDPfPe1s/ihwRjr6OtL43zJLzOFQ+/zciONEd+sp7LwrfOCnyukPSsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js?v=1"></script>
+    <script src="script.js?v=25"></script>
+    <script>
+        listAllCategories();
+    </script>
 </body>
 
 </html>
