@@ -7,11 +7,13 @@ const catDetailsContent = document.querySelector("#cat-details-content");
 const mealDetailsContent = document.querySelector("#meal-details-content");
 const recipeCloseBtn = document.querySelector("#recipe-close-btn");
 
+const APIUrl = 'https://www.themealdb.com/api/json/v2/9973533/';
+
 searchBtn.addEventListener("click", searchMeal);
 mealList.addEventListener("click", getMealRecipe);
 
 function listAllCategories() {
-    fetch(`https://www.themealdb.com/api/json/v2/9973533/categories.php`)
+    fetch(APIUrl + `categories.php`)
         .then(response => response.json())
         .then(data => {
             let html = "";
@@ -35,14 +37,14 @@ function listAllCategories() {
                     catList.innerHTML = html;
                 })
             } else {
-                html = 'Sorry, we didnt find any category';
+                html = 'Sorry, we didn\'t find any category';
                 catList.innerHTML = html;
             }
         });
 }
 
 function listAllAreas() {
-    fetch(`https://www.themealdb.com/api/json/v2/9973533/list.php?a=list`)
+    fetch(APIUrl + `list.php?a=list`)
         .then(response => response.json())
         .then(data => {
             let html = "";
@@ -50,19 +52,19 @@ function listAllAreas() {
                 // console.log(data.meals);
                 data.meals.forEach(area => {
                     html += `
-                    <button onclick="filterMealByArea(\`${area.strArea}\`);" class="btn btn-sm btn-secondary mb-3">${area.strArea}</button>
+                    <button onclick="filterMealByArea(\`${area.strArea}\`);" class="btn btn-sm btn-secondary mb-2">${area.strArea}</button>
                     `;
                     areaList.innerHTML = html;
                 })
             } else {
-                html = 'Sorry, we didnt find any area';
+                html = 'Sorry, we didn\'t find any area';
                 areaList.innerHTML = html;
             }
         });
 }
 
 function listAllIngredients() {
-    fetch(`https://www.themealdb.com/api/json/v2/9973533/list.php?i=list`)
+    fetch(APIUrl + `list.php?i=list`)
         .then(response => response.json())
         .then(data => {
             let html = "";
@@ -70,19 +72,19 @@ function listAllIngredients() {
                 // console.log(data.meals);
                 data.meals.forEach(ingredient => {
                     html += `
-                    <button onclick="filterMealByIngredient(\`${ingredient.strIngredient}\`);" class="btn btn-sm btn-secondary mb-3">${ingredient.strIngredient}</button>
+                    <button onclick="filterMealByIngredient(\`${ingredient.strIngredient}\`);" class="btn btn-sm btn-secondary mb-2">${ingredient.strIngredient}</button>
                     `;
                     ingredientList.innerHTML = html;
                 })
             } else {
-                html = 'Sorry, we didnt find any ingredient';
+                html = 'Sorry, we didn\'t find any ingredient';
                 ingredientList.innerHTML = html;
             }
         });
 }
 
 function filterMealByArea(area) {
-    fetch(`https://www.themealdb.com/api/json/v2/9973533/filter.php?a=${area}`)
+    fetch(APIUrl + `filter.php?a=${area}`)
         .then(response => response.json())
         .then(data => {
             let html = "";
@@ -104,7 +106,7 @@ function filterMealByArea(area) {
                     mealList.innerHTML = html;
                 })
             } else {
-                html = 'Sorry, we didnt find any meal';
+                html = 'Sorry, we didn\'t find any meal';
                 mealList.innerHTML = html;
             }
             document.getElementById('meal').scrollIntoView();
@@ -112,7 +114,7 @@ function filterMealByArea(area) {
 }
 
 function filterMealByIngredient(ingredient) {
-    fetch(`https://www.themealdb.com/api/json/v2/9973533/filter.php?i=${ingredient}`)
+    fetch(APIUrl + `filter.php?i=${ingredient}`)
         .then(response => response.json())
         .then(data => {
             let html = "";
@@ -134,16 +136,15 @@ function filterMealByIngredient(ingredient) {
                     mealList.innerHTML = html;
                 })
             } else {
-                html = 'Sorry, we didnt find any meal';
+                html = 'Sorry, we didn\'t find any meal';
                 mealList.innerHTML = html;
             }
             document.getElementById('meal').scrollIntoView();
         });
 }
 
-function searchMeal() {
-    const searchInputText = document.querySelector("#search-input").value.trim();
-    fetch(`https://www.themealdb.com/api/json/v2/9973533/search.php?s=${searchInputText}`)
+function showLatestMeals() {
+    fetch(APIUrl + `latest.php`)
         .then(response => response.json())
         .then(data => {
             let html = "";
@@ -165,14 +166,72 @@ function searchMeal() {
                     mealList.innerHTML = html;
                 })
             } else {
-                html = 'Sorry, we didnt find any meal';
+                html = 'Sorry, we didn\'t find any meal';
+                mealList.innerHTML = html;
+            }
+        });
+}
+
+function showRandomMeals() {
+    fetch(APIUrl + `randomselection.php`)
+        .then(response => response.json())
+        .then(data => {
+            let html = "";
+            if (data.meals) {
+                // console.log(data.meals);
+                data.meals.forEach(meal => {
+                    html += `
+                    <div class="col-md-3 mb-3">
+                        <div class="card" data-id="${meal.idMeal}">
+                            <img src="${meal.strMealThumb}"
+                                class="card-img-top" alt="${meal.strMeal}">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">${meal.strMeal}</h5>
+                                <a href="javascript:void(0);" class="btn btn-success recipe-btn w-100">Get Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                    mealList.innerHTML = html;
+                })
+            } else {
+                html = 'Sorry, we didn\'t find any meal';
+                mealList.innerHTML = html;
+            }
+        });
+}
+function searchMeal() {
+    const searchInputText = document.querySelector("#search-input").value.trim();
+    fetch(APIUrl + `search.php?s=${searchInputText}`)
+        .then(response => response.json())
+        .then(data => {
+            let html = "";
+            if (data.meals) {
+                // console.log(data.meals);
+                data.meals.forEach(meal => {
+                    html += `
+                    <div class="col-md-3 mb-3">
+                        <div class="card" data-id="${meal.idMeal}">
+                            <img src="${meal.strMealThumb}"
+                                class="card-img-top" alt="${meal.strMeal}">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">${meal.strMeal}</h5>
+                                <a href="javascript:void(0);" class="btn btn-success recipe-btn w-100">Get Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                    mealList.innerHTML = html;
+                })
+            } else {
+                html = 'Sorry, we didn\'t find any meal';
                 mealList.innerHTML = html;
             }
             document.getElementById('meal').scrollIntoView();
         });
 }
 function searchMealByFirstLetter(letter) {
-    fetch(`https://www.themealdb.com/api/json/v2/9973533/search.php?f=${letter}`)
+    fetch(APIUrl + `search.php?f=${letter}`)
         .then(response => response.json())
         .then(data => {
             let html = "";
@@ -194,14 +253,14 @@ function searchMealByFirstLetter(letter) {
                     mealList.innerHTML = html;
                 })
             } else {
-                html = 'Sorry, we didnt find any meal';
+                html = 'Sorry, we didn\'t find any meal';
                 mealList.innerHTML = html;
             }
             document.getElementById('meal').scrollIntoView();
         });
 }
 function searchMealByCategory(cat) {
-    fetch(`https://www.themealdb.com/api/json/v2/9973533/filter.php?c=${cat}`)
+    fetch(APIUrl + `filter.php?c=${cat}`)
         .then(response => response.json())
         .then(data => {
             let html = "";
@@ -223,7 +282,7 @@ function searchMealByCategory(cat) {
                     mealList.innerHTML = html;
                 })
             } else {
-                html = 'Sorry, we didnt find any meal';
+                html = 'Sorry, we didn\'t find any meal';
                 mealList.innerHTML = html;
             }
             document.getElementById('meal').scrollIntoView();
@@ -234,7 +293,7 @@ function getMealRecipe(e) {
     e.preventDefault();
     if (e.target.classList.contains('recipe-btn')) {
         let mealItem = e.target.parentElement.parentElement;
-        fetch(`https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=${mealItem.dataset.id}`)
+        fetch(APIUrl + `lookup.php?i=${mealItem.dataset.id}`)
             .then(response => response.json())
             .then(data => mealRecipeModal(data.meals[0]));
         // .then(data => console.log(data.meals));
