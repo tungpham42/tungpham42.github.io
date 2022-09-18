@@ -209,7 +209,8 @@ function showRandomMeals() {
 }
 function searchMeal() {
     const searchInputText = searchInput.value.trim();
-    fetch(APIUrl + `search.php?s=${searchInputText}`)
+    if (searchInputText != '') {
+        fetch(APIUrl + `search.php?s=${searchInputText}`)
         .then(response => response.json())
         .then(data => {
             let html = "";
@@ -236,6 +237,9 @@ function searchMeal() {
             }
             document.getElementById('meal').scrollIntoView();
         });
+    } else {
+        mealList.innerHTML = 'Please insert a keyword';
+    }
 }
 function searchMealByFirstLetter(letter) {
     fetch(APIUrl + `search.php?f=${letter}`)
