@@ -349,7 +349,9 @@ function mealRecipeModal(meal) {
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <p class="text-center">${iframeMarkup}</p>
+            <p class="text-center">
+                <div class="video-container">${iframeMarkup}</div>
+            </p>
             <p>${meal.strInstructions}</p>
         </div>
         <div class="modal-footer">
