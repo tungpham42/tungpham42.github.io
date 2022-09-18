@@ -1,14 +1,21 @@
-const searchBtn = document.querySelector("#search-btn");
-const catList = document.querySelector("#cat");
-const mealList = document.querySelector("#meal");
-const areaList = document.querySelector("#areas");
-const ingredientList = document.querySelector("#ingredients");
-const catDetailsContent = document.querySelector("#cat-details-content");
-const mealDetailsContent = document.querySelector("#meal-details-content");
-const recipeCloseBtn = document.querySelector("#recipe-close-btn");
+const searchBtn = document.getElementById("search-btn");
+const searchInput = document.getElementById("search-input");
+const catList = document.getElementById("cat");
+const mealList = document.getElementById("meal");
+const areaList = document.getElementById("areas");
+const ingredientList = document.getElementById("ingredients");
+const catDetailsContent = document.getElementById("cat-details-content");
+const mealDetailsContent = document.getElementById("meal-details-content");
+const recipeCloseBtn = document.getElementById("recipe-close-btn");
 
 const APIUrl = 'https://www.themealdb.com/api/json/v2/9973533/';
 
+searchInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        searchBtn.click();
+    }
+});
 searchBtn.addEventListener("click", searchMeal);
 mealList.addEventListener("click", getMealRecipe);
 
@@ -201,7 +208,7 @@ function showRandomMeals() {
         });
 }
 function searchMeal() {
-    const searchInputText = document.querySelector("#search-input").value.trim();
+    const searchInputText = searchInput.value.trim();
     fetch(APIUrl + `search.php?s=${searchInputText}`)
         .then(response => response.json())
         .then(data => {
@@ -324,7 +331,7 @@ function catModal(cat, desc) {
         </div>
     `;
     catDetailsContent.innerHTML = html;
-    const catModal = new bootstrap.Modal(document.querySelector("#catModal"));
+    const catModal = new bootstrap.Modal(document.getElementById("catModal"));
     catModal.show();
 }
 function mealRecipeModal(meal) {
@@ -346,6 +353,11 @@ function mealRecipeModal(meal) {
         </div>
     `;
     mealDetailsContent.innerHTML = html;
-    const mealModal = new bootstrap.Modal(document.querySelector("#mealModal"));
+    const mealModal = new bootstrap.Modal(document.getElementById("mealModal"));
     mealModal.show();
 }
+
+showRandomMeals();
+listAllIngredients();
+listAllAreas();
+listAllCategories();
