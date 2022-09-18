@@ -2,6 +2,7 @@ const searchBtn = document.querySelector("#search-btn");
 const catList = document.querySelector("#cat");
 const mealList = document.querySelector("#meal");
 const areaList = document.querySelector("#areas");
+const ingredientList = document.querySelector("#ingredients");
 const catDetailsContent = document.querySelector("#cat-details-content");
 const mealDetailsContent = document.querySelector("#meal-details-content");
 const recipeCloseBtn = document.querySelector("#recipe-close-btn");
@@ -10,14 +11,14 @@ searchBtn.addEventListener("click", searchMeal);
 mealList.addEventListener("click", getMealRecipe);
 
 function listAllCategories() {
-    fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`)
+    fetch(`https://www.themealdb.com/api/json/v2/9973533/categories.php`)
         .then(response => response.json())
         .then(data => {
             let html = "";
             if (data.categories) {
                 // console.log(data.meals);
                 data.categories.forEach(cat => {
-                    let catDesc = cat.strCategoryDescription.replace('\"', '&quot;');
+                    let catDesc = cat.strCategoryDescription.replace("'", "&#39;");
                     html += `
                     <div class="col-md-3 mb-3">
                         <div class="card" data-id="${cat.idCategory}">
@@ -41,7 +42,7 @@ function listAllCategories() {
 }
 
 function listAllAreas() {
-    fetch(`https://www.themealdb.com/api/json/v1/1/list.php?a=list`)
+    fetch(`https://www.themealdb.com/api/json/v2/9973533/list.php?a=list`)
         .then(response => response.json())
         .then(data => {
             let html = "";
@@ -60,8 +61,28 @@ function listAllAreas() {
         });
 }
 
+function listAllIngredients() {
+    fetch(`https://www.themealdb.com/api/json/v2/9973533/list.php?i=list`)
+        .then(response => response.json())
+        .then(data => {
+            let html = "";
+            if (data.meals) {
+                // console.log(data.meals);
+                data.meals.forEach(ingredient => {
+                    html += `
+                    <button onclick="filterMealByIngredient(\`${ingredient.strIngredient}\`);" class="btn btn-sm btn-secondary mb-3">${ingredient.strIngredient}</button>
+                    `;
+                    ingredientList.innerHTML = html;
+                })
+            } else {
+                html = 'Sorry, we didnt find any ingredient';
+                ingredientList.innerHTML = html;
+            }
+        });
+}
+
 function filterMealByArea(area) {
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`)
+    fetch(`https://www.themealdb.com/api/json/v2/9973533/filter.php?a=${area}`)
         .then(response => response.json())
         .then(data => {
             let html = "";
@@ -75,7 +96,37 @@ function filterMealByArea(area) {
                                 class="card-img-top" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
-                                <a href="javascript:void(0);" class="btn btn-success recipe-btn">Get Recipe</a>
+                                <a href="javascript:void(0);" class="btn btn-success recipe-btn w-100">Get Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                    mealList.innerHTML = html;
+                })
+            } else {
+                html = 'Sorry, we didnt find any meal';
+                mealList.innerHTML = html;
+            }
+            document.getElementById('meal').scrollIntoView();
+        });
+}
+
+function filterMealByIngredient(ingredient) {
+    fetch(`https://www.themealdb.com/api/json/v2/9973533/filter.php?i=${ingredient}`)
+        .then(response => response.json())
+        .then(data => {
+            let html = "";
+            if (data.meals) {
+                // console.log(data.meals);
+                data.meals.forEach(meal => {
+                    html += `
+                    <div class="col-md-3 mb-3">
+                        <div class="card" data-id="${meal.idMeal}">
+                            <img src="${meal.strMealThumb}"
+                                class="card-img-top" alt="${meal.strMeal}">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">${meal.strMeal}</h5>
+                                <a href="javascript:void(0);" class="btn btn-success recipe-btn w-100">Get Recipe</a>
                             </div>
                         </div>
                     </div>
@@ -92,7 +143,7 @@ function filterMealByArea(area) {
 
 function searchMeal() {
     const searchInputText = document.querySelector("#search-input").value.trim();
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInputText}`)
+    fetch(`https://www.themealdb.com/api/json/v2/9973533/search.php?s=${searchInputText}`)
         .then(response => response.json())
         .then(data => {
             let html = "";
@@ -106,7 +157,7 @@ function searchMeal() {
                                 class="card-img-top" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
-                                <a href="javascript:void(0);" class="btn btn-success recipe-btn">Get Recipe</a>
+                                <a href="javascript:void(0);" class="btn btn-success recipe-btn w-100">Get Recipe</a>
                             </div>
                         </div>
                     </div>
@@ -121,7 +172,7 @@ function searchMeal() {
         });
 }
 function searchMealByFirstLetter(letter) {
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`)
+    fetch(`https://www.themealdb.com/api/json/v2/9973533/search.php?f=${letter}`)
         .then(response => response.json())
         .then(data => {
             let html = "";
@@ -135,7 +186,7 @@ function searchMealByFirstLetter(letter) {
                                 class="card-img-top" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
-                                <a href="javascript:void(0);" class="btn btn-success recipe-btn">Get Recipe</a>
+                                <a href="javascript:void(0);" class="btn btn-success recipe-btn w-100">Get Recipe</a>
                             </div>
                         </div>
                     </div>
@@ -150,7 +201,7 @@ function searchMealByFirstLetter(letter) {
         });
 }
 function searchMealByCategory(cat) {
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${cat}`)
+    fetch(`https://www.themealdb.com/api/json/v2/9973533/filter.php?c=${cat}`)
         .then(response => response.json())
         .then(data => {
             let html = "";
@@ -164,7 +215,7 @@ function searchMealByCategory(cat) {
                                 class="card-img-top" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
-                                <a href="javascript:void(0);" class="btn btn-success recipe-btn">Get Recipe</a>
+                                <a href="javascript:void(0);" class="btn btn-success recipe-btn w-100">Get Recipe</a>
                             </div>
                         </div>
                     </div>
@@ -183,7 +234,7 @@ function getMealRecipe(e) {
     e.preventDefault();
     if (e.target.classList.contains('recipe-btn')) {
         let mealItem = e.target.parentElement.parentElement;
-        fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`)
+        fetch(`https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=${mealItem.dataset.id}`)
             .then(response => response.json())
             .then(data => mealRecipeModal(data.meals[0]));
         // .then(data => console.log(data.meals));
