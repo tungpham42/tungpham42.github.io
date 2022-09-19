@@ -115,7 +115,7 @@ function filterMealByArea(area) {
                     mealList.innerHTML = html;
                 })
             } else {
-                html = 'Sorry, we didn\'t find any meal';
+                html = 'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;" onclick="showRandomMeals();">random meals</a>!';
                 mealList.innerHTML = html;
             }
             document.getElementById('meal').scrollIntoView();
@@ -145,7 +145,7 @@ function filterMealByIngredient(ingredient) {
                     mealList.innerHTML = html;
                 })
             } else {
-                html = 'Sorry, we didn\'t find any meal';
+                html = 'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;" onclick="showRandomMeals();">random meals</a>!';
                 mealList.innerHTML = html;
             }
             document.getElementById('meal').scrollIntoView();
@@ -175,7 +175,7 @@ function showLatestMeals() {
                     latestMealList.innerHTML = html;
                 })
             } else {
-                html = 'Sorry, we didn\'t find any meal';
+                html = 'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;" onclick="showRandomMeals();">random meals</a>!';
                 latestMealList.innerHTML = html;
             }
         });
@@ -204,7 +204,7 @@ function showRandomMeals() {
                     mealList.innerHTML = html;
                 })
             } else {
-                html = 'Sorry, we didn\'t find any meal';
+                html = 'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;" onclick="showRandomMeals();">random meals</a>!';
                 mealList.innerHTML = html;
             }
         });
@@ -234,13 +234,13 @@ function searchMeal() {
                     mealList.innerHTML = html;
                 })
             } else {
-                html = 'Sorry, we didn\'t find any meal';
+                html = 'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;" onclick="showRandomMeals();">random meals</a>!';
                 mealList.innerHTML = html;
             }
             document.getElementById('meal').scrollIntoView();
         });
     } else {
-        mealList.innerHTML = 'Please insert a keyword';
+        mealList.innerHTML = 'Please insert a keyword, or show <a href="javascript:void(0);" style="width: fit-content;" onclick="showRandomMeals();">random meals</a>!';
     }
 }
 function searchMealByFirstLetter(letter) {
@@ -266,7 +266,7 @@ function searchMealByFirstLetter(letter) {
                     mealList.innerHTML = html;
                 })
             } else {
-                html = 'Sorry, we didn\'t find any meal';
+                html = 'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;" onclick="showRandomMeals();">random meals</a>!';
                 mealList.innerHTML = html;
             }
             document.getElementById('meal').scrollIntoView();
@@ -295,7 +295,7 @@ function searchMealByCategory(cat) {
                     mealList.innerHTML = html;
                 })
             } else {
-                html = 'Sorry, we didn\'t find any meal';
+                html = 'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;" onclick="showRandomMeals();">random meals</a>!';
                 mealList.innerHTML = html;
             }
             document.getElementById('meal').scrollIntoView();
