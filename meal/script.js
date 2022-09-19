@@ -2,6 +2,7 @@ const searchBtn = document.getElementById("search-btn");
 const searchInput = document.getElementById("search-input");
 const catList = document.getElementById("cat");
 const mealList = document.getElementById("meal");
+const latestMealList = document.getElementById("latest");
 const areaList = document.getElementById("areas");
 const ingredientList = document.getElementById("ingredients");
 const catDetailsContent = document.getElementById("cat-details-content");
@@ -18,6 +19,7 @@ searchInput.addEventListener("keypress", function(event) {
 });
 searchBtn.addEventListener("click", searchMeal);
 mealList.addEventListener("click", getMealRecipe);
+latestMealList.addEventListener("click", getMealRecipe);
 
 function listAllCategories() {
     fetch(APIUrl + `categories.php`)
@@ -170,11 +172,11 @@ function showLatestMeals() {
                         </div>
                     </div>
                     `;
-                    mealList.innerHTML = html;
+                    latestMealList.innerHTML = html;
                 })
             } else {
                 html = 'Sorry, we didn\'t find any meal';
-                mealList.innerHTML = html;
+                latestMealList.innerHTML = html;
             }
         });
 }
@@ -362,7 +364,7 @@ function mealRecipeModal(meal) {
     const mealModal = new bootstrap.Modal(document.getElementById("mealModal"));
     mealModal.show();
 }
-
+showLatestMeals();
 showRandomMeals();
 listAllIngredients();
 listAllAreas();
