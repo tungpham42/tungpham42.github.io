@@ -1,20 +1,4 @@
 - layout: left
-  name: Cờ tướng (Xiangqi)
-  link: https://cotuong.top
-  github: tungpham42/CoTuong
-  quote: >
-    A Xiangqi game with AI and Room Hosting.
-  description: | # this will include new lines to allow paragraphs
-    This is a dual languages Xiangqi Game With AI and Room Host. This Game is built with Laravel.
-- layout: left
-  name: Chess Room
-  link: https://chessroom.top
-  # github: sproogen/resume-theme
-  quote: >
-    A Chess game with AI and Room Hosting.
-  description: | # this will include new lines to allow paragraphs
-    There is AI feature with 4 levels: Newbie, Easy, Normal, and Hard. The AI is based on Minimax Alpha Beta algorithm. Player can host new room with a password. Set up board with Board Capture. Player can Share the board with others. This Game is built with Laravel.
-- layout: left
   name: Kambria
   link: https://kambria.io
   # github: sproogen/resume-theme
@@ -30,6 +14,22 @@
     Accelerating Open Innovation.
   description: | # this will include new lines to allow paragraphs
     Blog of Kambria.
+- layout: left
+  name: Cờ tướng (Xiangqi)
+  link: https://cotuong.top
+  github: tungpham42/CoTuong
+  quote: >
+    A Xiangqi game with AI and Room Hosting.
+  description: | # this will include new lines to allow paragraphs
+    This is a dual languages Xiangqi Game With AI and Room Host. This Game is built with Laravel.
+- layout: left
+  name: Chess Room
+  link: https://chessroom.top
+  # github: sproogen/resume-theme
+  quote: >
+    A Chess game with AI and Room Hosting.
+  description: | # this will include new lines to allow paragraphs
+    There is AI feature with 4 levels: Newbie, Easy, Normal, and Hard. The AI is based on Minimax Alpha Beta algorithm. Player can host new room with a password. Set up board with Board Capture. Player can Share the board with others. This Game is built with Laravel.
 - layout: left
   name: Nhịp sinh học (Biorhythm)
   link: https://nhipsinhhoc.vn
