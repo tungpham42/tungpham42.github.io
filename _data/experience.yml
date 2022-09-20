@@ -1,4 +1,22 @@
 - layout: left
+  company: Kambria
+  link: https://kambria.io
+  job_title: Frontend developer and Webmaster
+  dates: August 2018 - Present
+  quote: >
+   Kambria is the first decentralized open innovation platform for AI & Robotics. Using our platform, anyone can collaborate in researching, developing and commercializing innovative ideas and get rewarded fairly for their contributions.
+  description: | # this will include new lines to allow paragraphs
+    My roles are administering and maintaining the company's websites using Wordpress. The websites are <a href="https://kambria.io" target="_blank">https://kambria.io</a> and <a href="https://kambria.io/blog" target="_blank">https://kambria.io/blog</a>. In the Kambria Corporate site, I use Advanced Custom Fields and Custom Post Type UI plugins to manage Custom content such as Portfolios, DAOs, etc with their Custom Fields. The main theme for this website is Divi.
+- layout: left
+  company: Freelancer
+  link: https://tungpham42.info
+  job_title: Freelance Web Developer
+  dates: 2013 - 2018 
+  quote: >
+   Great way to gain experience
+  description: | # this will include new lines to allow paragraphs
+    I developed websites for many clients, such as: <a href="https://nhipsinhhoc.vn" target="_blank">https://nhipsinhhoc.vn</a>, <a href="https://cungrao.net" target="_blank">https://cungrao.net</a>, <a href="https://longanshare.club" target="_blank">https://longanshare.club</a>, <a href="https://filos.vn" target="_blank">https://filos.vn</a>, <a href="https://hololab.vn" target="_blank">https://hololab.vn</a>. Most of these projects were built on WordPress.
+- layout: left
   company: Cờ tướng
   link: https://cotuong.top
   job_title: PHP Developer - Self employed
@@ -16,24 +34,6 @@
    Chess for everyone
   description: | # this will include new lines to allow paragraphs
     I am the main PHP Developer of this website. There is AI feature with 4 levels: Newbie, Easy, Normal, and Hard. The AI is based on Minimax Alpha Beta algorithm. Player can host new room with a password. Set up board with Board Capture. Player can Share the board with others. This Game is built with Laravel.
-- layout: left
-  company: Kambria
-  link: https://kambria.io
-  job_title: Frontend developer and Webmaster
-  dates: August 2018 - Present
-  quote: >
-   Kambria is the first decentralized open innovation platform for AI & Robotics. Using our platform, anyone can collaborate in researching, developing and commercializing innovative ideas and get rewarded fairly for their contributions.
-  description: | # this will include new lines to allow paragraphs
-    My roles are administering and maintaining the company's websites using Wordpress. The websites are <a href="https://kambria.io" target="_blank">https://kambria.io</a> and <a href="https://kambria.io/blog" target="_blank">https://kambria.io/blog</a>
-- layout: left
-  company: Freelancer
-  link: https://tungpham42.info
-  job_title: Freelance Web Developer
-  dates: 2013 - 2018 
-  quote: >
-   Great way to gain experience
-  description: | # this will include new lines to allow paragraphs
-    I developed websites for many clients, such as: <a href="https://nhipsinhhoc.vn" target="_blank">https://nhipsinhhoc.vn</a>, <a href="https://cungrao.net" target="_blank">https://cungrao.net</a>, <a href="https://longanshare.club" target="_blank">https://longanshare.club</a>, <a href="https://filos.vn" target="_blank">https://filos.vn</a>, <a href="https://hololab.vn" target="_blank">https://hololab.vn</a>
 - layout: left
   company: YouNet Group
   link: https://www.younetgroup.com/
