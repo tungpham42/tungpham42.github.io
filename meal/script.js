@@ -31,7 +31,7 @@ function listAllCategories() {
                 data.categories.forEach(cat => {
                     let catDesc = cat.strCategoryDescription.replace("'", "&#39;");
                     html += `
-                    <div class="col-md-3 mb-3">
+                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${cat.idCategory}">
                             <img src="${cat.strCategoryThumb}"
                                 class="card-img-top" alt="${cat.strCategory}">
@@ -101,7 +101,7 @@ function filterMealByArea(area) {
                 // console.log(data.meals);
                 data.meals.forEach(meal => {
                     html += `
-                    <div class="col-md-3 mb-3">
+                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
                                 class="card-img-top" alt="${meal.strMeal}">
@@ -131,7 +131,7 @@ function filterMealByIngredient(ingredient) {
                 // console.log(data.meals);
                 data.meals.forEach(meal => {
                     html += `
-                    <div class="col-md-3 mb-3">
+                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
                                 class="card-img-top" alt="${meal.strMeal}">
@@ -161,7 +161,7 @@ function showLatestMeals() {
                 // console.log(data.meals);
                 data.meals.forEach(meal => {
                     html += `
-                    <div class="col-md-3 mb-3">
+                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
                                 class="card-img-top" alt="${meal.strMeal}">
@@ -190,7 +190,7 @@ function showRandomMeals() {
                 // console.log(data.meals);
                 data.meals.forEach(meal => {
                     html += `
-                    <div class="col-md-3 mb-3">
+                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
                                 class="card-img-top" alt="${meal.strMeal}">
@@ -220,7 +220,7 @@ function searchMeal() {
                 // console.log(data.meals);
                 data.meals.forEach(meal => {
                     html += `
-                    <div class="col-md-3 mb-3">
+                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
                                 class="card-img-top" alt="${meal.strMeal}">
@@ -252,7 +252,7 @@ function searchMealByFirstLetter(letter) {
                 // console.log(data.meals);
                 data.meals.forEach(meal => {
                     html += `
-                    <div class="col-md-3 mb-3">
+                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
                                 class="card-img-top" alt="${meal.strMeal}">
@@ -281,7 +281,7 @@ function searchMealByCategory(cat) {
                 // console.log(data.meals);
                 data.meals.forEach(meal => {
                     html += `
-                    <div class="col-md-3 mb-3">
+                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
                                 class="card-img-top" alt="${meal.strMeal}">
