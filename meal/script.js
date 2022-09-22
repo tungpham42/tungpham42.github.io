@@ -21,6 +21,19 @@ searchBtn.addEventListener("click", searchMeal);
 mealList.addEventListener("click", getMealRecipe);
 latestMealList.addEventListener("click", getMealRecipe);
 
+function highlightKeyword(keyword) {
+    let lowerCaseKeyword = keyword.toLowerCase();
+    let mealTitles = document.querySelectorAll("#meal h5.card-title");
+    [].forEach.call(mealTitles, function(mealTitle) {
+        let innerHTML = mealTitle.innerHTML;
+        let lowerCaseInnerHTML = innerHTML.toLowerCase();
+        let index = lowerCaseInnerHTML.indexOf(lowerCaseKeyword);
+        if (index >= 0) { 
+            innerHTML = innerHTML.substring(0, index) + "<span class='highlight'>" + innerHTML.substring(index, index + keyword.length) + "</span>" + innerHTML.substring(index + keyword.length);
+            mealTitle.innerHTML = innerHTML;
+        }
+    });
+}
 function listAllCategories() {
     fetch(APIUrl + `categories.php`)
         .then(response => response.json())
@@ -232,6 +245,7 @@ function searchMeal() {
                     </div>
                     `;
                     mealList.innerHTML = html;
+                    highlightKeyword(searchInputText);
                 })
             } else {
                 html = 'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
