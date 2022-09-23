@@ -50,8 +50,8 @@ function listAllCategories() {
                                 class="card-img-top" alt="${cat.strCategory}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${cat.strCategory}</h5>
-                                <button onclick='catModal(\`${cat.strCategory}\`, \`${catDesc}\`);' class="btn btn-secondary btn-sm mb-3 w-100"><i class="fa-regular fa-circle-question"></i> Details</button>
-                                <a href="javascript:void(0);" onclick="searchMealByCategory('${cat.strCategory}')" class="btn btn-success recipe-btn w-100"><i class="fa-solid fa-circle-info"></i> Get Recipes</a>
+                                <button onclick='catModal(\`${cat.strCategory}\`, \`${catDesc}\`);' class="btn btn-secondary mb-3 w-100"><i class="fa-regular fa-circle-question"></i> Details</button>
+                                <a href="javascript:void(0);" onclick="searchMealByCategory('${cat.strCategory}')" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-cookie"></i> Get Recipes</a>
                             </div>
                         </div>
                     </div>
@@ -120,7 +120,7 @@ function filterMealByArea(area) {
                                 class="card-img-top" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
-                                <a href="javascript:void(0);" class="btn btn-success recipe-btn w-100"><i class="fa-solid fa-circle-info"></i> Get Recipe</a>
+                                <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-cookie"></i> Get Recipe</a>
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@ function filterMealByIngredient(ingredient) {
                                 class="card-img-top" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
-                                <a href="javascript:void(0);" class="btn btn-success recipe-btn w-100"><i class="fa-solid fa-circle-info"></i> Get Recipe</a>
+                                <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-cookie"></i> Get Recipe</a>
                             </div>
                         </div>
                     </div>
@@ -180,7 +180,7 @@ function showLatestMeals() {
                                 class="card-img-top" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
-                                <a href="javascript:void(0);" class="btn btn-success recipe-btn w-100"><i class="fa-solid fa-circle-info"></i> Get Recipe</a>
+                                <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-cookie"></i> Get Recipe</a>
                             </div>
                         </div>
                     </div>
@@ -209,7 +209,7 @@ function showRandomMeals() {
                                 class="card-img-top" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
-                                <a href="javascript:void(0);" class="btn btn-success recipe-btn w-100"><i class="fa-solid fa-circle-info"></i> Get Recipe</a>
+                                <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-cookie"></i> Get Recipe</a>
                             </div>
                         </div>
                     </div>
@@ -239,7 +239,7 @@ function searchMeal() {
                                 class="card-img-top" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
-                                <a href="javascript:void(0);" class="btn btn-success recipe-btn w-100"><i class="fa-solid fa-circle-info"></i> Get Recipe</a>
+                                <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-cookie"></i> Get Recipe</a>
                             </div>
                         </div>
                     </div>
@@ -272,7 +272,7 @@ function searchMealByFirstLetter(letter) {
                                 class="card-img-top" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
-                                <a href="javascript:void(0);" class="btn btn-success recipe-btn w-100"><i class="fa-solid fa-circle-info"></i> Get Recipe</a>
+                                <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-cookie"></i> Get Recipe</a>
                             </div>
                         </div>
                     </div>
@@ -301,7 +301,7 @@ function searchMealByCategory(cat) {
                                 class="card-img-top" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
-                                <a href="javascript:void(0);" class="btn btn-success recipe-btn w-100"><i class="fa-solid fa-circle-info"></i> Get Recipe</a>
+                                <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-cookie"></i> Get Recipe</a>
                             </div>
                         </div>
                     </div>
