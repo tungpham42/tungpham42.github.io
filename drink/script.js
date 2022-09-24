@@ -126,7 +126,7 @@ function filterDrinkByCategory(cat) {
                 // console.log(data.drinks);
                 data.drinks.forEach(drink => {
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
                                 class="card-img-top" alt="${drink.strDrink}">
@@ -156,7 +156,7 @@ function filterDrinkByAlcoholic(alcoholic) {
                 // console.log(data.drinks);
                 data.drinks.forEach(drink => {
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
                                 class="card-img-top" alt="${drink.strDrink}">
@@ -186,7 +186,7 @@ function filterDrinkByIngredient(ingredient) {
                 // console.log(data.drinks);
                 data.drinks.forEach(drink => {
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
                                 class="card-img-top" alt="${drink.strDrink}">
@@ -216,7 +216,7 @@ function filterDrinkBygGlass(glass) {
                 // console.log(data.drinks);
                 data.drinks.forEach(drink => {
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
                                 class="card-img-top" alt="${drink.strDrink}">
@@ -246,7 +246,7 @@ function showLatestDrinks() {
                 // console.log(data.drinks);
                 data.drinks.forEach(drink => {
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
                                 class="card-img-top" alt="${drink.strDrink}">
@@ -275,7 +275,7 @@ function showPopularDrinks() {
                 // console.log(data.drinks);
                 data.drinks.forEach(drink => {
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
                                 class="card-img-top" alt="${drink.strDrink}">
@@ -304,7 +304,7 @@ function showRandomDrinks() {
                 // console.log(data.drinks);
                 data.drinks.forEach(drink => {
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
                                 class="card-img-top" alt="${drink.strDrink}">
@@ -334,7 +334,7 @@ function searchDrink() {
                 // console.log(data.drinks);
                 data.drinks.forEach(drink => {
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
                                 class="card-img-top" alt="${drink.strDrink}">
@@ -367,7 +367,7 @@ function searchDrinkByFirstLetter(letter) {
                 // console.log(data.drinks);
                 data.drinks.forEach(drink => {
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
                                 class="card-img-top" alt="${drink.strDrink}">
@@ -396,7 +396,7 @@ function searchDrinkByCategory(cat) {
                 // console.log(data.drinks);
                 data.drinks.forEach(drink => {
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
                                 class="card-img-top" alt="${drink.strDrink}">

@@ -3,6 +3,7 @@ const searchInput = document.getElementById("search-input");
 const catList = document.getElementById("cat");
 const mealList = document.getElementById("meal");
 const latestMealList = document.getElementById("latest");
+const popularMealList = document.getElementById("popular");
 const areaList = document.getElementById("areas");
 const ingredientList = document.getElementById("ingredients");
 const catDetailsContent = document.getElementById("cat-details-content");
@@ -44,7 +45,7 @@ function listAllCategories() {
                 data.categories.forEach(cat => {
                     let catDesc = cat.strCategoryDescription.replace("'", "&#39;");
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${cat.idCategory}">
                             <img src="${cat.strCategoryThumb}"
                                 class="card-img-top" alt="${cat.strCategory}">
@@ -114,7 +115,7 @@ function filterMealByArea(area) {
                 // console.log(data.meals);
                 data.meals.forEach(meal => {
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
                                 class="card-img-top" alt="${meal.strMeal}">
@@ -144,7 +145,7 @@ function filterMealByIngredient(ingredient) {
                 // console.log(data.meals);
                 data.meals.forEach(meal => {
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
                                 class="card-img-top" alt="${meal.strMeal}">
@@ -174,7 +175,7 @@ function showLatestMeals() {
                 // console.log(data.meals);
                 data.meals.forEach(meal => {
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
                                 class="card-img-top" alt="${meal.strMeal}">
@@ -194,6 +195,35 @@ function showLatestMeals() {
         });
 }
 
+function showPopularMeals() {
+    fetch(APIUrl + `popular.php`)
+        .then(response => response.json())
+        .then(data => {
+            let html = "";
+            if (data.meals) {
+                // console.log(data.meals);
+                data.meals.forEach(meal => {
+                    html += `
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
+                        <div class="card" data-id="${meal.idMeal}">
+                            <img src="${meal.strMealThumb}"
+                                class="card-img-top" alt="${meal.strMeal}">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">${meal.strMeal}</h5>
+                                <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-cookie"></i> Get Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                    popularMealList.innerHTML = html;
+                })
+            } else {
+                html = 'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
+                popularMealList.innerHTML = html;
+            }
+        });
+}
+
 function showRandomMeals() {
     fetch(APIUrl + `randomselection.php`)
         .then(response => response.json())
@@ -203,7 +233,7 @@ function showRandomMeals() {
                 // console.log(data.meals);
                 data.meals.forEach(meal => {
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
                                 class="card-img-top" alt="${meal.strMeal}">
@@ -233,7 +263,7 @@ function searchMeal() {
                 // console.log(data.meals);
                 data.meals.forEach(meal => {
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
                                 class="card-img-top" alt="${meal.strMeal}">
@@ -266,7 +296,7 @@ function searchMealByFirstLetter(letter) {
                 // console.log(data.meals);
                 data.meals.forEach(meal => {
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
                                 class="card-img-top" alt="${meal.strMeal}">
@@ -295,7 +325,7 @@ function searchMealByCategory(cat) {
                 // console.log(data.meals);
                 data.meals.forEach(meal => {
                     html += `
-                    <div class="col-xxl-3 col-xl-3 col-md-6 col-sm-12 mb-3">
+                    <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
                                 class="card-img-top" alt="${meal.strMeal}">
@@ -379,6 +409,7 @@ function mealRecipeModal(meal) {
     mealModal.show();
 }
 showLatestMeals();
+showPopularMeals();
 showRandomMeals();
 listAllIngredients();
 listAllAreas();
