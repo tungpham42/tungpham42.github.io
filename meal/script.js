@@ -21,6 +21,7 @@ searchInput.addEventListener("keypress", function(event) {
 searchBtn.addEventListener("click", searchMeal);
 mealList.addEventListener("click", getMealRecipe);
 latestMealList.addEventListener("click", getMealRecipe);
+popularMealList.addEventListener("click", getMealRecipe);
 
 function highlightKeyword(keyword) {
     let lowerCaseKeyword = keyword.toLowerCase();
@@ -47,7 +48,7 @@ function listAllCategories() {
                     html += `
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${cat.idCategory}">
-                            <img src="${cat.strCategoryThumb}"
+                            <img onclick="searchMealByCategory('${cat.strCategory}')" src="${cat.strCategoryThumb}"
                                 class="card-img-top" alt="${cat.strCategory}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${cat.strCategory}</h5>
@@ -118,7 +119,7 @@ function filterMealByArea(area) {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
-                                class="card-img-top" alt="${meal.strMeal}">
+                                class="card-img-top recipe-img" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-cookie"></i> Get Recipe</a>
@@ -148,7 +149,7 @@ function filterMealByIngredient(ingredient) {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
-                                class="card-img-top" alt="${meal.strMeal}">
+                                class="card-img-top recipe-img" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-cookie"></i> Get Recipe</a>
@@ -178,7 +179,7 @@ function showLatestMeals() {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
-                                class="card-img-top" alt="${meal.strMeal}">
+                                class="card-img-top recipe-img" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-cookie"></i> Get Recipe</a>
@@ -207,7 +208,7 @@ function showPopularMeals() {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
-                                class="card-img-top" alt="${meal.strMeal}">
+                                class="card-img-top recipe-img" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-cookie"></i> Get Recipe</a>
@@ -236,7 +237,7 @@ function showRandomMeals() {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
-                                class="card-img-top" alt="${meal.strMeal}">
+                                class="card-img-top recipe-img" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-cookie"></i> Get Recipe</a>
@@ -266,7 +267,7 @@ function searchMeal() {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
-                                class="card-img-top" alt="${meal.strMeal}">
+                                class="card-img-top recipe-img" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-cookie"></i> Get Recipe</a>
@@ -299,7 +300,7 @@ function searchMealByFirstLetter(letter) {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
-                                class="card-img-top" alt="${meal.strMeal}">
+                                class="card-img-top recipe-img" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-cookie"></i> Get Recipe</a>
@@ -328,7 +329,7 @@ function searchMealByCategory(cat) {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
-                                class="card-img-top" alt="${meal.strMeal}">
+                                class="card-img-top recipe-img" alt="${meal.strMeal}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${meal.strMeal}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-cookie"></i> Get Recipe</a>
@@ -350,6 +351,13 @@ function getMealRecipe(e) {
     e.preventDefault();
     if (e.target.classList.contains('recipe-btn')) {
         let mealItem = e.target.parentElement.parentElement;
+        fetch(APIUrl + `lookup.php?i=${mealItem.dataset.id}`)
+            .then(response => response.json())
+            .then(data => mealRecipeModal(data.meals[0]));
+        // .then(data => console.log(data.meals));
+    }
+    if (e.target.classList.contains('recipe-img')) {
+        let mealItem = e.target.parentElement;
         fetch(APIUrl + `lookup.php?i=${mealItem.dataset.id}`)
             .then(response => response.json())
             .then(data => mealRecipeModal(data.meals[0]));

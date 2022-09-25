@@ -129,7 +129,7 @@ function filterDrinkByCategory(cat) {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
-                                class="card-img-top" alt="${drink.strDrink}">
+                                class="card-img-top recipe-img" alt="${drink.strDrink}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${drink.strDrink}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-wine-glass"></i> Get Recipe</a>
@@ -159,7 +159,7 @@ function filterDrinkByAlcoholic(alcoholic) {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
-                                class="card-img-top" alt="${drink.strDrink}">
+                                class="card-img-top recipe-img" alt="${drink.strDrink}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${drink.strDrink}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-wine-glass"></i> Get Recipe</a>
@@ -189,7 +189,7 @@ function filterDrinkByIngredient(ingredient) {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
-                                class="card-img-top" alt="${drink.strDrink}">
+                                class="card-img-top recipe-img" alt="${drink.strDrink}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${drink.strDrink}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-wine-glass"></i> Get Recipe</a>
@@ -219,7 +219,7 @@ function filterDrinkBygGlass(glass) {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
-                                class="card-img-top" alt="${drink.strDrink}">
+                                class="card-img-top recipe-img" alt="${drink.strDrink}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${drink.strDrink}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-wine-glass"></i> Get Recipe</a>
@@ -249,7 +249,7 @@ function showLatestDrinks() {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
-                                class="card-img-top" alt="${drink.strDrink}">
+                                class="card-img-top recipe-img" alt="${drink.strDrink}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${drink.strDrink}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-wine-glass"></i> Get Recipe</a>
@@ -278,7 +278,7 @@ function showPopularDrinks() {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
-                                class="card-img-top" alt="${drink.strDrink}">
+                                class="card-img-top recipe-img" alt="${drink.strDrink}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${drink.strDrink}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-wine-glass"></i> Get Recipe</a>
@@ -307,7 +307,7 @@ function showRandomDrinks() {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
-                                class="card-img-top" alt="${drink.strDrink}">
+                                class="card-img-top recipe-img" alt="${drink.strDrink}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${drink.strDrink}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-wine-glass"></i> Get Recipe</a>
@@ -337,7 +337,7 @@ function searchDrink() {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
-                                class="card-img-top" alt="${drink.strDrink}">
+                                class="card-img-top recipe-img" alt="${drink.strDrink}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${drink.strDrink}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-wine-glass"></i> Get Recipe</a>
@@ -370,7 +370,7 @@ function searchDrinkByFirstLetter(letter) {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
-                                class="card-img-top" alt="${drink.strDrink}">
+                                class="card-img-top recipe-img" alt="${drink.strDrink}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${drink.strDrink}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-wine-glass"></i> Get Recipe</a>
@@ -399,7 +399,7 @@ function searchDrinkByCategory(cat) {
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${drink.idDrink}">
                             <img src="${drink.strDrinkThumb}"
-                                class="card-img-top" alt="${drink.strDrink}">
+                                class="card-img-top recipe-img" alt="${drink.strDrink}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${drink.strDrink}</h5>
                                 <a href="javascript:void(0);" class="btn btn-success btn-lg recipe-btn w-100"><i class="fa-solid fa-wine-glass"></i> Get Recipe</a>
@@ -421,6 +421,13 @@ function getDrinkRecipe(e) {
     e.preventDefault();
     if (e.target.classList.contains('recipe-btn')) {
         let drinkItem = e.target.parentElement.parentElement;
+        fetch(APIUrl + `lookup.php?i=${drinkItem.dataset.id}`)
+            .then(response => response.json())
+            .then(data => drinkRecipeModal(data.drinks[0]));
+        // .then(data => console.log(data.drinks));
+    }
+    if (e.target.classList.contains('recipe-img')) {
+        let drinkItem = e.target.parentElement;
         fetch(APIUrl + `lookup.php?i=${drinkItem.dataset.id}`)
             .then(response => response.json())
             .then(data => drinkRecipeModal(data.drinks[0]));

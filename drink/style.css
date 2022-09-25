@@ -4,3 +4,6 @@
     background-color: #65A493;
     color: #ffffff;
 }
+.card-img-top {
+    cursor: pointer;
+}
