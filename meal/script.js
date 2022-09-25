@@ -48,7 +48,7 @@ function listAllCategories() {
                     html += `
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${cat.idCategory}">
-                            <img onclick="searchMealByCategory('${cat.strCategory}')" src="${cat.strCategoryThumb}"
+                            <img onclick='catModal(\`${cat.strCategory}\`, \`${catDesc}\`);' src="${cat.strCategoryThumb}"
                                 class="card-img-top" alt="${cat.strCategory}">
                             <div class="card-body text-center">
                                 <h5 class="card-title">${cat.strCategory}</h5>
