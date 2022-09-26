@@ -207,7 +207,7 @@ function filterDrinkByIngredient(ingredient) {
         });
 }
 
-function filterDrinkBygGlass(glass) {
+function filterDrinkByGlass(glass) {
     fetch(APIUrl + `filter.php?g=${glass}`)
         .then(response => response.json())
         .then(data => {
