@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./image/icon.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Bầu cua</title>
+</head>
+<body>
+    <div class="container">
+        <img id="mute" src="./image/mute.png" onclick="mute()">
+        <div class="main">
+            <img class="circle" id="bowl" src="./image/bowl.png">           
+            <div>
+                <img class="dice circle" id="dice1" src="./image/bau.png">
+                <img class="dice circle" id="dice2" src="./image/cua.png">
+                <img class="dice circle" id="dice3" src="./image/tom.png">
+            </div>
+            <img class="circle" id="plate" src="./image/plate.png">
+        </div>
+        <div class="control">
+            <button class="btn btn_open" onclick="openBowl()">Mở nắp</button>
+            <button class="btn btn_shake" onclick="shakeBowl()">Xóc</button>
+        </div>
+    </div>
+    <audio id="musicBg" src="./music/music_background.mp3"></audio>
+    <audio id="musicShake" src="./music/shake.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
