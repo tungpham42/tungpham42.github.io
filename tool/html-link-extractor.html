@@ -1,0 +1,441 @@
+---
+title: HTML Link Extractor To Scrape URL From Web Page | Web Tools
+layout: post
+---
+<html style="height: auto; min-height: 100%;">
+
+<head>
+    <!-- Meta tags common for website -->
+    {% include common-meta %}
+    <title>{{ page.title }}</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="description"
+        content="This is easy to use open source tool to extract URL from a HTML document. Use it to scrape href links list from a web page." />
+    <meta name="keywords" content="online,tool,html,url,link,web,opensource" />
+    <!-- CSS for the site theme -->
+    {% include theme-css %}
+    <!-- Annoying IE fixes -->
+    {% include ie-fixes %}
+    <!-- Data Table Addon Styles -->
+    <link rel="stylesheet" href="https://tools.fromdev.com/plugins/datatables.net/dataTables.bootstrap.min.css">
+</head>
+
+<body class="hold-transition skin-green sidebar-mini" style="height: auto; min-height: 100%;max-width:100%;">
+    <!-- Site wrapper -->
+    <div class="wrapper" style="height: auto; min-height: 100%;">
+
+        <!-- header tag from theme -->
+        {% include theme-header %}
+        <!-- Sidebar for the whole website -->
+        {% include theme-sidebar %}
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper" style="height: auto; min-height: 100%;">
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-6">
+                        <div class="box box-success">
+                            <div class="box-header with-border">
+                                <h1 class="box-title">Extract Links From HTML</h1>
+                            </div>
+                            <!-- /.box-header -->
+                            <!-- form start -->
+                            <div class="box-body">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <label for="htm">HTML Data</label>
+                                        <textarea class="form-control" rows="20" id="htm"
+                                            placeholder="Enter your HTML data here" autofocus></textarea>
+                                        <div style="display:none;" id="hidden"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <p id="error" class="text-red"></p>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.box-body -->
+                            <div class="box-footer">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <button type="button" class="btn btn-info" id="extracturl">Extract URLs <i
+                                                class="fa fa-fw fa-arrow-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-footer -->
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="box box-success">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Copy Your Links From Here</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="urls">Extracted Unique Links</label>
+                                    <textarea class="form-control" id="urls" rows="13"
+                                        placeholder="Copy your links from here"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box box-success">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Links Summary</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="totalcount">Total URL Count</label>
+                                    <h4 class='text-green' id="totalcount"> 0 </h4>
+                                </div>
+                                <div class="form-group">
+                                    <label for="count">Unique URL Count</label>
+                                    <h4 class='text-green' id="count"> 0 </h4>
+                                </div>
+                                <div class="form-group">
+                                    <label for="uniqueDomainCount">Unique Domain Count</label>
+                                    <h4 class='text-green' id="uniqueDomainCount"> 0 </h4>
+                                </div>
+                                <div class="form-group">
+                                    <label for="httpsLinksCount">HTTPS Links Count</label>
+                                    <h4 class='text-green' id="httpsLinksCount"> 0 </h4>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
+            </section>
+            <section class="content">
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title" name="detailed-link-data-table">Detailed Link Data (Table)</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <!-- table setup start -->
+                        <div id="linkdatatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                            <div class="row">
+                                <div class="col-sm-12" id="linkdatatablecontainer">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- table setup end -->
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </section>
+            <section class="content">
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">About HTML Link Extractor Tool</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p>This is a free online tool to extract URLs from a HTML document. You can copy/paste any HTML
+                            document in the text area and hit the "Extract URLs" button to get list of all unique links
+                            on the HTML page.</p>
+                        <p>This tool is also commonly called as <strong>href extractor tool</strong> due to HTML
+                            attribute <code>HREF</code> in the anchor tag <code>a</code>. </p>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">What is a HTML?</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p>HTML (HyperText Markup Language) is used for web pages. All web pages on internet use this
+                            language. Browsers understand this language and render pages accordingly.</p>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">What Is Link?</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <img class="img-responsive" src="images/html-link-extractor.jpg"
+                            alt="Online link Extractor Tool from HTML data"
+                            title="Online link Extractor Tool from HTML data">
+                        <p>A link or URL or HREF value is common name for web page address. A link uniquely identifies a
+                            page location on internet.</p>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Why Extract URLs From HTML?</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p>Extracting the URL from HTML pages can be done for many reasons. I like to do it for web
+                            scraping and content research. HTML is powerful language for browsers, however, human can
+                            not easily read HTML pages. This page can easily
+                            extract all reference link from a HTML page and you can use them as you like.</p>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">How Do You Extract URLs From HTML?</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p>Every HTML document contains link in a specific format. We look for anchor tags in HTML
+                            document and extract the value of HREF attribute from it. </p>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">My HTML Document Has Duplicate Links. What Can You Do?</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p> We automatically remove duplicate links from the results. </p>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </section>
+            {% include addthis %}
+        </div>
+        <!-- /.content-wrapper -->
+        {% include theme-footer %}
+    </div>
+    <!-- ./wrapper -->
+    {% include theme-bottom-js %}
+
+</body>
+<script src="/plugins/datatables.net/jquery.dataTables.min.js"></script>
+<script src="/plugins/datatables.net/dataTables.bootstrap.min.js"></script>
+<script src="plugins/selectOnFocus/jquery.selectOnFocus.min.js"></script>
+<script src="javascripts/fromdev-utils.js"></script>
+<script src="/javascripts/custom-analytics.js"></script>
+
+<script>
+    var baseUrl = 'https://tools.fromdev.com/';
+    const Page = {
+        request: {
+            validated: new Set()
+        },
+        context: {
+            tableName: 'HTML-LINK-EXTRACTOR'
+        }
+    };
+    Page.request.validated.add('#');
+    var cleanLinks = function (arr, originalText) {
+        var cleanLinks = [];
+        $.each(arr, function (i, el) {
+            el = el.trim();
+            el = (el && el.toLowerCase().startsWith('javascript:')) ? '' : el;
+            if (el && originalText.indexOf(el) === -1 && el.indexOf(baseUrl) !== -1 && baseUrl.length < el.length - 1) {
+                console.log('stripping ' + baseUrl + ' from ' + el);
+                el = el.substring(baseUrl.length, el.length - 1);
+            }
+            if (el) {
+                cleanLinks.push(el);
+            }
+        });
+
+        return cleanLinks;
+    };
+    const createTableHeader = () => {
+        return `<thead><tr>
+                                    <th>SN</th>
+                                    <th>Link</th>
+                                    <th>Link Text</th>
+                                    <th>HTTPS Link</th>
+                                    <th>Actions</th>
+                                    <th>Replace URL</th>
+                                    <th>Type</th>
+                                    <th>Domain</th>
+                                    <th>Title</th>
+                                    <th>Alt</th>
+                                </tr></thead>`;
+    };
+    const isHttpsLink = (url) => {
+        return (url || '').toLowerCase().startsWith('https');
+    }
+    const toHttpsUrl = (url) => {
+        return (url || '').toLowerCase().replace('http://', 'https://');
+    };
+    const openHttpsVersion = (context) => {
+        return `<button type="button" class="btn btn-info action-try-https-url" data-url="${context.url}">Open HTTPS</button>`;
+    };
+    const getHttpToHttpsConverterButton = (context) => {
+        return `<button type="button" class="btn btn-info action-convert-to-https" data-url="${context.url}">Convert to HTTPS</button>`;
+    };
+    const getRemoveLinkButton = (context) => {
+        return `<button type="button" class="btn btn-info action-remove-link" data-url="${context.url}">Remove Link</button>`;
+    };
+    const getMarkValidatedButton = (context) => {
+        return `<button type="button" class="btn btn-info action-mark-validated" data-url="${context.url}">Mark Validated</button>`;
+    };
+    const getEligibleActions = (context) => {
+        const actionButtons = [];
+        if (!(Page.request.validated || new Set()).has(context.url)) {
+            if (!isHttpsLink(context.url)) {
+                actionButtons.push(getHttpToHttpsConverterButton(context));
+                actionButtons.push(openHttpsVersion(context));
+            }
+            actionButtons.push(getMarkValidatedButton(context));
+            actionButtons.push(getRemoveLinkButton(context));
+            return `<div class="btn-group">${actionButtons.join('')}</div>`;
+        }
+        return `<span class="label label-success"><i class="fa fa-check"></i> Validated</span>`;
+    };
+    const getReplaceAction = (context) => {
+        return `<input class="form-control" type="text" id="replace-${context.sn}"
+                                    placeholder="Enter replace URL here" />
+                <button type="button" class="btn btn-info action-replace-link" data-url="${context.url}" data-replace-element="replace-${context.sn}">Replace URL</button>`;
+    };
+
+    const registerActionButtons = () => {
+        $('.action-convert-to-https').click(function () {
+            const toReplace = $(this).attr("data-url");
+            replace(toReplace, toHttpsUrl(toReplace));
+        });
+        $('.action-try-https-url').click(function () {
+            const url = $(this).attr("data-url");
+            if (url) {
+                window.open(toHttpsUrl(url), '_blank').focus();
+            }
+        });
+        $('.action-remove-link').click(function () {
+            const toReplace = $(this).attr("data-url");
+            replace(toReplace, '#');
+        });
+        $('.action-mark-validated').click(function () {
+            const link = $(this).attr("data-url");
+            Page.request.validated.add(link);
+            handleConvertClick();
+        });
+        $('.action-replace-link').click(function () {
+            const toReplace = $(this).attr("data-url");
+            const replaceElementId = $(this).attr("data-replace-element");
+            const newValue = $(`#${replaceElementId}`).val();
+            if(newValue) {
+                replace(toReplace, newValue);
+            }
+        });
+    };
+
+    const createLinkRow = (context) => {
+        return `
+        <tr>
+                                    <td>${context.sn}</td>
+                                    <td><a href='${context.url}' target='_blank'> ${context.text || context.backupText}</a></td>
+                                    <td>${context.text || '-'}</td>
+                                    <td>${isHttpsLink(context.url) ? '<span class="badge bg-green">HTTPS</span>' : '<span class="badge bg-red">HTTP</span>'}</td>
+                                    <td>${getEligibleActions(context)}</td>
+                                    <td>${getReplaceAction(context)}</td>
+                                    <td><span class="label label-${context.relStyle}">${context.rel}</span></td>
+                                    <td>${UrlUtils.extractDomain(context.url) || '-'}</td>
+                                    <td>${context.title}</td>
+                                    <td>${context.alt}</td>
+                                    </tr>
+        `;
+    };
+    const suggestText = (el) => {
+        return el.text() || UrlUtils.extractDomain(el.attr('href')) || '-';
+    }
+
+    const replace = (txt, toTxt) => {
+        if (!Page.request.originalText || Page.request.originalText.indexOf(txt) === -1) return;
+        $("#htm").val(Page.request.originalText.replace(txt, toTxt));
+        Page.request.validated.add(toTxt);
+        handleConvertClick();
+    };
+
+    const handleConvertClick = () => {
+        if (Page.datatable) {
+            Page.datatable.clear();
+            $('#linkdatatablecontainer').empty();
+        }
+        var links = [];
+        const linkAttributes = [];
+        Page.request.originalText = $("#htm").val();
+        if(!Page.request.originalText) {
+            $('#error').text('HTML data required');
+            return;
+        }
+        let $html;
+        try {
+            $html = $(Page.request.originalText);
+        } catch(e) {
+            $('#error').text('Invalid HTML, Please input valid HTML data');
+            return;
+        }
+        let count = 1;
+        $html.find('a').each(function () {
+            if (this.href && UrlUtils.isValidURL(this.href)) {
+                links.push(this.href);
+                const el = $(this);
+                linkAttributes.push({
+                    url: this.href,
+                    sn: count++,
+                    text: el.text(),
+                    backupText: suggestText(el),
+                    title: el.attr('title') || '-',
+                    alt: el.attr('alt') || '-',
+                    rel: el.attr('rel') || 'dofollow',
+                    relStyle: (el.attr('rel') === 'nofollow') ? 'warning' : 'success'
+                });
+            }
+        });
+        var uniqueLinks = cleanLinks(ArrayUtils.removeDuplicates(links), Page.request.originalText);
+        if (uniqueLinks) {
+            $("#urls").val(uniqueLinks.join("\r\n"));
+            $("#count").text(uniqueLinks.length);
+            $("#totalcount").text(links.length);
+            var uniqueDomains = ArrayUtils.removeDuplicates(UrlUtils.extractDomainList(links));
+            $("#uniqueDomainCount").text(uniqueDomains.length);
+            const httpsLink = (links || []).filter(l => l && l.toLowerCase().startsWith('https'));
+            $('#httpsLinksCount').text(httpsLink.length);
+        }
+        const rows = [];
+        rows.push(createTableHeader());
+        (linkAttributes || []).forEach(linkAttribute => rows.push(createLinkRow(linkAttribute)))
+        $('#linkdatatablecontainer').html(`<table class="table table-hover"></table>`);
+        $('#linkdatatablecontainer table').append(rows.join(''));
+        Page.datatable = $('#linkdatatablecontainer table').DataTable({
+            "lengthMenu": [[100, 250, 500, -1], [100, 250, 500, "All"]]
+        });
+        registerActionButtons();
+    };
+    const clear = () => {
+        $('#error').text('');
+        Page.request = {
+            validated: new Set()
+        };
+    };
+    $(document).ready(function () {
+        $("#extracturl").click(function () {
+            try {
+                clear();
+                handleConvertClick();
+            } catch (e) {
+                CustomAnalytics.collector.collectError(
+                    {
+                        eventAction: `${Page.context.tableName}-convert-click`,
+                        message: `${JSON.stringify(Page.request)}`
+                    },
+                    e
+                );
+            }
+        });
+
+        $("#urls").selectOnFocus();
+        $("#htm").selectOnFocus();
+        $('#converters-category').addClass('active');
+        $('.markdown-body').attr('style', 'max-width:100%;');
+    });
+</script>
+
+</html>

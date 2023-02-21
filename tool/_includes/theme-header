@@ -1,0 +1,22 @@
+       <!-- Go to www.addthis.com/dashboard to customize your tools --> 
+       <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-587c47a0d75086b8"></script> 
+       <header class="main-header">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>T</b>ools</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>Tools</b>.FromDev</span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+            </nav>
+
+        </header>

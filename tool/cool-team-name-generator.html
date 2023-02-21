@@ -1,0 +1,441 @@
+---
+title: Cool Team Name Generator | Team Tools
+layout: post
+---
+<html>
+
+<head>
+    <!-- Meta tags common for website -->
+    {% include common-meta %}
+    <title>{{ page.title }}</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="description"
+        content="This is easy to use open source tool to generate cool team names for your team." />
+    <meta name="keywords" content="online,tool,team,easy,cool,name, idea, domain, company,opensource" />
+    <!-- CSS for the site theme -->
+    {% include theme-css %}
+    <!-- Annoying IE fixes -->
+    {% include ie-fixes %}
+</head>
+
+<body class="hold-transition skin-green sidebar-mini">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+
+        <!-- header tag from theme -->
+        {% include theme-header %}
+        <!-- Sidebar for the whole website -->
+        {% include theme-sidebar %}
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="box box-success">
+                        <div class="box-header with-border">
+                            <h1 class="box-title">Cool Team Name Generator - That Everyone Loves
+                            </h1>
+                        </div>
+                        <!-- /.box-header -->
+                        <!-- form start -->
+                        <div class="box-body">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="result">Team Name</label>
+                                    <div class="input-group margin">
+                                        <input class="form-control" name="result" id="result" type="text"
+                                            placeholder="Copy password from here" readonly="readonly" />
+                                        <span class="input-group-btn">
+                                            <button type="button" id="copy-result" class="btn btn-default btn-flat"><i
+                                                    class="fa fa-copy"></i> Copy
+                                                Team Name</button>
+                                        </span>
+                                    </div>
+                                    <span class="label label-success" id="confirm-result" style="display:none"><i
+                                            class="fa fa-check"></i> Copied</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="words">One Word (e.g. Awesome, Orange, Shining)</label>
+                                    <input class="form-control" type="text" id="words" name="words" value=""
+                                        placeholder="Enter a word that describe your team" autofocus="true" />
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                            <div class="row">
+                                <div class="col-xs-1">
+                                    <button type="button" class="btn btn-success" id="submit">Generate Team
+                                        Name</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-footer -->
+                    </div>
+                </div>
+            </section>
+            <section class="content">
+                <div class="box box-success">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Recently Created Names History (Saved On Browser)</h3>
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body">
+                    <div id="history_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                      <div id="history">Empty</div>
+                    </div>
+                  </div>
+                  <!-- /.box-body -->
+                </div>
+              </section>
+            <section class="content">
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">About Cool Team Name Generator Tool</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <img class="img-responsive" src="images/cool-team-name.jpg"
+                            alt="Cool Team Name Generator Tool"
+                            title="Cool Team Name Generator Tool">
+                        <p>This is a free online tool to generate ideas for a cool name for team. The tool uses some popular team naming words and creates a team name that may go well with your context. </p>
+                        <p>You can try multiple variations and use any name you like.</p>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Why Team Name Generator Is Needed?</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p>Coming up with a good team name is at times difficult than it seems. This tool can provide a ton on ideas to you in few seconds. This will save time in hunting for a team name.</p>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">How To Use This Tool?</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p>Feel free to use this tool for naming any kind of team or group. You can use it for a team name at work or school. This can also be a good way to find good domain name and company name ideas.</p>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">How Many Team Names Can I Generate with this tool?</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p>This tool has no limit, you can generate and use as many team names you like.</p>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">What Should I Enter In One Word Field?</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p>This field can give you more context on the name of the team. Adding a relevant word that relates to the purpose of your team would help get best team names from this tool.</p>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Can I use This tool to generate domain names?</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p>Though the tool is not designed to generate domain name format, you can still use it to generate ideas and look up the domain names on popular domain registrars.</p>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Can I use This tool to generate company or business names?</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p>Yes, you can use this tool to generate a company or business name. The does not not guarantee uniqueness so you may need to use your own research to ensure all other factors e.g. domain name and registration with goverment.</p>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </section>
+            {% include addthis %}
+        </div>
+        <!-- /.content-wrapper -->
+        {% include theme-footer %}
+    </div>
+    <!-- ./wrapper -->
+    {% include theme-bottom-js %}
+
+</body>
+<script src="javascripts/fromdev-ux-addon.js"></script>
+<script src="plugins/selectOnFocus/jquery.selectOnFocus.min.js"></script>
+<script src="plugins/copyText/jquery.copyText.min.js"></script>
+<script src="javascripts/fromdev-utils.js"></script>
+<script src="/javascripts/history.js"></script>
+
+<script>
+    const Page = {
+    request: {},
+    context: {
+      tableName: 'COOL-TEAM-NAME-GENERATOR',
+      containerId: '#history',
+      createTableHeader: () => {
+        return `<thead><tr><th>Input Word</th><th>Team Name</th>
+                <th>Date Created</th></tr></thead>`;
+      },
+      createRow: (context) => {
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+        return `<tr>
+                      <td>${context.input}</td>
+                      <td>${context.teamName}</td>
+                      <td>${(new Date(context.timestamp).toLocaleDateString(undefined, options))}</td>
+                  </tr>`;
+      }
+    }    
+  };
+    const suffixes = [
+        'Warriors',
+        'Champions',
+        'Lions',
+        'Bandits',
+        'Conquerors',
+        'Stars',
+        'Rockers',
+        'Masters',
+        'Maniacs',
+        'Ninjas',
+        'Rebels',
+        'Titans',
+        'Vikings',
+        'Gladiators',
+        'Defenders',
+        'Mafia',
+        'Pulverizers',
+        'Guardians',
+        'Brigade',
+        'Regulators',
+        'Thrashers',
+        'Yankees',
+        'Shakers',
+        'Addicts',
+        'Killers',
+        'Millennials',
+        'Admirals',
+        'Aliens',
+        'Ambassadors',
+        'Patriots',
+        'Americans',
+        'Annihilators',
+        'Bachelors',
+        'Boys',
+        'Girls',
+        'Barbarians',
+        'Bats',
+        'Cats',
+        'Buddies',
+        'Bears',
+        'Beasts',
+        'Bees',
+        'Knights',
+        'Bisons',
+        'Hawks',
+        'Angels',
+        'Birds',
+        'Whales',
+        'Bombers',
+        'Buffaloes',
+        'Bulldogs',
+        'Bullfighters',
+        'Bulls',
+        'Butchers',
+        'Captains',
+        'Cardinals',
+        'Challengers',
+        'Chasers',
+        'Chiefs',
+        'Animals',
+        'Cougars',
+        'Cowboys',
+        'Coyotes',
+        'Crusaders',
+        'Makers',
+        'Destroyers',
+        'Devils',
+        'Diplomats',
+        'Dodgers',
+        'Dolphins',
+        'Dragons',
+        'Drifters',
+        'Dukes',
+        'Eagles',
+        'Eliminators',
+        'Entrepreneurs',
+        'Executioners',
+        'Falcons',
+        'Fighters',
+        'Starters',
+        'Fireflies',
+        'Squad',
+        'Fixers',
+        'Monkeys',
+        'Freaks',
+        'Generals',
+        'Riders',
+        'Goblins',
+        'Godfathers',
+        'Gophers',
+        'Gorillas',
+        'Diggers',
+        'Griffins',
+        'Growlers',
+        'Grizzlies',
+        'Hammerheads',
+        'Hunters',
+        'Runners',
+        'Invaders',
+        'Islanders',
+        'Jaguars',
+        'Jackrabbits',
+        'Jokers',
+        'Judges',
+        'Kings',
+        'Bringers',
+        'Kickers',
+        'Kittens',
+        'Koalas',
+        'Ladies',
+        'Leaders',
+        'Leopards',
+        'Lords',
+        'Lumberjacks',
+        'Magicians',
+        'Mariners',
+        'Marines',
+        'Marlins',
+        'Marshalls',
+        'Mavericks',
+        'Mercenaries',
+        'Mermaids',
+        'Meteors',
+        'Ducks',
+        'Monsters',
+        'Mountaineers',
+        'Dogs',
+        'Hens',
+        'Musketeers',
+        'Breakers',
+        'Nerds',
+        'Nuggets',
+        'Occupiers',
+        'Olympians',
+        'Contenders',
+        'Achievers',
+        'Owls',
+        'Packers',
+        'Pandas',
+        'Panthers',
+        'Peacocks',
+        'Penguins',
+        'Phantoms',
+        'Pilots',
+        'Pimps',
+        'Pioneers',
+        'Piranhas',
+        'Pirates',
+        'Players',
+        'Predators',
+        'Professionals',
+        'Prophets',
+        'Prowlers',
+        'Punishers',
+        'Pythons',
+        'Racers',
+        'Radicals',
+        'Raiders',
+        'Rangers',
+        'Raptors',
+        'Snakes',
+        'Rattlesnakes',
+        'Ravens',
+        'Reapers',
+        'Rhinos',
+        'Robots',
+        'Royals',
+        'Sailors',
+        'Saints',
+        'Savages',
+        'Scorpions',
+        'Demons',
+        'Seabirds',
+        'Seahawks',
+        'Senators',
+        'Shapeshifters',
+        'Sinners',
+        'Crushers',
+        'Skywalkers',
+        'Slayers',
+        'Sledgehammers',
+        'Sluggers',
+        'Sinpers',
+        'Soldiers',
+        'Spartans',
+        'Steelers',
+        'Strangers',
+        'Sultans',
+        'Heroes',
+        'Texans',
+        'Thunderbirds',
+        'Tigers',
+        'Tornadoes',
+        'Blazers',
+        'Travelers',
+        'Trappers',
+        'Trojans',
+        'Twins',
+        'Untouchables',
+        'Veterans',
+        'Vipers',
+        'Voyagers',
+        'Vultures',
+        'Watchers',
+        'Wizards',
+        'Witches',
+        'Wolverines',
+        'Zombies',
+        'Zeniths'
+    ];
+    const generateAndShowTeamName = () => {
+        Page.request.input = $("#words").val();
+        if(!Page.request.input) return;
+        Page.request.teamName = `${Page.request.input} ${ArrayUtils.nextRandomItem(suffixes)}`;
+        $("#result").val(Page.request.teamName);
+        History.collectAndShow(Page);
+    };
+    $(document).ready(function () {
+        $("#submit").click(generateAndShowTeamName);
+        $("#result").selectOnFocus();
+        $('#words').keypress(function (e) {
+            var key = e.which;
+            if (key == 13) {
+                generateAndShowTeamName();
+                return false;
+            }
+        });
+        CopyTextAddon.register('result');
+        $('#generators-category').addClass('active');
+        $('.markdown-body').attr('style', 'max-width:100%;');
+        History.showHistory(Page.context);
+    });
+</script>
+
+</html>

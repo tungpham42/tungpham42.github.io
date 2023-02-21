@@ -1,0 +1,213 @@
+---
+title: Bar Code Sample Data For Testing | Data Tools
+layout: post
+---
+<html>
+
+<head>
+  <!-- Meta tags common for website -->
+  {% include common-meta %}
+  <title>{{ page.title }}</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <meta name="description" content="This is easy to use open source tool to generate barcode for any text inpu. This can help you easily generate barcode images." />
+  <meta name="keywords" content="online,tool,barcode,download,samples,web,opensource" />
+  <!-- CSS for the site theme -->
+  {% include theme-css %}
+  <!-- Annoying IE fixes -->
+  {% include ie-fixes %}
+</head>
+
+<body class="hold-transition skin-green sidebar-mini">
+  <!-- Site wrapper -->
+  <div class="wrapper">
+
+    <!-- header tag from theme -->
+    {% include theme-header %}
+    <!-- Sidebar for the whole website -->
+    {% include theme-sidebar %}
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Main content -->
+      <section class="content">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="box box-success">
+              <div class="box-header with-border">
+                <h3 class="box-title">Download Or Scan Bar Code From Here</h3>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                <div class="form-group">
+                  <div id="result">
+                    <canvas id="barcode" width="256" height="256"></canvas>
+                  </div>
+                </div>
+                <div class="form-group" style="display: none;">
+                  <label for="format">Bar Code Format</label>
+                  <select id="format">
+                    <option value="autodetect" selected="selected">Any</option>
+                    <option value="UPC">UPC - (12 DIGIT)</option>
+                    <option value="EAN2">EAN-2</option>
+                    <option value="EAN5">EAN-5</option>
+                    <option value="EAN8">EAN-8</option>
+                    <option value="EAN13">EAN-13 - (13 DIGIT)</option>
+                    <option value="EAN13">GTIN-13 (13 DIGIT)</option>
+                    <option value="CODE128">CODE128</option>
+                    <option value="CODE128A">CODE128A</option>
+                    <option value="CODE128B">CODE128B</option>
+                    <option value="CODE128C">CODE128C</option>
+                    <option value="ITF14">ITF14</option>
+                    <option value="MSI">MSI</option>
+                    <option value="MSI10">MSI10</option>
+                    <option value="MSI11">MSI11</option>
+                    <option value="MSI1010">MSI1010</option>
+                    <option value="MSI1110">MSI1110</option>
+                    <option value="pharmacode">pharmacode</option>
+                    <option value="codabar">codabar</option>
+                  </select>
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-success" id="generate">Generate Bar Code</button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-info" id="download"> <i class="fa fa-download"></i> Download Bar Code</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box box-success">
+              <div class="box-header with-border">
+                <h3 class="box-title">Find More About This Bardcode Here</h3>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+               
+                <div class="form-group">
+                    <p id="autodetect" class="text-aqua"></p>
+                </div>
+                <div class="form-group">
+                  <label for="amazon-url">Find On Amazon</label>
+                  <div class="form-control"> <a id="amazon-url" target="_blank">Search On Amazon</a></div>
+                </div>
+                <div class="form-group">
+                  <label for="ebay-url">Find On eBay</label>
+                  <div class="form-control"> <a id="ebay-url" target="_blank">Search On eBay</a></div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+          </div>
+            
+          </div>
+      </section>
+      <section class="content">
+        <div class="box box-success">
+          <div class="box-header with-border">
+            <h3 class="box-title">About Bar Code Sample Data Tool</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <img class="img-responsive" src="/images/barcode-samples.jpg" alt="Online Open Source Sample Data Bar Code Tool" title="Online Open Source Sample Data Bar Code Tool">
+            <p>This is a free online tool to test sample barcodes. The tool randomly shows a barcode from list of hundreds of barcode values.</p>
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <div class="box box-success">
+          <div class="box-header with-border">
+            <h3 class="box-title">How To Generate Bar Code?</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <p>You can use our barcode generator tool for generating barcode. It is available <a href="https://tools.fromdev.com/bar-code-generator.html">here</a></p>
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <div class="box box-success">
+          <div class="box-header with-border">
+            <h3 class="box-title">How Can I Use This tool?</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <p>You can use this tool for various things. I personally use it for testing barcode scanning feature on various devices. Just point the scanner to barcode image and it should work.</p>
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <div class="box box-success">
+          <div class="box-header with-border">
+            <h3 class="box-title">How To Download Bar Code Image?</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <p>The Bar code generated on this page can be downloaded using Download Bar code button. You can also download it (on most browsers except safari) by doing right click on image and choosing save image menu option.</p>
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <div class="box box-success">
+          <div class="box-header with-border">
+            <h3 class="box-title">Is this Bar Code Printable?</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <p>Yes, the generated Bar code image can be printed easily.</p>
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <div class="box box-success">
+          <div class="box-header with-border">
+            <h3 class="box-title">How does the tool generate barcode?</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <p>The tool generates barcode images using Javascript and HTML canvas element. The generated barcode values are based on a predefined list. </p>
+          </div>
+          <!-- /.box-body -->
+        </div>
+      </section>
+      {% include addthis %}
+    </div>
+    <!-- /.content-wrapper -->
+    {% include theme-footer %}
+  </div>
+  <!-- ./wrapper -->
+  {% include theme-bottom-js %}
+
+</body>
+<script src="/javascripts/fromdev-utils.js"></script>
+<script src="/plugins/selectOnFocus/jquery.selectOnFocus.min.js"></script>
+<script src="/javascripts/JsBarcode.all.min.js"></script>
+<script src="/javascripts/reimg.js"></script>
+<script src="/javascripts/barcode-ux-utils.js"></script>
+<script src="/javascripts/data/upc-list.js"></script>
+
+<script>
+
+  $(document).ready(function() {
+    const randomPick = ArrayUtils.nextRandomItem(upcList);
+    BarcodeUxUtils.generateBarcode(randomPick);
+    BarcodeUxUtils.createUrls(randomPick);
+    $("#generate").click(function() {
+      $('#error').text('');
+      const input = ArrayUtils.nextRandomItem(upcList);
+      if (BarcodeUxUtils.validateBarcode(input)) {
+        BarcodeUxUtils.generateBarcode(input);
+        BarcodeUxUtils.createUrls(input);
+      }
+    });
+
+    $("#download").click(function() {
+      $('#error').text('');
+      BarcodeUxUtils.download();
+    });
+
+    $("#inputText").selectOnFocus();
+    $('#generators-category').addClass('active');
+  });
+</script>
+
+</html>

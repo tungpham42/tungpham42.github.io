@@ -1,0 +1,157 @@
+---
+title: Calculate Standard Deviation | Standard Deviation Online | Math Tools
+layout: post
+---
+<html>
+
+<head>
+    {% include common-meta %}
+    <title>{{ page.title }}</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="description"
+        content="This is open source tool to calculate standard deviation, and related statistics online" />
+    <meta name="keywords" content="online,tool,math,standard,deviation,statistics,sigma,web,opensource,http" />
+    <!-- CSS for the site theme -->
+    {% include theme-css %}
+    <!-- Annoying IE fixes -->
+    {% include ie-fixes %}
+</head>
+
+<body class="hold-transition skin-green sidebar-mini">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <!-- header tag from theme -->
+        {% include theme-header %}
+        <!-- Sidebar for the whole website -->
+        {% include theme-sidebar %}
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h1 class="box-title">Calculate Standard Deviation Online Tool</h1>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    <div class="box-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <textarea class="form-control" rows="20"
+                                    placeholder="Copy/Paste list of numbers here to see standard deviation"
+                                    id="inputText" autofocus></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="box-footer">
+                        <div id="result">
+                            <div><code>Standard Deviation[σ]: ?</code></div>
+                        </div>
+                        <div id="count">
+                            <div><code>Data Count[Valid Number Input]: ?</code></div>
+                        </div>
+                        <div id="separator">
+                            <div><code>Data Separator: Automatic</code></div>
+                        </div>
+            </section>
+            <section class="content">
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">About Standard Deviation Calculator Tool</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <img class="img-responsive" src="images/standard-deviation.png"
+                            alt="Online Standard Deviation Calculator Tool"
+                            title="Online Standard Deviation Calculator Tool" />
+                        <p>This is a free online tool to do calculation of standard deviation statistics function.</p>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Why Standard Deviation Calculation Is Needed?</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p>Standard deviation is a common way to measure variation or dispersion of data. This is a
+                            common tool to do statistical analysis of large data set.</p>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">What Standard Deviation Formula is used this tool?</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p>This tool uses mean to calculate the variation.</p>
+                        <img class="img-responsive" src="images/standard-deviation-formula.png"
+                            alt="Online Standard Deviation Calculator Tool Uses This Formula"
+                            title="Online Standard Deviation Calculator Tool Uses This Formula" />
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">What separator to use in the data in this tool?</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <p>This tool tries to automatically guess from the list of common separators that include
+                            following. In case data has multiple separator it will use following order </p>
+                    </div>
+                    <div> <code>Newline: '\n'</code></div>
+                    <div> <code>Comma: ','</code></div>
+                    <div> <code>Colon: ':'</code></div>
+                    <div> <code>Semicolon: ';'</code></div>
+                    <div> <code>Tab: '\t'</code></div>
+                    <div> <code>PIpe: '|'</code></div>
+                </div>
+                <!-- /.box-body -->
+        </div>
+
+        <!-- /.box -->
+        </section>
+        {% include addthis %}
+    </div>
+    <!-- /.content-wrapper -->
+    {% include theme-footer %}
+    </div>
+    <!-- ./wrapper -->
+    {% include theme-bottom-js %}
+
+</body>
+<script src="plugins/selectOnFocus/jquery.selectOnFocus.min.js"></script>
+<script src="javascripts/fromdev-utils.js"></script>
+<script>
+
+    const textarea = document.getElementById("inputText");
+    const result = document.getElementById("result");
+    const separatorElement = document.getElementById("separator");
+    const countElement = document.getElementById("count");
+
+    textarea.addEventListener("input", function () {
+        const inVal = this.value || '';
+        const separator = TextUtils.guessSeparator(inVal);
+        const values = inVal.split(separator.value);
+        const numValues = values.map(Number.parseFloat).filter(Number);
+        const count = (numValues) ? numValues.length : 0;
+        const v = MathUtils.standardDeviation(numValues);
+        const displayValue = (Number.isNaN(v)) ? '?' : (v || '?');
+        result.innerHTML = `<div><code>Standard Deviation[σ]: ${displayValue} </code></div>`;
+        const separatorHtml = `<div><code>Data Separator: ${separator.name} ['${separator.displayValue || separator.value}'] </code></div>`;
+        separatorElement.innerHTML = separatorHtml;
+        countElement.innerHTML = `<div><code>Data Count[Valid Number Input]: ${count}</code></div>`;
+    }, false);
+    $(document).ready(function () {
+        $('#string-utility-category').addClass('active');
+    });
+
+</script>
+
+</html>
