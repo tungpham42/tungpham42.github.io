@@ -10,8 +10,6 @@ name: Tung Pham
 title: Website Developer
 email: tung.42@gmail.com
 website: https://tungpham42.github.io
-phone: 0368571310
-address: 34/31, Nguyen Thi Thap Street, Binh Thuan Ward, District 7, Ho Chi Minh City, Vietnam
 
 # Social links
 facebook_username: tungpham42
@@ -36,6 +34,8 @@ gtag: "G-50HKXL041G"
 # about_title: About Me
 about_profile_image: images/tung.jpg
 about_content: | # this will include new lines to allow paragraphs
+  - My phone number is: 0368571310.
+  - My address is: 34/31, Nguyen Thi Thap Street, Binh Thuan Ward, District 7, Ho Chi Minh City, Vietnam
   - I have 8 years of experience in both Frontend and Backend stacks.
   - My Frontend stack is HTML5, CSS3, SASS/SCSS, Javascript, jQuery, and Bootstrap 4.
   - My Backend stack is PHP 8, Laravel 9, MySQL/MariaDB, Wordpress 6, and Xenforo 2.
