@@ -3,12 +3,13 @@ repository: tungpham42/tungpham42.github.io
 favicon: images/favicon.ico
 
 # Dark Mode (true/false/never)
-darkmode: true
+darkmode: false
 
 # Personal info
 name: Tung Pham
 title: Website Developer
 email: tung.42@gmail.com
+phone: 0368571310
 website: https://tungpham42.github.io
 
 # Social links
@@ -34,6 +35,7 @@ gtag: "G-50HKXL041G"
 # about_title: About Me
 about_profile_image: images/tung.jpg
 about_content: | # this will include new lines to allow paragraphs
+  - I live in District 7, Ho Chi Minh City, Vietnam
   - I have 8 years of experience in both Frontend and Backend stacks.
   - My Frontend stack is HTML5, CSS3, SASS/SCSS, Javascript, jQuery, and Bootstrap 4.
   - My Backend stack is PHP 8, Laravel 9, MySQL/MariaDB, Wordpress 6, and Xenforo 2.
