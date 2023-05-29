@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>BitTorrent Magnet Link Generator</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 90%;
+	margin: 1em auto;
+	font: 100% sans-serif;
+}
+
+fieldset {
+	margin: 1em 0;
+	padding: 0 5em;
+	border: none;
+}
+
+label {
+	display: block;
+	margin: 1em 0 0;
+}
+
+label.checkboxlabel {
+	display: inline-block;
+	margin: auto;
+}
+
+input, textarea {
+	display: block;
+	width: 100%;
+	margin: .5em 0;
+	padding: 1em;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+textarea {
+	height: 10em;
+	resize: none;
+}
+
+input[type=checkbox] {
+	display: inline-block;
+	width: auto;
+	margin: auto;
+}
+
+input[type=button] {
+	width: 25%;
+	margin: .5em auto;
+	background-color: #ccc;
+	transition-duration: .5s;
+}
+
+input[type=button]:hover {
+	background-color: #eee;
+}
+</style>
+</head>
+<body>
+<h1>BitTorrent Magnet Link Generator</h1>
+
+<p>Cobble together magnet URIs consisting of a BitTorrent info hash, filename and a few BitTorrent trackers.</p>
+
+<fieldset>
+<label id="labelmagnetlink" for="magnetlink">Magnet Link</label>
+<input type="text" id="magnetlink" value=""/>
+</fieldset>
+
+<input type="button" value="Deconstruct" title="fill input parameters for generating a new magnet link" onclick="deconstructMagnetLink()"/>
+
+<fieldset>
+<label for="hash">BitTorrent Info Hash</label>
+<input type="text" id="hash" value=""/>
+
+<label for="name">Display Name</label>
+<input type="text" id="name" value=""/>
+
+<label for="trackers">Trackers</label>
+<textarea id="trackers">
+</textarea>
+<input type="checkbox" id="remembertrackers" checked />
+<label class="checkboxlabel" for="remembertrackers" title="new ones will be added at the end">Remember trackers</label>
+<p>You might find more public BitTorrent trackers in <a href="https://github.com/ngosang/trackerslist">ngosang's trackerlist</a>.</p>
+</fieldset>
+
+<input type="button" value="Generate" title="generate the magnet link" onclick="generateMagnetLink()"/>
+
+<input type="button" value="Clear" title="clear all inputs and outputs" onclick="clearInputsAndOutputs()"/>
+
+<script>
+function deconstructMagnetLink() {
+	var parameters = document.getElementById("magnetlink").value.split("&");
+	var trackers = "";
+
+	for (var i = 0; i < parameters.length; i++){
+		if (parameters[i]) {
+			if (parameters[i].startsWith("magnet:?xt=urn:btih:")){
+				document.getElementById("hash").value = parameters[i].substr(20);
+			}
+			else if (parameters[i].startsWith("dn=")){
+				document.getElementById("name").value = decodeURIComponent(parameters[i].substr(3));
+			}
+			else if (parameters[i].startsWith("tr=")){
+				trackers += decodeURIComponent(parameters[i].substr(3)) + "\n";
+			}
+			else {
+				console.log("Parameter ignored:", parameters[i]);
+			}
+		}
+	}
+
+	if (document.getElementById("remembertrackers").checked) {
+		document.getElementById("trackers").value += trackers;
+	}
+	else {
+		document.getElementById("trackers").value = trackers;
+	}
+}
+
+
+function generateMagnetLink() {
+	var magnetLink = "magnet:";
+
+	magnetLink += "?xt=urn:btih:" + document.getElementById("hash").value;
+	magnetLink += "&dn=" + encodeURIComponent(document.getElementById("name").value);
+
+	var trackers = document.getElementById("trackers").value.split("\n");
+	for (var i = 0; i < trackers.length; i++){
+		if (trackers[i]) {
+			magnetLink += "&tr=" + encodeURIComponent(trackers[i]);
+		}
+	}
+
+	document.getElementById("labelmagnetlink").innerHTML = "<a href=\"" + magnetLink + "\">Magnet Link</a>";
+	document.getElementById("magnetlink").value = magnetLink;
+}
+
+
+function clearInputsAndOutputs() {
+	document.getElementById("hash").value = "";
+	document.getElementById("name").value = "";
+	document.getElementById("labelmagnetlink").innerHTML = "Magnet Link";
+	document.getElementById("magnetlink").value = "";
+
+	if (!document.getElementById("remembertrackers").checked) {
+		document.getElementById("trackers").value = "";
+	}
+}
+</script>
+</body>
+</html>
