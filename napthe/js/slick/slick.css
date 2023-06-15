@@ -1,0 +1,189 @@
+/* BEGIN slick.css */
+/* Version: 1.8.0 */
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus, .slick-initialized .slick-slide:focus, .slick-list a:focus {
+    outline: none;
+}
+.slick-list.dragging {
+    cursor: pointer;
+    cursor: hand;
+}
+.slick-slider .slick-track, .slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-track:before, .slick-track:after {
+    display: table;
+    content: '';
+}
+.slick-track:after {
+    clear: both;
+}
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide {
+    float: right;
+}
+.slick-slide img {
+    display: block;
+}
+.slick-slide.slick-loading img {
+    display: none;
+}
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+.slick-initialized .slick-slide {
+    display: block;
+}
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+.slick-prev, .slick-next {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    z-index: 1;
+}
+.slick-prev {
+    left: 0;
+}
+.slick-next {
+    right: 0;
+}
+.slick-dots {
+    text-align: center;
+    line-height: 0;
+}
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+}
+.slick-dots li button {
+    font-size: 10px;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    padding: 0;
+    border-radius: 50%;
+    margin: 10px 5px;
+}
+.slick-dots li.slick-active button {
+    opacity: .75;
+    color: #222222;
+}
+[class*="b-sslide-"] .slick-arrow {
+   width: 30px;
+   height: 40px;
+   border-radius: 5px;
+   background: rgb(255 255 255 / 10%);
+   font-size: 10px;
+   color: transparent;
+   box-shadow: 3px 0px 8px 0px rgb(0 0 0 / 20%);
+   opacity: 0;
+   transition: all 0.3s;
+}
+[class*="b-sslide-"]:hover .slick-arrow{
+    opacity: 1;
+}
+[class*="b-sslide-"] .slick-arrow:before {
+    content: '';
+    font-family: FontAwesome;
+    line-height: 1;
+    color: #fff;
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+[class*="b-sslide-"] .slick-arrow:hover{
+    background-color: rgb(0 0 0 / 80%);
+}
+[class*="b-sslide-"] .slick-prev::before {
+    content: "\f104";
+}
+[class*="b-sslide-"] .slick-next::before {
+    content: '\f105';
+}
+[class*="b-sslide-"] .slick-dots li button {
+    color: #fff;
+    background-color: #05a;
+    font-size: 10px;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+}
+[class*="b-sslide-"] .slick-dots li.slick-active button {
+    background-color: #e10034;
+}
+.b-sslide-ratio .slick-list {
+    position: relative;
+    overflow: hidden;
+}
+.b-sslide-ratio .slick-list::before {
+    content: '';
+    display: block;
+    padding-bottom: 35%;
+}
+.b-sslide-ratio .slick-list>.slick-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.b-sslide-ratio .slick-list>.slick-track img {
+    width: 100%;
+}
+/* END slick.css */

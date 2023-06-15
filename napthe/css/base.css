@@ -631,7 +631,7 @@ h6, .h6 {
 @keyframes slide-up {
   0% {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(50%);
   }
   100% {
     opacity: 1;
@@ -649,9 +649,9 @@ h6, .h6 {
     right: 0;
     bottom: 0;
     left: 0;
-    -webkit-transition: opacity 0.15s linear;
+    /* -webkit-transition: opacity 0.15s linear;
     -o-transition: opacity 0.15s linear;
-    transition: opacity 0.15s linear;
+    transition: opacity 0.15s linear; */
 }
 .c-modal.c-modal-3{
     z-index: 1050;
@@ -665,9 +665,9 @@ h6, .h6 {
     right: 0;
     bottom: 0;
     left: 0;
-    -webkit-transition: opacity 0.15s linear;
+    /* -webkit-transition: opacity 0.15s linear;
     -o-transition: opacity 0.15s linear;
-    transition: opacity 0.15s linear;
+    transition: opacity 0.15s linear; */
 }
 .c-modal-3-backdrop{
     z-index: 1040;
@@ -679,6 +679,7 @@ h6, .h6 {
     max-width: 445px;
     padding: 4.286em 0.715em 0.715em 0.715em;
     position: relative;
+    transform: translateY(50%);
     z-index: 1050;
 }
 .c-modal-group {
@@ -724,9 +725,9 @@ h6, .h6 {
 .c-modal.show {
     opacity: 1;
 }
-.c-modal.show .c-modal-box {
+/* .c-modal.show .c-modal-box {
     animation: slide-up 0.3s;
-}
+} */
 @media (max-width: 992px) {
     .c-modal-open {
         -webkit-overflow-scrolling: touch !important;
