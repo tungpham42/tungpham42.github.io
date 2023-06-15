@@ -880,3 +880,23 @@ h6, .h6 {
 .c-form.is-error .c_label {
     color: #f55145 !important;
 }
+#modalLogin5 .row {
+    padding: 0;
+}
+#modalLogin5 .row .col {
+    width: 88px;
+    display: block;
+    -webkit-transition: color .3s;
+    transition: color .3s;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    color: #202325;
+    color: rgba(32,35,37,.8);
+}
+#modalLogin2.show + #modalLogin5 {
+    display: none !important;
+}
