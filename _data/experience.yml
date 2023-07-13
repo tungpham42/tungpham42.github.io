@@ -9,13 +9,13 @@
     My roles are administering and maintaining the company's websites using Wordpress. The websites are <a href="https://kambria.io" target="_blank">https://kambria.io</a> and <a href="https://kambria.io/blog" target="_blank">https://kambria.io/blog</a>. In the Kambria Corporate site, I use Advanced Custom Fields and Custom Post Type UI plugins to manage Custom content such as Portfolios, DAOs, etc with their Custom Fields. The main theme for this website is Divi.
 - layout: left
   company: Freelancer
-  link: https://tungpham42.info
+  link: https://tungpham42.github.io
   job_title: Freelance Web Developer
   dates: 2013 - 2018 
   quote: >
    Great way to gain experience
   description: | # this will include new lines to allow paragraphs
-    I developed websites for many clients, such as: <a href="https://nhipsinhhoc.vn" target="_blank">https://nhipsinhhoc.vn</a>, <a href="https://cungrao.net" target="_blank">https://cungrao.net</a>, <a href="https://longanshare.club" target="_blank">https://longanshare.club</a>, <a href="https://filos.vn" target="_blank">https://filos.vn</a>, <a href="https://hololab.vn" target="_blank">https://hololab.vn</a>. Most of these projects were built on WordPress.
+    I developed websites for many clients, such as: <a href="https://nhipsinhhoc.vn" target="_blank">https://nhipsinhhoc.vn</a>, <a href="https://cungrao.net" target="_blank">https://cungrao.net</a>, <a href="https://corpnec.com" target="_blank">https://corpnec.com</a>, <a href="https://lengocthuy.vn" target="_blank">https://lengocthuy.vn</a>, <a href="https://hololab.vn" target="_blank">https://hololab.vn</a>. Most of these projects were built on WordPress.
 - layout: left
   company: Cờ tướng
   link: https://cotuong.top
@@ -24,7 +24,7 @@
   quote: >
    Xiangqi for everyone
   description: | # this will include new lines to allow paragraphs
-    I am the main PHP Developer of this website. It has 2 languages: Vietnamese and English. There is AI feature with 4 levels: Newbie, Easy, Normal, and Hard. The AI is based on Minimax Alpha Beta algorithm. Player can host new room with a password. Set up board with Board Capture. Player can Share the board with others. This Game is built with Laravel.
+    I am the main PHP Developer of this website. It has 5 languages: Vietnamese, English, Japanese, Korean, and Chinese. There is AI feature with 4 levels: Newbie, Easy, Normal, and Hard. The AI is based on Minimax Alpha Beta algorithm. Player can host new room with a password. Set up board with Board Capture. Player can Share the board with others. This Game is built with Laravel.
 - layout: left
   company: Chessroom
   link: https://chessroom.top
