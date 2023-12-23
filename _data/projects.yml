@@ -1,4 +1,20 @@
 - layout: left
+  name: Làm việc tự do
+  link: https://lamviectudo.xyz
+  # github: sproogen/resume-theme
+  quote: >
+    Learn the basics of Freelancing.
+  description: | # this will include new lines to allow paragraphs
+    Home page of Làm việc tự do.
+- layout: left
+  name: HoloLab
+  link: https://hololab.vn
+  # github: sproogen/resume-theme
+  quote: >
+    Make the impossible possible
+  description: | # this will include new lines to allow paragraphs
+    Home page of HoloLab.
+- layout: left
   name: Kambria
   link: https://kambria.io
   # github: sproogen/resume-theme
