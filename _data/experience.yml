@@ -8,6 +8,15 @@
   description: | # this will include new lines to allow paragraphs
     Sharing my knowledge about freelancing including Upwork, WordPress, HTML/CSS, etc.
 - layout: left
+  company: HoloLab
+  link: https://hololab.vn
+  job_title: Webmaster
+  dates: June 2023 - Present
+  quote: >
+   Make the impossible possible.
+  description: | # this will include new lines to allow paragraphs
+    My role is maintaining and developing new features.
+- layout: left
   company: Kambria
   link: https://kambria.io
   job_title: Frontend developer and Webmaster
