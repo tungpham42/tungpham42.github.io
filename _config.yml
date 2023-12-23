@@ -37,9 +37,9 @@ about_profile_image: images/tung.jpg
 about_content: | # this will include new lines to allow paragraphs
   - I live in District 7, Ho Chi Minh City, Vietnam
   - I have 8 years of experience in both Frontend and Backend stacks.
-  - My Frontend stack is HTML5, CSS3, SASS/SCSS, Javascript, jQuery, ReactJS, and Bootstrap 4.
-  - My Backend stack is PHP 8, Laravel 9, MySQL/MariaDB, Wordpress 6, and Xenforo 2.
-  - I am familiar with Git, Composer, NPM, CPanel, DirectAdmin, CentOS, Ubuntu, Slack, Trello, and Jira.
+  - My Frontend stack is HTML5, CSS3, SASS/SCSS, Javascript, jQuery, React, and Bootstrap 4.
+  - My Backend stack is PHP 8, Laravel 9, Node.js, MySQL/MariaDB, Wordpress 6, and Xenforo 2.
+  - I am familiar with Git, Composer, npm, Yarn, cPanel, DirectAdmin, Plesk, CentOS, Ubuntu, Slack, Trello, and Jira.
 # Projects Section
 # projects_title: Projects
 
