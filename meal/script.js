@@ -23,6 +23,35 @@ mealList.addEventListener("click", getMealRecipe);
 latestMealList.addEventListener("click", getMealRecipe);
 popularMealList.addEventListener("click", getMealRecipe);
 
+function setEqualHeight(selector, offset = 0) {
+  const elements = document.querySelectorAll(selector);
+  let maxHeight = 0;
+
+  elements.forEach((element) => {
+    element.style.height = ""; // Reset height to recalculate properly
+    const elementHeight = element.getBoundingClientRect().height;
+    maxHeight = Math.max(maxHeight, elementHeight);
+  });
+
+  elements.forEach((element) => {
+    element.style.height = maxHeight + offset + "px";
+  });
+}
+function updateHeights() {
+  setEqualHeight("h5.card-title");
+}
+
+function setEvents() {
+  updateHeights(); // Initial call to set equal heights
+  window.addEventListener("load", updateHeights);
+  window.addEventListener("resize", updateHeights);
+  //   jQuery(document).on("ajaxComplete", updateHeights);
+}
+
+function setEqualHeightOnEvents() {
+  setEvents(); // Set event listeners
+}
+
 function highlightKeyword(keyword) {
   let lowerCaseKeyword = keyword.toLowerCase();
   let mealTitles = document.querySelectorAll("#meal h5.card-title");
@@ -65,6 +94,7 @@ function listAllCategories() {
                     `;
           catList.innerHTML = html;
         });
+        setEqualHeightOnEvents();
       } else {
         html = "Sorry, we didn't find any category";
         catList.innerHTML = html;
@@ -85,6 +115,7 @@ function listAllAreas() {
                     `;
           areaList.innerHTML = html;
         });
+        setEqualHeightOnEvents();
       } else {
         html = "Sorry, we didn't find any area";
         areaList.innerHTML = html;
@@ -105,6 +136,7 @@ function listAllIngredients() {
                     `;
           ingredientList.innerHTML = html;
         });
+        setEqualHeightOnEvents();
       } else {
         html = "Sorry, we didn't find any ingredient";
         ingredientList.innerHTML = html;
@@ -134,6 +166,7 @@ function filterMealByArea(area) {
                     `;
           mealList.innerHTML = html;
         });
+        setEqualHeightOnEvents();
       } else {
         html =
           'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
@@ -165,6 +198,7 @@ function filterMealByIngredient(ingredient) {
                     `;
           mealList.innerHTML = html;
         });
+        setEqualHeightOnEvents();
       } else {
         html =
           'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
@@ -196,6 +230,7 @@ function showLatestMeals() {
                     `;
           latestMealList.innerHTML = html;
         });
+        setEqualHeightOnEvents();
       } else {
         html =
           'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
@@ -226,6 +261,7 @@ function showPopularMeals() {
                     `;
           popularMealList.innerHTML = html;
         });
+        setEqualHeightOnEvents();
       } else {
         html =
           'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
@@ -256,6 +292,7 @@ function showRandomMeals() {
                     `;
           mealList.innerHTML = html;
         });
+        setEqualHeightOnEvents();
       } else {
         html =
           'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
@@ -288,6 +325,7 @@ function searchMeal() {
             mealList.innerHTML = html;
             highlightKeyword(searchInputText);
           });
+          setEqualHeightOnEvents();
         } else {
           html =
             'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
@@ -322,6 +360,7 @@ function searchMealByFirstLetter(letter) {
                     `;
           mealList.innerHTML = html;
         });
+        setEqualHeightOnEvents();
       } else {
         html =
           'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
@@ -352,6 +391,7 @@ function searchMealByCategory(cat) {
                     `;
           mealList.innerHTML = html;
         });
+        setEqualHeightOnEvents();
       } else {
         html =
           'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
@@ -430,36 +470,9 @@ function mealRecipeModal(meal) {
   const mealModal = new bootstrap.Modal(document.getElementById("mealModal"));
   mealModal.show();
 }
-function setEqualHeight(selector, offset = 0) {
-  const elements = document.querySelectorAll(selector);
-  let maxHeight = 0;
-
-  elements.forEach((element) => {
-    element.style.height = ""; // Reset height to recalculate properly
-    const elementHeight = element.getBoundingClientRect().height;
-    maxHeight = Math.max(maxHeight, elementHeight);
-  });
-
-  elements.forEach((element) => {
-    element.style.height = maxHeight + offset + "px";
-  });
-}
-function updateHeights() {
-  setEqualHeight("h5.card-title");
-}
-
-function setEvents() {
-  updateHeights(); // Initial call to set equal heights
-  window.addEventListener("load", updateHeights);
-  window.addEventListener("resize", updateHeights);
-  //   jQuery(document).on("ajaxComplete", updateHeights);
-}
-
-function setEqualHeightOnEvents() {
-  setEvents(); // Set event listeners
-}
 
 // Call the function to set equal heights on page load and events
+
 setEqualHeightOnEvents();
 showLatestMeals();
 showPopularMeals();
