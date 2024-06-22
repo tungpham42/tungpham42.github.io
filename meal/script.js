@@ -10,13 +10,13 @@ const catDetailsContent = document.getElementById("cat-details-content");
 const mealDetailsContent = document.getElementById("meal-details-content");
 const recipeCloseBtn = document.getElementById("recipe-close-btn");
 
-const APIUrl = 'https://www.themealdb.com/api/json/v2/9973533/';
+const APIUrl = "https://www.themealdb.com/api/json/v2/9973533/";
 
-searchInput.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        searchBtn.click();
-    }
+searchInput.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    searchBtn.click();
+  }
 });
 searchBtn.addEventListener("click", searchMeal);
 mealList.addEventListener("click", getMealRecipe);
@@ -24,28 +24,33 @@ latestMealList.addEventListener("click", getMealRecipe);
 popularMealList.addEventListener("click", getMealRecipe);
 
 function highlightKeyword(keyword) {
-    let lowerCaseKeyword = keyword.toLowerCase();
-    let mealTitles = document.querySelectorAll("#meal h5.card-title");
-    [].forEach.call(mealTitles, function(mealTitle) {
-        let innerHTML = mealTitle.innerHTML;
-        let lowerCaseInnerHTML = innerHTML.toLowerCase();
-        let index = lowerCaseInnerHTML.indexOf(lowerCaseKeyword);
-        if (index >= 0) { 
-            innerHTML = innerHTML.substring(0, index) + "<span class='highlight'>" + innerHTML.substring(index, index + keyword.length) + "</span>" + innerHTML.substring(index + keyword.length);
-            mealTitle.innerHTML = innerHTML;
-        }
-    });
+  let lowerCaseKeyword = keyword.toLowerCase();
+  let mealTitles = document.querySelectorAll("#meal h5.card-title");
+  [].forEach.call(mealTitles, function (mealTitle) {
+    let innerHTML = mealTitle.innerHTML;
+    let lowerCaseInnerHTML = innerHTML.toLowerCase();
+    let index = lowerCaseInnerHTML.indexOf(lowerCaseKeyword);
+    if (index >= 0) {
+      innerHTML =
+        innerHTML.substring(0, index) +
+        "<span class='highlight'>" +
+        innerHTML.substring(index, index + keyword.length) +
+        "</span>" +
+        innerHTML.substring(index + keyword.length);
+      mealTitle.innerHTML = innerHTML;
+    }
+  });
 }
 function listAllCategories() {
-    fetch(APIUrl + `categories.php`)
-        .then(response => response.json())
-        .then(data => {
-            let html = "";
-            if (data.categories) {
-                // console.log(data.meals);
-                data.categories.forEach(cat => {
-                    let catDesc = cat.strCategoryDescription.replace("'", "&#39;");
-                    html += `
+  fetch(APIUrl + `categories.php`)
+    .then((response) => response.json())
+    .then((data) => {
+      let html = "";
+      if (data.categories) {
+        // console.log(data.meals);
+        data.categories.forEach((cat) => {
+          let catDesc = cat.strCategoryDescription.replace("'", "&#39;");
+          html += `
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${cat.idCategory}">
                             <img onclick='catModal(\`${cat.strCategory}\`, \`${catDesc}\`);' src="${cat.strCategoryThumb}"
@@ -58,64 +63,64 @@ function listAllCategories() {
                         </div>
                     </div>
                     `;
-                    catList.innerHTML = html;
-                })
-            } else {
-                html = 'Sorry, we didn\'t find any category';
-                catList.innerHTML = html;
-            }
+          catList.innerHTML = html;
         });
+      } else {
+        html = "Sorry, we didn't find any category";
+        catList.innerHTML = html;
+      }
+    });
 }
 
 function listAllAreas() {
-    fetch(APIUrl + `list.php?a=list`)
-        .then(response => response.json())
-        .then(data => {
-            let html = "";
-            if (data.meals) {
-                // console.log(data.meals);
-                data.meals.forEach(area => {
-                    html += `
+  fetch(APIUrl + `list.php?a=list`)
+    .then((response) => response.json())
+    .then((data) => {
+      let html = "";
+      if (data.meals) {
+        // console.log(data.meals);
+        data.meals.forEach((area) => {
+          html += `
                     <button onclick="filterMealByArea(\`${area.strArea}\`);" class="btn btn-sm btn-secondary mb-2">${area.strArea}</button>
                     `;
-                    areaList.innerHTML = html;
-                })
-            } else {
-                html = 'Sorry, we didn\'t find any area';
-                areaList.innerHTML = html;
-            }
+          areaList.innerHTML = html;
         });
+      } else {
+        html = "Sorry, we didn't find any area";
+        areaList.innerHTML = html;
+      }
+    });
 }
 
 function listAllIngredients() {
-    fetch(APIUrl + `list.php?i=list`)
-        .then(response => response.json())
-        .then(data => {
-            let html = "";
-            if (data.meals) {
-                // console.log(data.meals);
-                data.meals.forEach(ingredient => {
-                    html += `
+  fetch(APIUrl + `list.php?i=list`)
+    .then((response) => response.json())
+    .then((data) => {
+      let html = "";
+      if (data.meals) {
+        // console.log(data.meals);
+        data.meals.forEach((ingredient) => {
+          html += `
                     <button onclick="filterMealByIngredient(\`${ingredient.strIngredient}\`);" class="btn btn-sm btn-secondary mb-2">${ingredient.strIngredient}</button>
                     `;
-                    ingredientList.innerHTML = html;
-                })
-            } else {
-                html = 'Sorry, we didn\'t find any ingredient';
-                ingredientList.innerHTML = html;
-            }
+          ingredientList.innerHTML = html;
         });
+      } else {
+        html = "Sorry, we didn't find any ingredient";
+        ingredientList.innerHTML = html;
+      }
+    });
 }
 
 function filterMealByArea(area) {
-    fetch(APIUrl + `filter.php?a=${area}`)
-        .then(response => response.json())
-        .then(data => {
-            let html = "";
-            if (data.meals) {
-                // console.log(data.meals);
-                data.meals.forEach(meal => {
-                    html += `
+  fetch(APIUrl + `filter.php?a=${area}`)
+    .then((response) => response.json())
+    .then((data) => {
+      let html = "";
+      if (data.meals) {
+        // console.log(data.meals);
+        data.meals.forEach((meal) => {
+          html += `
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
@@ -127,25 +132,26 @@ function filterMealByArea(area) {
                         </div>
                     </div>
                     `;
-                    mealList.innerHTML = html;
-                })
-            } else {
-                html = 'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
-                mealList.innerHTML = html;
-            }
-            document.getElementById('meal').scrollIntoView();
+          mealList.innerHTML = html;
         });
+      } else {
+        html =
+          'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
+        mealList.innerHTML = html;
+      }
+      document.getElementById("meal").scrollIntoView();
+    });
 }
 
 function filterMealByIngredient(ingredient) {
-    fetch(APIUrl + `filter.php?i=${ingredient}`)
-        .then(response => response.json())
-        .then(data => {
-            let html = "";
-            if (data.meals) {
-                // console.log(data.meals);
-                data.meals.forEach(meal => {
-                    html += `
+  fetch(APIUrl + `filter.php?i=${ingredient}`)
+    .then((response) => response.json())
+    .then((data) => {
+      let html = "";
+      if (data.meals) {
+        // console.log(data.meals);
+        data.meals.forEach((meal) => {
+          html += `
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
@@ -157,25 +163,26 @@ function filterMealByIngredient(ingredient) {
                         </div>
                     </div>
                     `;
-                    mealList.innerHTML = html;
-                })
-            } else {
-                html = 'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
-                mealList.innerHTML = html;
-            }
-            document.getElementById('meal').scrollIntoView();
+          mealList.innerHTML = html;
         });
+      } else {
+        html =
+          'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
+        mealList.innerHTML = html;
+      }
+      document.getElementById("meal").scrollIntoView();
+    });
 }
 
 function showLatestMeals() {
-    fetch(APIUrl + `latest.php`)
-        .then(response => response.json())
-        .then(data => {
-            let html = "";
-            if (data.meals) {
-                // console.log(data.meals);
-                data.meals.forEach(meal => {
-                    html += `
+  fetch(APIUrl + `latest.php`)
+    .then((response) => response.json())
+    .then((data) => {
+      let html = "";
+      if (data.meals) {
+        // console.log(data.meals);
+        data.meals.forEach((meal) => {
+          html += `
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
@@ -187,24 +194,25 @@ function showLatestMeals() {
                         </div>
                     </div>
                     `;
-                    latestMealList.innerHTML = html;
-                })
-            } else {
-                html = 'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
-                latestMealList.innerHTML = html;
-            }
+          latestMealList.innerHTML = html;
         });
+      } else {
+        html =
+          'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
+        latestMealList.innerHTML = html;
+      }
+    });
 }
 
 function showPopularMeals() {
-    fetch(APIUrl + `popular.php`)
-        .then(response => response.json())
-        .then(data => {
-            let html = "";
-            if (data.meals) {
-                // console.log(data.meals);
-                data.meals.forEach(meal => {
-                    html += `
+  fetch(APIUrl + `popular.php`)
+    .then((response) => response.json())
+    .then((data) => {
+      let html = "";
+      if (data.meals) {
+        // console.log(data.meals);
+        data.meals.forEach((meal) => {
+          html += `
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
@@ -216,24 +224,25 @@ function showPopularMeals() {
                         </div>
                     </div>
                     `;
-                    popularMealList.innerHTML = html;
-                })
-            } else {
-                html = 'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
-                popularMealList.innerHTML = html;
-            }
+          popularMealList.innerHTML = html;
         });
+      } else {
+        html =
+          'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
+        popularMealList.innerHTML = html;
+      }
+    });
 }
 
 function showRandomMeals() {
-    fetch(APIUrl + `randomselection.php`)
-        .then(response => response.json())
-        .then(data => {
-            let html = "";
-            if (data.meals) {
-                // console.log(data.meals);
-                data.meals.forEach(meal => {
-                    html += `
+  fetch(APIUrl + `randomselection.php`)
+    .then((response) => response.json())
+    .then((data) => {
+      let html = "";
+      if (data.meals) {
+        // console.log(data.meals);
+        data.meals.forEach((meal) => {
+          html += `
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
@@ -245,25 +254,26 @@ function showRandomMeals() {
                         </div>
                     </div>
                     `;
-                    mealList.innerHTML = html;
-                })
-            } else {
-                html = 'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
-                mealList.innerHTML = html;
-            }
+          mealList.innerHTML = html;
         });
+      } else {
+        html =
+          'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
+        mealList.innerHTML = html;
+      }
+    });
 }
 function searchMeal() {
-    const searchInputText = searchInput.value.trim();
-    if (searchInputText != '') {
-        fetch(APIUrl + `search.php?s=${searchInputText}`)
-        .then(response => response.json())
-        .then(data => {
-            let html = "";
-            if (data.meals) {
-                // console.log(data.meals);
-                data.meals.forEach(meal => {
-                    html += `
+  const searchInputText = searchInput.value.trim();
+  if (searchInputText != "") {
+    fetch(APIUrl + `search.php?s=${searchInputText}`)
+      .then((response) => response.json())
+      .then((data) => {
+        let html = "";
+        if (data.meals) {
+          // console.log(data.meals);
+          data.meals.forEach((meal) => {
+            html += `
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
@@ -275,28 +285,30 @@ function searchMeal() {
                         </div>
                     </div>
                     `;
-                    mealList.innerHTML = html;
-                    highlightKeyword(searchInputText);
-                })
-            } else {
-                html = 'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
-                mealList.innerHTML = html;
-            }
-            document.getElementById('meal').scrollIntoView();
-        });
-    } else {
-        mealList.innerHTML = 'Please insert a keyword, or show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
-    }
+            mealList.innerHTML = html;
+            highlightKeyword(searchInputText);
+          });
+        } else {
+          html =
+            'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
+          mealList.innerHTML = html;
+        }
+        document.getElementById("meal").scrollIntoView();
+      });
+  } else {
+    mealList.innerHTML =
+      'Please insert a keyword, or show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
+  }
 }
 function searchMealByFirstLetter(letter) {
-    fetch(APIUrl + `search.php?f=${letter}`)
-        .then(response => response.json())
-        .then(data => {
-            let html = "";
-            if (data.meals) {
-                // console.log(data.meals);
-                data.meals.forEach(meal => {
-                    html += `
+  fetch(APIUrl + `search.php?f=${letter}`)
+    .then((response) => response.json())
+    .then((data) => {
+      let html = "";
+      if (data.meals) {
+        // console.log(data.meals);
+        data.meals.forEach((meal) => {
+          html += `
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
@@ -308,24 +320,25 @@ function searchMealByFirstLetter(letter) {
                         </div>
                     </div>
                     `;
-                    mealList.innerHTML = html;
-                })
-            } else {
-                html = 'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
-                mealList.innerHTML = html;
-            }
-            document.getElementById('meal').scrollIntoView();
+          mealList.innerHTML = html;
         });
+      } else {
+        html =
+          'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
+        mealList.innerHTML = html;
+      }
+      document.getElementById("meal").scrollIntoView();
+    });
 }
 function searchMealByCategory(cat) {
-    fetch(APIUrl + `filter.php?c=${cat}`)
-        .then(response => response.json())
-        .then(data => {
-            let html = "";
-            if (data.meals) {
-                // console.log(data.meals);
-                data.meals.forEach(meal => {
-                    html += `
+  fetch(APIUrl + `filter.php?c=${cat}`)
+    .then((response) => response.json())
+    .then((data) => {
+      let html = "";
+      if (data.meals) {
+        // console.log(data.meals);
+        data.meals.forEach((meal) => {
+          html += `
                     <div class="col-xxl-3 col-xl-4 col-md-6 col-sm-12 mb-3">
                         <div class="card" data-id="${meal.idMeal}">
                             <img src="${meal.strMealThumb}"
@@ -337,46 +350,45 @@ function searchMealByCategory(cat) {
                         </div>
                     </div>
                     `;
-                    mealList.innerHTML = html;
-                })
-            } else {
-                html = 'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
-                mealList.innerHTML = html;
-            }
-            document.getElementById('meal').scrollIntoView();
+          mealList.innerHTML = html;
         });
+      } else {
+        html =
+          'Sorry, we didn\'t find any meal. Show <a href="javascript:void(0);" style="width: fit-content;padding-left: 5px;padding-right: 0;" onclick="showRandomMeals();">random meals</a>!';
+        mealList.innerHTML = html;
+      }
+      document.getElementById("meal").scrollIntoView();
+    });
 }
 
 function getMealRecipe(e) {
-    e.preventDefault();
-    if (e.target.classList.contains('recipe-btn')) {
-        let mealItem = e.target.parentElement.parentElement;
-        fetch(APIUrl + `lookup.php?i=${mealItem.dataset.id}`)
-            .then(response => response.json())
-            .then(data => mealRecipeModal(data.meals[0]));
-        // .then(data => console.log(data.meals));
-    }
-    if (e.target.classList.contains('recipe-img')) {
-        let mealItem = e.target.parentElement;
-        fetch(APIUrl + `lookup.php?i=${mealItem.dataset.id}`)
-            .then(response => response.json())
-            .then(data => mealRecipeModal(data.meals[0]));
-        // .then(data => console.log(data.meals));
-    }
+  e.preventDefault();
+  if (e.target.classList.contains("recipe-btn")) {
+    let mealItem = e.target.parentElement.parentElement;
+    fetch(APIUrl + `lookup.php?i=${mealItem.dataset.id}`)
+      .then((response) => response.json())
+      .then((data) => mealRecipeModal(data.meals[0]));
+    // .then(data => console.log(data.meals));
+  }
+  if (e.target.classList.contains("recipe-img")) {
+    let mealItem = e.target.parentElement;
+    fetch(APIUrl + `lookup.php?i=${mealItem.dataset.id}`)
+      .then((response) => response.json())
+      .then((data) => mealRecipeModal(data.meals[0]));
+    // .then(data => console.log(data.meals));
+  }
 }
 
 function getYoutubeId(url) {
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-    const match = url.match(regExp);
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+  const match = url.match(regExp);
 
-    return (match && match[2].length === 11)
-      ? match[2]
-      : null;
+  return match && match[2].length === 11 ? match[2] : null;
 }
 
 function catModal(cat, desc) {
-    let html = "";
-    html += `
+  let html = "";
+  html += `
         <div class="modal-header">
             <h5 class="modal-title">${cat}</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -388,16 +400,18 @@ function catModal(cat, desc) {
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
     `;
-    catDetailsContent.innerHTML = html;
-    const catModal = new bootstrap.Modal(document.getElementById("catModal"));
-    catModal.show();
+  catDetailsContent.innerHTML = html;
+  const catModal = new bootstrap.Modal(document.getElementById("catModal"));
+  catModal.show();
 }
 function mealRecipeModal(meal) {
-    const videoId = getYoutubeId(meal.strYoutube);
-    const iframeMarkup = '<iframe width="560" height="315" src="//www.youtube.com/embed/' 
-    + videoId + '" frameborder="0" allowfullscreen></iframe>';
-    let html = "";
-    html += `
+  const videoId = getYoutubeId(meal.strYoutube);
+  const iframeMarkup =
+    '<iframe width="560" height="315" src="//www.youtube.com/embed/' +
+    videoId +
+    '" frameborder="0" allowfullscreen></iframe>';
+  let html = "";
+  html += `
         <div class="modal-header">
             <h5 class="modal-title">${meal.strMeal} - ${meal.strArea} - ${meal.strCategory}</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -412,10 +426,42 @@ function mealRecipeModal(meal) {
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
     `;
-    mealDetailsContent.innerHTML = html;
-    const mealModal = new bootstrap.Modal(document.getElementById("mealModal"));
-    mealModal.show();
+  mealDetailsContent.innerHTML = html;
+  const mealModal = new bootstrap.Modal(document.getElementById("mealModal"));
+  mealModal.show();
 }
+function setEqualHeight(selector, offset = 0) {
+  const elements = document.querySelectorAll(selector);
+  let maxHeight = 0;
+
+  elements.forEach((element) => {
+    element.style.height = ""; // Reset height to recalculate properly
+    const elementHeight = element.getBoundingClientRect().height;
+    maxHeight = Math.max(maxHeight, elementHeight);
+  });
+
+  elements.forEach((element) => {
+    element.style.height = maxHeight + offset + "px";
+  });
+}
+
+function setEqualHeightOnEvents() {
+  function updateHeights() {
+    setEqualHeight("h5.card-title");
+  }
+
+  function setEvents() {
+    window.addEventListener("load", updateHeights);
+    window.addEventListener("resize", updateHeights);
+    jQuery(document).on("ajaxComplete", updateHeights);
+  }
+
+  updateHeights(); // Initial call to set equal heights
+  setEvents(); // Set event listeners
+}
+
+// Call the function to set equal heights on page load and events
+setEqualHeightOnEvents();
 showLatestMeals();
 showPopularMeals();
 showRandomMeals();

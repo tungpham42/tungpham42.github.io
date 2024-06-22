@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meal Planet</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.1/css/bootstrap.min.css" integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.1/minty/bootstrap.min.css" integrity="sha512-6ukxQXphUzPdLkhJ+Hqrn22qIKuq0KYsclqv1dYX9s8Yo2PtE3PBjkq1qsMCGV41IlWZnB25QBeF4+df1X3NOg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css?v=5">
-    <link rel="icon" type="image/x-icon" href="https://mealpla.net/favicon.ico">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.1/css/bootstrap.min.css"
+      integrity="sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.1/minty/bootstrap.min.css"
+      integrity="sha512-6ukxQXphUzPdLkhJ+Hqrn22qIKuq0KYsclqv1dYX9s8Yo2PtE3PBjkq1qsMCGV41IlWZnB25QBeF4+df1X3NOg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css?v=5" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://mealpla.net/favicon.ico"
+    />
     <meta property="og:url" content="https://mealpla.net" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
@@ -21,95 +42,305 @@
     <meta property="og:image:width" content="200" />
     <meta property="og:image:height" content="200" />
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-N2VBMP6');</script>
-    <!-- End Google Tag Manager -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3585118770961536" crossorigin="anonymous"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL3LETZ9BH"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-TL3LETZ9BH');
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-N2VBMP6");
     </script>
-</head>
+    <!-- End Google Tag Manager -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3585118770961536"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TL3LETZ9BH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<body>
+      gtag("config", "G-TL3LETZ9BH");
+    </script>
+  </head>
+
+  <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2VBMP6"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-N2VBMP6"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div class="container">
-        <div class="meal-wrapper">
-            <div class="meal-search text-center mt-5">
-                <h1><i class="fa-solid fa-utensils"></i> Meal Planet</h1>
-                <blockquote>Real food doesn't have ingredients, real food is ingredients. <br>
-                    <cite>- Jamie Oliver</cite>
-                </blockquote>
+      <div class="meal-wrapper">
+        <div class="meal-search text-center mt-5">
+          <h1><i class="fa-solid fa-utensils"></i> Meal Planet</h1>
+          <blockquote>
+            Real food doesn't have ingredients, real food is ingredients. <br />
+            <cite>- Jamie Oliver</cite>
+          </blockquote>
 
-                <div class="meal-search-box mx-auto d-flex justify-content-center flex-row" style="max-width: 500px">
-                    <input type="text" class="serch-content form-control form-control-lg" id="search-input"
-                        placeholder="Enter a keyword">
-                    <button class="btn btn-primary btn-lg w-50 ms-2" id="search-btn"><i class="fa-solid fa-magnifying-glass"></i> Find</button>
-                </div>
-            </div>
-
-            <div class="meal-result mt-5 mb-0">
-                <h3 class="title text-center">Your Search Results:</h3>
-                <div id="meal" class="pt-0 row gx-3">
-                </div>
-            </div>
-
-            <div class="meal-result mt-5 mb-0">
-                <h3 class="title text-center">Latest Meals</h3>
-                <div id="latest" class="pt-0 row gx-3">
-                </div>
-            </div>
-
-            <div class="meal-result mt-5 mb-0">
-                <h3 class="title text-center">Popular Meals</h3>
-                <div id="popular" class="pt-0 row gx-3">
-                </div>
-            </div>
-
-            <div class="cat-result mt-5 mb-0">
-                <h3 class="title text-center">All Categories</h3>
-                <div id="cat" class="pt-0 row gx-3">
-                </div>
-            </div>
-            <h3 class="text-center mt-5">Browse Ingredient</h3>
-            <section id="ingredients" class="text-center"></section>
-            <h3 class="text-center mt-5">Browse Country</h3>
-            <section id="areas" class="text-center"></section>
-            <h3 class="text-center mt-5">Browse by Name</h3>
-            <section id="letters" class="text-center">
-                <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('a');">A</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('b');">B</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('c');">C</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('d');">D</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('e');">E</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('f');">F</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('g');">G</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('h');">H</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('i');">I</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('j');">J</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('k');">K</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('l');">L</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('m');">M</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('n');">N</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('o');">O</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('p');">P</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('q');">Q</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('r');">R</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('s');">S</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('t');">T</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('u');">U</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('v');">V</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('w');">W</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('x');">X</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('y');">Y</a> / <a class="btn btn-sm btn-secondary mb-2"  href="javascript:void(0);" onclick="searchMealByFirstLetter('z');">Z</a>
-            </section>
+          <div
+            class="meal-search-box mx-auto d-flex justify-content-center flex-row"
+            style="max-width: 500px"
+          >
+            <input
+              type="text"
+              class="serch-content form-control form-control-lg"
+              id="search-input"
+              placeholder="Enter a keyword"
+            />
+            <button class="btn btn-primary btn-lg w-50 ms-2" id="search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i> Find
+            </button>
+          </div>
         </div>
+
+        <div class="meal-result mt-5 mb-0">
+          <h3 class="title text-center">Your Search Results:</h3>
+          <div id="meal" class="pt-0 row gx-3"></div>
+        </div>
+
+        <div class="meal-result mt-5 mb-0">
+          <h3 class="title text-center">Latest Meals</h3>
+          <div id="latest" class="pt-0 row gx-3"></div>
+        </div>
+
+        <div class="meal-result mt-5 mb-0">
+          <h3 class="title text-center">Popular Meals</h3>
+          <div id="popular" class="pt-0 row gx-3"></div>
+        </div>
+
+        <div class="cat-result mt-5 mb-0">
+          <h3 class="title text-center">All Categories</h3>
+          <div id="cat" class="pt-0 row gx-3"></div>
+        </div>
+        <h3 class="text-center mt-5">Browse Ingredient</h3>
+        <section id="ingredients" class="text-center"></section>
+        <h3 class="text-center mt-5">Browse Country</h3>
+        <section id="areas" class="text-center"></section>
+        <h3 class="text-center mt-5">Browse by Name</h3>
+        <section id="letters" class="text-center">
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('a');"
+            >A</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('b');"
+            >B</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('c');"
+            >C</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('d');"
+            >D</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('e');"
+            >E</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('f');"
+            >F</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('g');"
+            >G</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('h');"
+            >H</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('i');"
+            >I</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('j');"
+            >J</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('k');"
+            >K</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('l');"
+            >L</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('m');"
+            >M</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('n');"
+            >N</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('o');"
+            >O</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('p');"
+            >P</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('q');"
+            >Q</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('r');"
+            >R</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('s');"
+            >S</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('t');"
+            >T</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('u');"
+            >U</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('v');"
+            >V</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('w');"
+            >W</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('x');"
+            >X</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('y');"
+            >Y</a
+          >
+          /
+          <a
+            class="btn btn-sm btn-secondary mb-2"
+            href="javascript:void(0);"
+            onclick="searchMealByFirstLetter('z');"
+            >Z</a
+          >
+        </section>
+      </div>
     </div>
 
     <!-- Modal Detail Cat -->
     <div class="modal fade" tabindex="-1" id="catModal">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content" id="cat-details-content">
-            </div>
-        </div>
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" id="cat-details-content"></div>
+      </div>
     </div>
     <!-- Modal Detail Meal -->
     <div class="modal fade" tabindex="-1" id="mealModal">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content" id="meal-details-content">
-            </div>
-        </div>
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" id="meal-details-content"></div>
+      </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.1/js/bootstrap.bundle.min.js" integrity="sha512-1TK4hjCY5+E9H3r5+05bEGbKGyK506WaDPfPe1s/ihwRjr6OtL43zJLzOFQ+/zciONEd+sp7LwrfOCnyukPSsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js?v=85"></script>
-</body>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.1/js/bootstrap.bundle.min.js"
+      integrity="sha512-1TK4hjCY5+E9H3r5+05bEGbKGyK506WaDPfPe1s/ihwRjr6OtL43zJLzOFQ+/zciONEd+sp7LwrfOCnyukPSsg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js?v=86"></script>
+  </body>
 </html>
