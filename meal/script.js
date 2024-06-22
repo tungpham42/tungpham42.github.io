@@ -444,44 +444,18 @@ function setEqualHeight(selector, offset = 0) {
     element.style.height = maxHeight + offset + "px";
   });
 }
-let activeRequests = 0;
-
-function makeRequest(method, url, callback) {
-  const xhr = new XMLHttpRequest();
-  activeRequests++;
-
-  xhr.open(method, url);
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-      if (xhr.status === 200) {
-        callback(xhr.responseText);
-      } else {
-        console.error("Error:", xhr.statusText);
-      }
-      activeRequests--;
-
-      if (activeRequests === 0) {
-        window.dispatchEvent(new Event("allRequestsComplete"));
-      }
-    }
-  };
-  xhr.send();
+function updateHeights() {
+  setEqualHeight("h5.card-title");
 }
-function setEqualHeightOnEvents() {
-  function updateHeights() {
-    setEqualHeight("h5.card-title");
-  }
 
-  function setEvents() {
-    window.addEventListener("load", updateHeights);
-    window.addEventListener("resize", updateHeights);
-    // $(document).on("ajaxComplete", updateHeights);
-    window.addEventListener("allRequestsComplete", function () {
-      updateHeights();
-    });
-  }
-
+function setEvents() {
   updateHeights(); // Initial call to set equal heights
+  window.addEventListener("load", updateHeights);
+  window.addEventListener("resize", updateHeights);
+  //   jQuery(document).on("ajaxComplete", updateHeights);
+}
+
+function setEqualHeightOnEvents() {
   setEvents(); // Set event listeners
 }
 
