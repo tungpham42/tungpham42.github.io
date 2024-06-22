@@ -453,7 +453,7 @@ function setEqualHeightOnEvents() {
   function setEvents() {
     window.addEventListener("load", updateHeights);
     window.addEventListener("resize", updateHeights);
-    jQuery(document).on("ajaxComplete", updateHeights);
+    $(document).on("ajaxComplete", updateHeights);
   }
 
   updateHeights(); // Initial call to set equal heights
