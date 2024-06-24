@@ -16,7 +16,7 @@ website: https://tungpham42.github.io
 facebook_username: tungpham42
 linkedin_username: tungpham42
 twitter_username: tungpham42
-github_username:  tungpham42
+github_username: tungpham42
 stackoverflow_username: "3689856"
 # flickr_username: jekyll
 # instagram_username: chillwildlife
@@ -38,7 +38,7 @@ about_content: | # this will include new lines to allow paragraphs
   - I live in District 7, Ho Chi Minh City, Vietnam
   - I have 8 years of experience in both Frontend and Backend stacks.
   - My Frontend stack is HTML5, CSS3, SASS/SCSS, Javascript, jQuery, React, and Bootstrap 4.
-  - My Backend stack is PHP 8, Laravel 9, Node.js, MySQL/MariaDB, Wordpress 6, and Xenforo 2.
+  - My Backend stack is PHP 8, Laravel 9, Node.js, ReactJS, MySQL/MariaDB, Wordpress 6, and Xenforo 2.
   - I am familiar with Git, Composer, npm, Yarn, cPanel, DirectAdmin, Plesk, CentOS, Ubuntu, Slack, Trello, and Jira.
 # Projects Section
 # projects_title: Projects
@@ -67,4 +67,4 @@ sass:
   style: compressed
 
 plugins:
- - jekyll-seo-tag
+  - jekyll-seo-tag
