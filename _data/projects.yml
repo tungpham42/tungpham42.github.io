@@ -71,6 +71,14 @@
   description: | # this will include new lines to allow paragraphs
     It is built with ReactJS and Bootstrap. It supports 16 languages.
 - layout: left
+  name: Text to Speech app
+  link: https://tungpham42.github.io/t2s/
+  # github: sproogen/resume-theme
+  quote: >
+    Text to Speech app.
+  description: | # this will include new lines to allow paragraphs
+    It is built with ReactJS and Bootstrap. With the help of AI.
+- layout: left
   name: Meal Planet
   link: https://tungpham42.github.io/meal/
   # github: sproogen/resume-theme
