@@ -1,19 +1,19 @@
 - layout: left
-  company: Làm việc tự do
-  link: https://lamviectudo.xyz
-  job_title: Content creator
-  dates: December 2023 - Present
+  company: Cờ tướng
+  link: https://cotuong.top
+  job_title: PHP (Laravel) Developer - Self employed
+  dates: January 2020 - Present
   quote: >
-   Learn the basics of Freelancing.
+    Xiangqi for everyone
   description: | # this will include new lines to allow paragraphs
-    Sharing my knowledge about freelancing including Upwork, WordPress, HTML/CSS, etc.
+    I am the main PHP Developer of this website. It has 5 languages: Vietnamese, English, Japanese, Korean, and Chinese. There is AI feature with 4 levels: Newbie, Easy, Normal, and Hard. The AI is based on Minimax Alpha Beta algorithm. Player can host new room with a password. Set up board with Board Capture. Player can Share the board with others. This Game is built with Laravel.
 - layout: left
   company: HoloLab
   link: https://hololab.vn
   job_title: Webmaster
   dates: June 2023 - Present
   quote: >
-   Make the impossible possible.
+    Make the impossible possible.
   description: | # this will include new lines to allow paragraphs
     My role is maintaining and developing new features.
 - layout: left
@@ -22,43 +22,34 @@
   job_title: Frontend developer and Webmaster
   dates: August 2018 - Present
   quote: >
-   Kambria is the first decentralized open innovation platform for AI & Robotics. Using our platform, anyone can collaborate in researching, developing and commercializing innovative ideas and get rewarded fairly for their contributions.
+    Kambria is the first decentralized open innovation platform for AI & Robotics. Using our platform, anyone can collaborate in researching, developing and commercializing innovative ideas and get rewarded fairly for their contributions.
   description: | # this will include new lines to allow paragraphs
     My roles are administering and maintaining the company's websites using Wordpress. The websites are <a href="https://kambria.io" target="_blank">https://kambria.io</a> and <a href="https://kambria.io/blog" target="_blank">https://kambria.io/blog</a>. In the Kambria Corporate site, I use Advanced Custom Fields and Custom Post Type UI plugins to manage Custom content such as Portfolios, DAOs, etc with their Custom Fields. The main theme for this website is Divi.
 - layout: left
   company: Freelancer
   link: https://tungpham42.github.io
   job_title: Freelance Web Developer
-  dates: 2013 - 2018 
+  dates: 2013 - 2018
   quote: >
-   Great way to gain experience
+    Great way to gain experience
   description: | # this will include new lines to allow paragraphs
     I developed websites for many clients, such as: <a href="https://nhipsinhhoc.vn" target="_blank">https://nhipsinhhoc.vn</a>, <a href="https://cungrao.net" target="_blank">https://cungrao.net</a>, <a href="https://corpnec.com" target="_blank">https://corpnec.com</a>, <a href="https://lengocthuy.vn" target="_blank">https://lengocthuy.vn</a>, <a href="https://hololab.vn" target="_blank">https://hololab.vn</a>, <a href="https://lamviectudo.xyz" target="_blank">https://lamviectudo.xyz</a>. Most of these projects were built on WordPress.
-- layout: left
-  company: Cờ tướng
-  link: https://cotuong.top
-  job_title: PHP Developer - Self employed
-  dates: January 2020 - January 2022
-  quote: >
-   Xiangqi for everyone
-  description: | # this will include new lines to allow paragraphs
-    I am the main PHP Developer of this website. It has 5 languages: Vietnamese, English, Japanese, Korean, and Chinese. There is AI feature with 4 levels: Newbie, Easy, Normal, and Hard. The AI is based on Minimax Alpha Beta algorithm. Player can host new room with a password. Set up board with Board Capture. Player can Share the board with others. This Game is built with Laravel.
 - layout: left
   company: Chessroom
   link: https://chessroom.top
   job_title: PHP Developer - Self employed
   dates: May 2020 - January 2022
   quote: >
-   Chess for everyone
+    Chess for everyone
   description: | # this will include new lines to allow paragraphs
     I am the main PHP Developer of this website. There is AI feature with 4 levels: Newbie, Easy, Normal, and Hard. The AI is based on Minimax Alpha Beta algorithm. Player can host new room with a password. Set up board with Board Capture. Player can Share the board with others. This Game is built with Laravel.
 - layout: left
   company: YouNet Group
   link: https://www.younetgroup.com/
   job_title: Associate Engineer
-  dates: 2013 - 2013 
+  dates: 2013 - 2013
   quote: >
-   Over 10 years of establishment and development, YouNet Group has always been a pioneer in applying social intelligence and technology into marketing activities and processes, in order to bring about comprehensive digital innovation to push the business performance in Vietnamese and international markets.
+    Over 10 years of establishment and development, YouNet Group has always been a pioneer in applying social intelligence and technology into marketing activities and processes, in order to bring about comprehensive digital innovation to push the business performance in Vietnamese and international markets.
   description: | # this will include new lines to allow paragraphs
     My role is learning Social network PHP Scripts, which are PHPFox and SocialEngine, to deploy websites for overseas clients.
 - layout: left
@@ -67,7 +58,7 @@
   job_title: Research Assistant
   dates: October 2012 - January 2013
   quote: >
-   Research integrity means conducting research in a way which allows peers and the public to have trust and confidence in the university, its methods and the results of the research.
+    Research integrity means conducting research in a way which allows peers and the public to have trust and confidence in the university, its methods and the results of the research.
   description: | # this will include new lines to allow paragraphs
     My role is to analyse, design, implement and evaluate an online knowledge management system that allows academic staff to gather learning problems from students. The system also allows students to view, extend and evaluate knowledge related to learning problems.
 - layout: left
@@ -76,6 +67,6 @@
   job_title: Web Developer Intern
   dates: June 2011 - June 2012
   quote: >
-   Passion is a key to success. Passion for excellence: we aspire for excellence in all we do.
+    Passion is a key to success. Passion for excellence: we aspire for excellence in all we do.
   description: | # this will include new lines to allow paragraphs
     My role is to work with Web CMS (content management systems) such as Drupal or Wordpress.
