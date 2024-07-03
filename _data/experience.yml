@@ -8,6 +8,15 @@
   description: | # this will include new lines to allow paragraphs
     I am the main PHP Developer of this website. It has 5 languages: Vietnamese, English, Japanese, Korean, and Chinese. There is AI feature with 4 levels: Newbie, Easy, Normal, and Hard. The AI is based on Minimax Alpha Beta algorithm. Player can host new room with a password. Set up board with Board Capture. Player can Share the board with others. This Game is built with Laravel.
 - layout: left
+  company: Codester
+  link: https://www.codester.com
+  job_title: Seller - Self employed
+  dates: January 2020 - Present
+  quote: >
+    Buy Code, Scripts, Themes, Templates and Plugins for PHP, JavaScript, HTML, WordPress, Android, iOS and more.
+  description: | # this will include new lines to allow paragraphs
+    I have been the seller of several source codes naming: Chess Game With AI PHP Script - https://www.codester.com/items/23609/chess-game-with-ai-php-script , Yet Another Biorhythm Calculator PHP - https://www.codester.com/items/23917/yet-another-biorhythm-calculator-php , 	Multilingual Chinese Chess Game with many options - https://www.codester.com/items/41601/multilingual-chinese-chess-game-with-many-options
+- layout: left
   company: HoloLab
   link: https://hololab.vn
   job_title: Webmaster
