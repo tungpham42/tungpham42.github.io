@@ -111,6 +111,14 @@
   description: | # this will include new lines to allow paragraphs
     Date add and substract app.
 - layout: left
+  name: Text Counter app
+  link: https://tungpham42.github.io/text-counter/
+  # github: sproogen/resume-theme
+  quote: >
+    Text Counter app
+  description: | # this will include new lines to allow paragraphs
+    Words, Characters, Sentences, and Paragraphs Counter.
+- layout: left
   name: Meal Planet
   link: https://tungpham42.github.io/meal/
   # github: sproogen/resume-theme
