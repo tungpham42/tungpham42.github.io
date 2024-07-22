@@ -33,7 +33,7 @@
   quote: >
     Kambria is the first decentralized open innovation platform for AI & Robotics. Using our platform, anyone can collaborate in researching, developing and commercializing innovative ideas and get rewarded fairly for their contributions.
   description: | # this will include new lines to allow paragraphs
-    My roles are administering and maintaining the company's websites using Wordpress. The websites are <a href="https://kambria.io" target="_blank">https://kambria.io</a> and <a href="https://kambria.io/blog" target="_blank">https://kambria.io/blog</a>. In the Kambria Corporate site, I use Advanced Custom Fields and Custom Post Type UI plugins to manage Custom content such as Portfolios, DAOs, etc with their Custom Fields. The main theme for this website is Divi.
+    My roles are administering and maintaining the company's websites using Wordpress. The websites are <a href="https://kambria.io" target="_blank">https://kambria.io</a> and <a href="https://blog.kambria.io" target="_blank">https://blog.kambria.io</a>. In the Kambria Corporate site, I use Advanced Custom Fields and Custom Post Type UI plugins to manage Custom content such as Portfolios, DAOs, etc with their Custom Fields. The main theme for this website is Divi.
 - layout: left
   company: Freelancer
   link: https://tungpham42.github.io

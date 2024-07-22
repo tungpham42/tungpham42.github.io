@@ -32,7 +32,7 @@
     Home page of Kambria.
 - layout: left
   name: Kambria Blog
-  link: https://kambria.io/blog
+  link: https://blog.kambria.io
   # github: sproogen/resume-theme
   quote: >
     Accelerating Open Innovation.
