@@ -43,18 +43,5 @@
         </div>
       </div>
     </div>
-    <script>
-      function resizeIframe() {
-        const iframe = document.getElementById("myIframe");
-        iframe.style.height =
-          iframe.contentWindow.document.body.scrollHeight + "px";
-      }
-
-      const iframe = document.getElementById("myIframe");
-      iframe.addEventListener("load", resizeIframe);
-
-      // Optional: Re-adjust iframe height on window resize
-      window.addEventListener("resize", resizeIframe);
-    </script>
   </body>
 </html>
