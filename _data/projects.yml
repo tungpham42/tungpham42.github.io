@@ -1,4 +1,68 @@
 - layout: left
+  name: SRT app
+  link: https://tungpham42.github.io/srt/
+  # github: sproogen/resume-theme
+  quote: >
+    CSV to SRT (subtitle) converter app.
+  description: | # this will include new lines to allow paragraphs
+    It is built with ReactJS and Bootstrap.
+- layout: left
+  name: Speech app
+  link: https://tungpham42.github.io/speech/
+  # github: sproogen/resume-theme
+  quote: >
+    Speech to Text and Text to Speech app.
+  description: | # this will include new lines to allow paragraphs
+    It is built with ReactJS and Bootstrap.
+- layout: left
+  name: Speech to Text app
+  link: https://tungpham42.github.io/s2t/
+  # github: sproogen/resume-theme
+  quote: >
+    Speech to Text app.
+  description: | # this will include new lines to allow paragraphs
+    It is built with ReactJS and Bootstrap. It supports 16 languages.
+- layout: left
+  name: Text to Speech app
+  link: https://tungpham42.github.io/t2s/
+  # github: sproogen/resume-theme
+  quote: >
+    Text to Speech app.
+  description: | # this will include new lines to allow paragraphs
+    It is built with ReactJS and Bootstrap. With the help of AI.
+- layout: left
+  name: Biorhythm app
+  link: https://tungpham42.github.io/bio/
+  # github: sproogen/resume-theme
+  quote: >
+    Biorhythm app.
+  description: | # this will include new lines to allow paragraphs
+    Biorhythm Calculator app.
+- layout: left
+  name: Timer app
+  link: https://tungpham42.github.io/timer/
+  # github: sproogen/resume-theme
+  quote: >
+    Timer app.
+  description: | # this will include new lines to allow paragraphs
+    Stopwatch and Countdown app.
+- layout: left
+  name: Date app
+  link: https://tungpham42.github.io/date-app/
+  # github: sproogen/resume-theme
+  quote: >
+    Date app.
+  description: | # this will include new lines to allow paragraphs
+    Date add and substract app.
+- layout: left
+  name: Text Counter app
+  link: https://tungpham42.github.io/text-counter/
+  # github: sproogen/resume-theme
+  quote: >
+    Text Counter app
+  description: | # this will include new lines to allow paragraphs
+    Words, Characters, Sentences, and Paragraphs Counter.
+- layout: left
   name: Cờ tướng (Xiangqi)
   link: https://cotuong.top
   github: tungpham42/CoTuong
@@ -62,62 +126,6 @@
     This is our Capstone project at RMIT Vietnam.
   description: | # this will include new lines to allow paragraphs
     It is built with pure PHP.
-- layout: left
-  name: Speech app
-  link: https://tungpham42.github.io/speech/
-  # github: sproogen/resume-theme
-  quote: >
-    Speech to Text and Text to Speech app.
-  description: | # this will include new lines to allow paragraphs
-    It is built with ReactJS and Bootstrap.
-- layout: left
-  name: Speech to Text app
-  link: https://tungpham42.github.io/s2t/
-  # github: sproogen/resume-theme
-  quote: >
-    Speech to Text app.
-  description: | # this will include new lines to allow paragraphs
-    It is built with ReactJS and Bootstrap. It supports 16 languages.
-- layout: left
-  name: Text to Speech app
-  link: https://tungpham42.github.io/t2s/
-  # github: sproogen/resume-theme
-  quote: >
-    Text to Speech app.
-  description: | # this will include new lines to allow paragraphs
-    It is built with ReactJS and Bootstrap. With the help of AI.
-- layout: left
-  name: Biorhythm app
-  link: https://tungpham42.github.io/bio/
-  # github: sproogen/resume-theme
-  quote: >
-    Biorhythm app.
-  description: | # this will include new lines to allow paragraphs
-    Biorhythm Calculator app.
-- layout: left
-  name: Timer app
-  link: https://tungpham42.github.io/timer/
-  # github: sproogen/resume-theme
-  quote: >
-    Timer app.
-  description: | # this will include new lines to allow paragraphs
-    Stopwatch and Countdown app.
-- layout: left
-  name: Date app
-  link: https://tungpham42.github.io/date-app/
-  # github: sproogen/resume-theme
-  quote: >
-    Date app.
-  description: | # this will include new lines to allow paragraphs
-    Date add and substract app.
-- layout: left
-  name: Text Counter app
-  link: https://tungpham42.github.io/text-counter/
-  # github: sproogen/resume-theme
-  quote: >
-    Text Counter app
-  description: | # this will include new lines to allow paragraphs
-    Words, Characters, Sentences, and Paragraphs Counter.
 - layout: left
   name: Meal Planet
   link: https://tungpham42.github.io/meal/
