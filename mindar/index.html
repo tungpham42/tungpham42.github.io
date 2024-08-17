@@ -3,23 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MindAR GLB Viewer</title>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.140.2/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.140.2/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mindar@latest"></script>
+    <title>MindAR Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/mindar@latest/dist/mindar.js"></script>
     <style>
       body {
         margin: 0;
+        background-color: black;
       }
-      #container {
+      #mindar-container {
         width: 100vw;
         height: 100vh;
+        background-image: url("./sun.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
       }
     </style>
   </head>
   <body>
-    <div id="container"></div>
-
-    <script src="script.js"></script>
+    <div id="mindar-container"></div>
+    <script src="app.js"></script>
   </body>
 </html>
