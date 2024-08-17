@@ -1,20 +1,67 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <style>
+      #uploadContainer {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 100;
+      }
+    </style>
   </head>
   <body>
-    <a-scene mindar-image="imageTargetSrc: ./hololab.mind; filterMinCF: 0.0001; filterBeta: 0.001; warmupTolerance: 1; missTolerance: 1" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <div id="uploadContainer">
+      <input type="file" id="fileInput" accept=".glb" />
+    </div>
+
+    <a-scene
+      mindar-image="imageTargetSrc: ./hololab.mind; filterMinCF: 0.0001; filterBeta: 0.001; warmupTolerance: 1; missTolerance: 1"
+      color-space="sRGB"
+      renderer="colorManagement: true, physicallyCorrectLights"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+    >
       <a-assets>
-        <a-asset-item id="avatarModel" src="./jikin_goldfish.glb"></a-asset-item>
+        <a-asset-item
+          id="avatarModel"
+          src="./jikin_goldfish.glb"
+        ></a-asset-item>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-      <a-entity mindar-image-target="targetIndex: 0">=
-        <a-gltf-model rotation="0 0 0" position="0 0 0.1" scale="0.25 0.25 0.25" src="#avatarModel" animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate">
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model
+          id="model"
+          rotation="0 0 0"
+          position="0 0 0.1"
+          scale="0.25 0.25 0.25"
+          src="#avatarModel"
+          animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+        >
+        </a-gltf-model>
       </a-entity>
       <a-entity environment="preset: default"></a-entity>
     </a-scene>
+
+    <script>
+      document
+        .getElementById("fileInput")
+        .addEventListener("change", function (event) {
+          const file = event.target.files[0];
+          if (file && file.type === "model/gltf-binary") {
+            const url = URL.createObjectURL(file);
+            document.getElementById("avatarModel").setAttribute("src", url);
+            document
+              .getElementById("model")
+              .setAttribute("src", "#avatarModel");
+          } else {
+            alert("Please upload a valid GLB file.");
+          }
+        });
+    </script>
   </body>
 </html>
