@@ -1,4 +1,20 @@
 - layout: left
+  name: A-Frame Generator app
+  link: https://tungpham42.github.io/aframe/
+  # github: sproogen/resume-theme
+  quote: >
+    A-Frame Generator app
+  description: | # this will include new lines to allow paragraphs
+    It is built with ReactJS and Bootstrap.
+- layout: left
+  name: GLB Viewer app
+  link: https://tungpham42.github.io/glb-viewer/
+  # github: sproogen/resume-theme
+  quote: >
+    GLB Model Viewer app.
+  description: | # this will include new lines to allow paragraphs
+    It is built with ReactJS and Bootstrap.
+- layout: left
   name: SRT app
   link: https://tungpham42.github.io/srt/
   # github: sproogen/resume-theme
