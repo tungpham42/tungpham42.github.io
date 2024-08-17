@@ -1,0 +1,8 @@
+Model Information:
+* title:	ASUS TUF DASH F15 LAPTOP
+* source:	https://sketchfab.com/3d-models/asus-tuf-dash-f15-laptop-804fb1368c5947e7b0145d9f86303d35
+* author:	uday (https://sketchfab.com/udayjeet)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
