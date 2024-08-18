@@ -1,4 +1,12 @@
 - layout: left
+  name: QR Code Generator app
+  link: https://tungpham42.github.io/qr/
+  # github: sproogen/resume-theme
+  quote: >
+    QR Code Generator app
+  description: | # this will include new lines to allow paragraphs
+    It is built with ReactJS and Bootstrap.
+- layout: left
   name: A-Frame Generator app
   link: https://tungpham42.github.io/aframe/
   # github: sproogen/resume-theme
