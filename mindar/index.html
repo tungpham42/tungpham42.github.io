@@ -6,19 +6,15 @@
     <script src="./play-all-model-animations.js"></script>
   </head>
   <body>
-    <a-scene
-      mindar-image="imageTargetSrc: ./qrcode1.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 1"
-      color-space="sRGB"
-      renderer="colorManagement: true, physicallyCorrectLights"
-      vr-mode-ui="enabled: false"
-      device-orientation-permission-ui="enabled: false"
-    >
+    <a-scene mindar-image="imageTargetSrc: ./qrcode1.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 1" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
         <a-asset-item id="avatarModel" src="./solar-system.glb"></a-asset-item>
       </a-assets>
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-      <a-entity gltf-model="#avatarModel" play-all-model-animations></a-entity>
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model rotation="0 0 0" position="0 0 0" scale="0.25 0.25 0.25" src="#avatarModel" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear">
+      </a-entity>
       <a-entity environment="preset: default"></a-entity>
     </a-scene>
   </body>
