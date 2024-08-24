@@ -6,7 +6,7 @@
   </head>
   <body>
     <a-scene
-      mindar-image="imageTargetSrc: ./kambria.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 1"
+      mindar-image="imageTargetSrc: ./tung.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 1"
       color-space="sRGB"
       renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false"
@@ -25,10 +25,6 @@
           src="#avatarModel"
           animation="property: rotation; to: 90 0 -90; loop: true; dur: 15000; easing: linear"
         ></a-gltf-model>
-      </a-entity>
-      <a-link href="./index.html" title="Kambria"></a-link>
-      <a-entity camera look-controls>
-        <a-cursor></a-cursor>
       </a-entity>
       <a-entity environment="preset: default"></a-entity>
     </a-scene>
