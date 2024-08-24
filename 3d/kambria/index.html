@@ -6,13 +6,17 @@
   </head>
   <body>
     <a-scene
+      mindar-image="imageTargetSrc: ./kambria.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 1"
       color-space="sRGB"
       renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: false"
     >
       <a-assets>
-        <a-asset-item id="avatarModel" src="./tung.glb"></a-asset-item>
+        <img id="chiLienImage" src="./chiLienImage.png" />
+        <img id="trangImage" src="./trangImage.png" />
+        <img id="thaoImage" src="./thaoImage.png" />
+        <img id="tungImage" src="./tungImage.png" />
       </a-assets>
 
       <a-entity camera position="0 1.6 0" look-controls></a-entity>
@@ -21,24 +25,28 @@
         title="Chị Liên"
         color="#000000"
         position="-1 1 -3"
+        image="#chiLienImage"
       ></a-link>
       <a-link
         href="./trang.html"
         title="Trang"
         color="#000000"
         position="1 1 -3"
+        image="#trangImage"
       ></a-link>
       <a-link
         href="./thao.html"
         title="Thảo"
         color="#000000"
         position="-1 0 -3"
+        image="#thaoImage"
       ></a-link>
       <a-link
         href="./tung.html"
         title="Tùng"
         color="#000000"
         position="1 0 -3"
+        image="#tungImage"
       ></a-link>
       <a-entity camera look-controls>
         <a-cursor></a-cursor>
