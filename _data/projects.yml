@@ -1,4 +1,20 @@
 - layout: left
+  name: Proverb app
+  link: https://proverb.cungrao.net
+  # github: sproogen/resume-theme
+  quote: >
+    Proverb app
+  description: | # this will include new lines to allow paragraphs
+    It is built with Symfony and Bootstrap.
+- layout: left
+  name: Todo List app
+  link: https://todo.cungrao.net
+  # github: sproogen/resume-theme
+  quote: >
+    Todo List app
+  description: | # this will include new lines to allow paragraphs
+    It is built with Symfony, MySQL and Bootstrap.
+- layout: left
   name: QR Code Generator app
   link: https://tungpham42.github.io/qr/
   # github: sproogen/resume-theme
