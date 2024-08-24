@@ -1,4 +1,12 @@
 - layout: left
+  name: Biorhythm app
+  link: https://biorhythm.cungrao.net
+  # github: sproogen/resume-theme
+  quote: >
+    Biorhythm app
+  description: | # this will include new lines to allow paragraphs
+    It is built with Symfony and Bootstrap.
+- layout: left
   name: Proverb app
   link: https://proverb.cungrao.net
   # github: sproogen/resume-theme
