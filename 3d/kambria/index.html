@@ -13,45 +13,35 @@
       device-orientation-permission-ui="enabled: false"
     >
       <a-assets>
-        <img id="chiLienImage" src="./chiLienImage.png" />
-        <img id="trangImage" src="./trangImage.png" />
-        <img id="thaoImage" src="./thaoImage.png" />
-        <img id="tungImage" src="./tungImage.png" />
+        <a-asset-item id="avatarModel"></a-asset-item>
       </a-assets>
 
-      <a-entity camera position="0 1.6 0" look-controls></a-entity>
-      <a-link
-        href="./chiLien.html"
-        title="Chị Liên"
-        color="#000000"
-        position="-1 1 -3"
-        image="#chiLienImage"
-      ></a-link>
-      <a-link
-        href="./trang.html"
-        title="Trang"
-        color="#000000"
-        position="1 1 -3"
-        image="#trangImage"
-      ></a-link>
-      <a-link
-        href="./thao.html"
-        title="Thảo"
-        color="#000000"
-        position="-1 0 -3"
-        image="#thaoImage"
-      ></a-link>
-      <a-link
-        href="./tung.html"
-        title="Tùng"
-        color="#000000"
-        position="1 0 -3"
-        image="#tungImage"
-      ></a-link>
-      <a-entity camera look-controls>
-        <a-cursor></a-cursor>
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model
+          rotation="90 360 -90"
+          position="0 0 0"
+          scale="0.175 0.175 0.175"
+          src="#avatarModel"
+          animation="property: rotation; to: 90 0 -90; loop: true; dur: 15000; easing: linear"
+        ></a-gltf-model>
       </a-entity>
       <a-entity environment="preset: default"></a-entity>
     </a-scene>
+    <script>
+      const queryString = window.location.search;
+
+      // Create a URLSearchParams object
+      const urlParams = new URLSearchParams(queryString);
+
+      // Get the value of the "key" parameter
+      const key = urlParams.get("key");
+      const avatarModelElement = document.getElementById("avatarModel");
+
+      // Set the src attribute to include the key value
+      if (key) {
+        avatarModelElement.setAttribute("src", `./${key}.glb`);
+      }
+    </script>
   </body>
 </html>
