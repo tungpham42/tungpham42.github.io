@@ -34,13 +34,13 @@
       // Create a URLSearchParams object
       const urlParams = new URLSearchParams(queryString);
 
-      // Get the value of the "key" parameter
-      const key = urlParams.get("key");
+      // Get the value of the "id" parameter
+      const id = urlParams.get("id");
       const avatarModelElement = document.getElementById("avatarModel");
 
-      // Set the src attribute to include the key value
-      if (key) {
-        avatarModelElement.setAttribute("src", `./${key}.glb`);
+      // Set the src attribute to include the id value
+      if (id) {
+        avatarModelElement.setAttribute("src", `./${id}.glb`);
       }
     </script>
   </body>
