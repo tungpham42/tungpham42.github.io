@@ -1,4 +1,12 @@
 - layout: left
+  name: Máy tính BMI
+  link: https://tungpham42.github.io/maytinh-bmi/
+  # github: sproogen/resume-theme
+  quote: >
+    Tính chỉ số BMI và đưa ra đề xuất
+  description: | # this will include new lines to allow paragraphs
+    Máy tính BMI làm bằng Angular, Bootstrap, và Bootswatch
+- layout: left
   name: Biorhythm app
   link: https://biorhythm.cungrao.net
   # github: sproogen/resume-theme
