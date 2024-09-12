@@ -1,4 +1,12 @@
 - layout: left
+  name: Máy tính Nhịp sinh học
+  link: https://nhipsinhhoc.netlify.app/
+  # github: sproogen/resume-theme
+  quote: >
+    Tính chỉ số Sức khỏe, Tình cảm, Trí tuệ
+  description: | # this will include new lines to allow paragraphs
+    Máy tính Nhịp sinh học làm bằng Angular, Highcharts, Bootstrap, và Bootswatch
+- layout: left
   name: Máy tính BMI
   link: https://tungpham42.github.io/maytinh-bmi/
   # github: sproogen/resume-theme
