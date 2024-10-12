@@ -244,7 +244,7 @@
       </div>
 
       <a-scene
-        mindar-image="imageTargetSrc: ./new.mind; showStats: false; uiScanning: #hololab-scanning-overlay;"
+        mindar-image="imageTargetSrc: ./new.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 1; showStats: false; uiScanning: #hololab-scanning-overlay;"
         embedded
         color-space="sRGB"
         renderer="colorManagement: true, physicallyCorrectLights"
@@ -252,7 +252,7 @@
         device-orientation-permission-ui="enabled: false"
       >
         <a-assets>
-          <img id="card" src="./new/card.png" />
+          <img id="card" src="./new/hololab.png" />
           <img id="icon-web" src="./new/icons/web.png" />
           <img id="icon-location" src="./new/icons/location.png" />
           <img id="icon-profile" src="./new/icons/profile.png" />
