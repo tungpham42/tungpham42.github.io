@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-    <script src="./play-all-model-animations.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.1.0/dist/aframe-extras.min.js"></script>
   </head>
   <body>
     <a-scene
@@ -22,13 +22,56 @@
         <a-gltf-model
           rotation="0 90 0"
           position="0 0 0"
-          scale="0.5 0.5 0.5"
+          scale="0.3 0.3 0.3"
           src="#avatarModel"
-          animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+          gesture-handler
         >
         </a-gltf-model>
       </a-entity>
       <a-entity environment="preset: default"></a-entity>
     </a-scene>
+    <script>
+      AFRAME.registerComponent("gesture-handler", {
+        schema: {
+          enabled: { default: true },
+        },
+        init: function () {
+          this.modelEl = this.el;
+          this.initialRotation = { x: 0, y: 0, z: 0 };
+          this.touchStartX = 0;
+          this.touchStartY = 0;
+          this.touchStartRotationY = 0;
+
+          this.modelEl.addEventListener(
+            "touchstart",
+            this.onTouchStart.bind(this)
+          );
+          this.modelEl.addEventListener(
+            "touchmove",
+            this.onTouchMove.bind(this)
+          );
+        },
+        onTouchStart: function (event) {
+          if (event.touches && event.touches.length === 1) {
+            // Get the initial touch point
+            this.touchStartX = event.touches[0].clientX;
+            this.touchStartY = event.touches[0].clientY;
+
+            // Save the initial rotation of the model
+            const currentRotation = this.modelEl.getAttribute("rotation");
+            this.touchStartRotationY = currentRotation.y;
+          }
+        },
+        onTouchMove: function (event) {
+          if (event.touches && event.touches.length === 1) {
+            const deltaX = event.touches[0].clientX - this.touchStartX;
+
+            // Rotate the model based on horizontal swipe
+            const newRotationY = this.touchStartRotationY + deltaX * 0.2; // Adjust sensitivity here
+            this.modelEl.setAttribute("rotation", `0 ${newRotationY} 0`);
+          }
+        },
+      });
+    </script>
   </body>
 </html>
