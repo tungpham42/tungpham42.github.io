@@ -37,10 +37,11 @@
         },
         init: function () {
           this.modelEl = this.el;
-          this.initialRotation = { x: 0, y: 0, z: 0 };
+          this.initialPosition = { x: 0, y: 0, z: 0 };
           this.touchStartX = 0;
           this.touchStartY = 0;
-          this.touchStartRotationY = 0;
+          this.touchStartPositionX = 0;
+          this.touchStartPositionZ = 0;
 
           this.modelEl.addEventListener(
             "touchstart",
@@ -57,18 +58,25 @@
             this.touchStartX = event.touches[0].clientX;
             this.touchStartY = event.touches[0].clientY;
 
-            // Save the initial rotation of the model
-            const currentRotation = this.modelEl.getAttribute("rotation");
-            this.touchStartRotationY = currentRotation.y;
+            // Save the initial position of the model
+            const currentPosition = this.modelEl.getAttribute("position");
+            this.touchStartPositionX = currentPosition.x;
+            this.touchStartPositionZ = currentPosition.z;
           }
         },
         onTouchMove: function (event) {
           if (event.touches && event.touches.length === 1) {
             const deltaX = event.touches[0].clientX - this.touchStartX;
+            const deltaY = event.touches[0].clientY - this.touchStartY;
 
-            // Rotate the model based on horizontal swipe
-            const newRotationY = this.touchStartRotationY + deltaX * 0.2; // Adjust sensitivity here
-            this.modelEl.setAttribute("rotation", `0 ${newRotationY} 0`);
+            // Move the model along the X and Z axes
+            const newPositionX = this.touchStartPositionX + deltaX * 0.01; // Adjust sensitivity here
+            const newPositionZ = this.touchStartPositionZ + deltaY * 0.01; // Adjust sensitivity here
+
+            this.modelEl.setAttribute(
+              "position",
+              `${newPositionX} 0 ${newPositionZ}`
+            );
           }
         },
       });
