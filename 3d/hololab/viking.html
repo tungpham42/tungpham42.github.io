@@ -163,7 +163,13 @@
           <a-asset-item id="avatarModel" src="./viking.glb"></a-asset-item>
         </a-assets>
 
-        <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+        <a-camera
+          position="0 0 0"
+          look-controls="enabled: false"
+          cursor="fuse: false; rayOrigin: mouse;"
+          raycaster="far: 10000; objects: .clickable"
+        >
+        </a-camera>
 
         <a-entity
           id="vikingtarget"
@@ -230,7 +236,7 @@
             width="2"
             position="0 -0.25 0"
             geometry="primitive:plane; height: 0.1; width: 2;"
-            material="opacity: 1"
+            material="opacity: 0.5"
           ></a-text>
         </a-entity>
         <a-entity environment="preset: default"></a-entity>
