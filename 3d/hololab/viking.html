@@ -28,14 +28,14 @@
         cockpitButton.addEventListener("click", function (evt) {
           text.setAttribute(
             "value",
-            "Buồng lái của tàu chở hàng, hay còn gọi là cabin, là nơi điều khiển và giám sát hoạt động của tàu. Nó thường được thiết kế rộng rãi để đáp ứng yêu cầu công việc và thoải mái cho các thuyền viên, bao gồm thuyền trưởng và nhân viên điều khiển."
+            "An ocean ship cockpit, often referred to as the bridge, is the command center of a vessel. It’s where the ship's officers navigate and control the ship's operations."
           );
           currentTab = "cockpit";
         });
         containerButton.addEventListener("click", function (evt) {
           text.setAttribute(
             "value",
-            "Thùng hàng là một loại thùng vận chuyển tiêu chuẩn được sử dụng để chứa hàng hóa trong quá trình vận chuyển trên các phương tiện như tàu biển, xe tải, và tàu hỏa. Các thùng hàng này được thiết kế để dễ dàng bốc xếp, vận chuyển, và lưu trữ, giúp tối ưu hóa quy trình kho vận toàn cầu."
+            "A ship container, often referred to as a shipping container or cargo container, is a standardized, large metal box used for transporting goods by sea, land, or rail."
           );
           currentTab = "container";
         });
@@ -110,17 +110,7 @@
         align-items: center;
         justify-content: center;
         position: relative;
-
-        background: linear-gradient(to right, white 10px, transparent 10px) 0 0,
-          linear-gradient(to right, white 10px, transparent 10px) 0 100%,
-          linear-gradient(to left, white 10px, transparent 10px) 100% 0,
-          linear-gradient(to left, white 10px, transparent 10px) 100% 100%,
-          linear-gradient(to bottom, white 10px, transparent 10px) 0 0,
-          linear-gradient(to bottom, white 10px, transparent 10px) 100% 0,
-          linear-gradient(to top, white 10px, transparent 10px) 0 100%,
-          linear-gradient(to top, white 10px, transparent 10px) 100% 100%;
-        background-repeat: no-repeat;
-        background-size: 40px 40px;
+        background: white;
       }
 
       #viking-scanning-overlay.hidden {
@@ -245,7 +235,7 @@
             color="black"
             align="center"
             width="2"
-            position="0 -1 0"
+            position="0 1 0"
             geometry="primitive:plane; height: 0.1; width: 2;"
             material="opacity: 0.8"
           ></a-text>
