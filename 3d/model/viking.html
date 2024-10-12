@@ -4,82 +4,254 @@
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.1.0/dist/aframe-extras.min.js"></script>
-  </head>
-  <body>
-    <a-scene
-      mindar-image="imageTargetSrc: ./viking.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 1"
-      color-space="sRGB"
-      renderer="colorManagement: true, physicallyCorrectLights"
-      vr-mode-ui="enabled: false"
-      device-orientation-permission-ui="enabled: false"
-    >
-      <a-assets>
-        <a-asset-item id="avatarModel" src="./viking.glb"></a-asset-item>
-      </a-assets>
-
-      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-      <a-entity mindar-image-target="targetIndex: 0">
-        <a-gltf-model
-          rotation="0 90 0"
-          position="0 0 0"
-          scale="0.3 0.3 0.3"
-          src="#avatarModel"
-          gesture-handler
-        >
-        </a-gltf-model>
-      </a-entity>
-      <a-entity environment="preset: default"></a-entity>
-    </a-scene>
     <script>
-      AFRAME.registerComponent("gesture-handler", {
-        schema: {
-          enabled: { default: true },
-        },
+      const showInfo = () => {
+        let y = 0;
+        const cockpitButton = document.querySelector("#cockpit-button");
+        const containerButton = document.querySelector("#container-button");
+        const emailButton = document.querySelector("#email-button");
+        const locationButton = document.querySelector("#location-button");
+        const text = document.querySelector("#text");
+
+        cockpitButton.setAttribute("visible", true);
+        setTimeout(() => {
+          containerButton.setAttribute("visible", true);
+        }, 300);
+        setTimeout(() => {
+          emailButton.setAttribute("visible", true);
+        }, 600);
+        setTimeout(() => {
+          locationButton.setAttribute("visible", true);
+        }, 900);
+
+        let currentTab = "";
+        cockpitButton.addEventListener("click", function (evt) {
+          text.setAttribute(
+            "value",
+            "Buồng lái của tàu chở hàng, hay còn gọi là cabin, là nơi điều khiển và giám sát hoạt động của tàu. Nó thường được thiết kế rộng rãi để đáp ứng yêu cầu công việc và thoải mái cho các thuyền viên, bao gồm thuyền trưởng và nhân viên điều khiển."
+          );
+          currentTab = "cockpit";
+        });
+        containerButton.addEventListener("click", function (evt) {
+          text.setAttribute(
+            "value",
+            "Thùng hàng là một loại thùng vận chuyển tiêu chuẩn được sử dụng để chứa hàng hóa trong quá trình vận chuyển trên các phương tiện như tàu biển, xe tải, và tàu hỏa. Các thùng hàng này được thiết kế để dễ dàng bốc xếp, vận chuyển, và lưu trữ, giúp tối ưu hóa quy trình kho vận toàn cầu."
+          );
+          currentTab = "container";
+        });
+        emailButton.addEventListener("click", function (evt) {
+          text.setAttribute("value", "hotro@hololab.vn");
+          currentTab = "email";
+        });
+        locationButton.addEventListener("click", function (evt) {
+          console.log("loc");
+          text.setAttribute("value", "Ho Chi Minh City, Vietnam");
+          currentTab = "location";
+        });
+        text.addEventListener("click", function (evt) {
+          if (currentTab === "web") {
+            window.location.href = "https://hololab.vn";
+          }
+        });
+      };
+
+      AFRAME.registerComponent("vikingtarget", {
         init: function () {
-          this.modelEl = this.el;
-          this.initialPosition = { x: 0, y: 0, z: 0 };
-          this.touchStartX = 0;
-          this.touchStartY = 0;
-          this.touchStartPositionX = 0;
-          this.touchStartPositionZ = 0;
-
-          this.modelEl.addEventListener(
-            "touchstart",
-            this.onTouchStart.bind(this)
-          );
-          this.modelEl.addEventListener(
-            "touchmove",
-            this.onTouchMove.bind(this)
-          );
-        },
-        onTouchStart: function (event) {
-          if (event.touches && event.touches.length === 1) {
-            // Get the initial touch point
-            this.touchStartX = event.touches[0].clientX;
-            this.touchStartY = event.touches[0].clientY;
-
-            // Save the initial position of the model
-            const currentPosition = this.modelEl.getAttribute("position");
-            this.touchStartPositionX = currentPosition.x;
-            this.touchStartPositionZ = currentPosition.z;
-          }
-        },
-        onTouchMove: function (event) {
-          if (event.touches && event.touches.length === 1) {
-            const deltaX = event.touches[0].clientX - this.touchStartX;
-            const deltaY = event.touches[0].clientY - this.touchStartY;
-
-            // Move the model along the X and Z axes
-            const newPositionX = this.touchStartPositionX + deltaX * 0.01; // Adjust sensitivity here
-            const newPositionZ = this.touchStartPositionZ + deltaY * 0.01; // Adjust sensitivity here
-
-            this.modelEl.setAttribute(
-              "position",
-              `${newPositionX} 0 ${newPositionZ}`
-            );
-          }
+          this.el.addEventListener("targetFound", (event) => {
+            console.log("target found");
+            showInfo();
+          });
+          this.el.addEventListener("targetLost", (event) => {
+            console.log("target found");
+          });
+          //this.el.emit('targetFound');
         },
       });
     </script>
+
+    <style>
+      body {
+        margin: 0;
+      }
+      .viking-container {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      #viking-scanning-overlay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: transparent;
+        z-index: 2;
+      }
+      @media (min-aspect-ratio: 1/1) {
+        #viking-scanning-overlay .inner {
+          width: 50vh;
+          height: 50vh;
+        }
+      }
+      @media (max-aspect-ratio: 1/1) {
+        #viking-scanning-overlay .inner {
+          width: 80vw;
+          height: 80vw;
+        }
+      }
+
+      #viking-scanning-overlay .inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        background: linear-gradient(to right, white 10px, transparent 10px) 0 0,
+          linear-gradient(to right, white 10px, transparent 10px) 0 100%,
+          linear-gradient(to left, white 10px, transparent 10px) 100% 0,
+          linear-gradient(to left, white 10px, transparent 10px) 100% 100%,
+          linear-gradient(to bottom, white 10px, transparent 10px) 0 0,
+          linear-gradient(to bottom, white 10px, transparent 10px) 100% 0,
+          linear-gradient(to top, white 10px, transparent 10px) 0 100%,
+          linear-gradient(to top, white 10px, transparent 10px) 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 40px 40px;
+      }
+
+      #viking-scanning-overlay.hidden {
+        display: none;
+      }
+
+      #viking-scanning-overlay img {
+        opacity: 0.6;
+        width: 90%;
+        align-self: center;
+      }
+
+      #viking-scanning-overlay .inner .scanline {
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        background: white;
+        animation: move 2s linear infinite;
+      }
+      @keyframes move {
+        0%,
+        100% {
+          top: 0%;
+        }
+        50% {
+          top: calc(100% - 10px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="viking-container">
+      <div id="viking-scanning-overlay" class="hidden">
+        <div class="inner">
+          <img src="./viking.jpg" />
+          <div class="scanline"></div>
+        </div>
+      </div>
+      <a-scene
+        mindar-image="imageTargetSrc: ./viking.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 1"
+        color-space="sRGB"
+        renderer="colorManagement: true, physicallyCorrectLights"
+        vr-mode-ui="enabled: false"
+        device-orientation-permission-ui="enabled: false"
+      >
+        <a-assets>
+          <img id="icon-cockpit" src="./viking/icons/cockpit.png" />
+          <img id="icon-container" src="./viking/icons/container.png" />
+          <img id="icon-email" src="./viking/icons/email.png" />
+          <img id="icon-location" src="./viking/icons/location.png" />
+          <a-asset-item id="avatarModel" src="./viking.glb"></a-asset-item>
+        </a-assets>
+
+        <a-camera
+          position="0 0 0"
+          look-controls="enabled: false"
+          cursor="fuse: false; rayOrigin: mouse;"
+          raycaster="far: 10000; objects: .clickable"
+        >
+        </a-camera>
+
+        <a-entity
+          id="vikingtarget"
+          vikingtarget
+          mindar-image-target="targetIndex: 0"
+          ><a-image
+            visible="false"
+            id="cockpit-button"
+            class="clickable"
+            src="#icon-cockpit"
+            position="-0.42 -0.5 0"
+            height="0.15"
+            width="0.15"
+            animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          ></a-image>
+
+          <a-image
+            visible="false"
+            id="container-button"
+            class="clickable"
+            src="#icon-container"
+            alpha-test="0.5"
+            position="-0.14 -0.5 0"
+            height="0.15"
+            width="0.15"
+            animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          ></a-image>
+
+          <a-image
+            visible="false"
+            id="email-button"
+            class="clickable"
+            src="#icon-email"
+            position="0.14 -0.5 0"
+            height="0.15"
+            width="0.15"
+            animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          ></a-image>
+
+          <a-image
+            visible="false"
+            id="location-button"
+            class="clickable"
+            src="#icon-location"
+            position="0.42 -0.5 0"
+            height="0.15"
+            width="0.15"
+            animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          ></a-image>
+
+          <a-gltf-model
+            rotation="0 90 0"
+            position="0 0 0"
+            scale="0.3 0.3 0.3"
+            src="#avatarModel"
+          ></a-gltf-model>
+
+          <a-text
+            id="text"
+            class="clickable"
+            value=""
+            color="black"
+            align="center"
+            width="2"
+            position="0 -1 0"
+            geometry="primitive:plane; height: 0.1; width: 2;"
+            material="opacity: 0.8"
+          ></a-text>
+        </a-entity>
+        <a-entity environment="preset: default"></a-entity>
+      </a-scene>
+    </div>
   </body>
 </html>
