@@ -110,7 +110,7 @@
         align-items: center;
         justify-content: center;
         position: relative;
-        background: transparent;
+        background: white;
       }
 
       #viking-scanning-overlay.hidden {
@@ -127,7 +127,7 @@
         position: absolute;
         width: 100%;
         height: 10px;
-        background: transparent;
+        background: white;
         animation: move 2s linear infinite;
       }
       @keyframes move {
@@ -143,8 +143,13 @@
   </head>
   <body>
     <div class="viking-container">
+      <div id="viking-scanning-overlay" class="hidden">
+        <div class="inner">
+          <img src="./viking.jpg" />
+        </div>
+      </div>
       <a-scene
-        mindar-image="imageTargetSrc: ./viking.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 1"
+        mindar-image="imageTargetSrc: ./viking.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 1; showStats: false; uiScanning: #viking-scanning-overlay;"
         color-space="sRGB"
         renderer="colorManagement: true, physicallyCorrectLights"
         vr-mode-ui="enabled: false"
