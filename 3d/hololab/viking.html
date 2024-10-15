@@ -31,19 +31,25 @@
         let currentTab = "";
         cockpitButton.addEventListener("click", function (evt) {
           cockpitImage.setAttribute("visible", true);
+          containerImage.setAttribute("visible", false);
           currentTab = "cockpit";
         });
         containerButton.addEventListener("click", function (evt) {
           containerImage.setAttribute("visible", true);
+          cockpitImage.setAttribute("visible", false);
           currentTab = "container";
         });
         emailButton.addEventListener("click", function (evt) {
           text.setAttribute("value", "hotro@hololab.vn");
+          cockpitImage.setAttribute("visible", false);
+          containerImage.setAttribute("visible", false);
           currentTab = "email";
         });
         locationButton.addEventListener("click", function (evt) {
           console.log("loc");
           text.setAttribute("value", "Ho Chi Minh City, Vietnam");
+          cockpitImage.setAttribute("visible", false);
+          containerImage.setAttribute("visible", false);
           currentTab = "location";
         });
         text.addEventListener("click", function (evt) {
@@ -206,7 +212,7 @@
             id="cockpit-image"
             class="clickable"
             src="#img-cockpit"
-            position="0 -0.35 0"
+            position="0 -0.5 0"
             height="0.5"
             width="0.5"
           ></a-image>
@@ -217,7 +223,7 @@
             class="clickable"
             src="#img-container"
             alpha-test="0.5"
-            position="0 -0.35 0"
+            position="0 -0.5 0"
             height="0.5"
             width="0.5"
           ></a-image>
