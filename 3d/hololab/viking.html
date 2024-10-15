@@ -141,11 +141,11 @@
   </head>
   <body>
     <div class="viking-container">
-      <div id="viking-scanning-overlay" class="hidden">
+      <!-- <div id="viking-scanning-overlay" class="hidden">
         <div class="inner">
           <img src="./viking.jpg" />
         </div>
-      </div>
+      </div> -->
       <a-scene
         mindar-image="imageTargetSrc: ./viking.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 1; showStats: false; uiScanning: #viking-scanning-overlay;"
         color-space="sRGB"
@@ -183,7 +183,7 @@
             id="cockpit-button"
             class="clickable"
             src="#icon-cockpit"
-            position="-0.42 0 0"
+            position="-0.42 -0.15 0"
             height="0.15"
             width="0.15"
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
@@ -195,7 +195,7 @@
             class="clickable"
             src="#icon-container"
             alpha-test="0.5"
-            position="-0.14 0 0"
+            position="-0.14 -0.15 0"
             height="0.15"
             width="0.15"
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
@@ -229,7 +229,7 @@
             id="email-button"
             class="clickable"
             src="#icon-email"
-            position="0.14 0 0"
+            position="0.14 -0.15 0"
             height="0.15"
             width="0.15"
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
@@ -240,7 +240,7 @@
             id="location-button"
             class="clickable"
             src="#icon-location"
-            position="0.42 0 0"
+            position="0.42 -0.15 0"
             height="0.15"
             width="0.15"
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
@@ -248,8 +248,8 @@
 
           <a-gltf-model
             rotation="0 90 0"
-            position="0 0 0"
-            scale="0.2 0.2 0.2"
+            position="0 0.15 0"
+            scale="0.25 0.25 0.25"
             src="#avatarModel"
           ></a-gltf-model>
 
