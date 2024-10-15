@@ -32,11 +32,13 @@
         cockpitButton.addEventListener("click", function (evt) {
           cockpitImage.setAttribute("visible", true);
           containerImage.setAttribute("visible", false);
+          text.setAttribute("visible", false);
           currentTab = "cockpit";
         });
         containerButton.addEventListener("click", function (evt) {
           containerImage.setAttribute("visible", true);
           cockpitImage.setAttribute("visible", false);
+          text.setAttribute("visible", false);
           currentTab = "container";
         });
         emailButton.addEventListener("click", function (evt) {
@@ -189,7 +191,7 @@
             id="cockpit-button"
             class="clickable"
             src="#icon-cockpit"
-            position="-0.42 -0.05 0"
+            position="-0.3 -0.05 0"
             height="0.15"
             width="0.15"
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
@@ -201,7 +203,7 @@
             class="clickable"
             src="#icon-container"
             alpha-test="0.5"
-            position="-0.14 -0.05 0"
+            position="-0.1 -0.05 0"
             height="0.15"
             width="0.15"
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
@@ -233,7 +235,7 @@
             id="email-button"
             class="clickable"
             src="#icon-email"
-            position="0.14 -0.05 0"
+            position="0.1 -0.05 0"
             height="0.15"
             width="0.15"
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
@@ -244,7 +246,7 @@
             id="location-button"
             class="clickable"
             src="#icon-location"
-            position="0.42 -0.05 0"
+            position="0.3 -0.05 0"
             height="0.15"
             width="0.15"
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
