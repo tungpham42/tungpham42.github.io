@@ -150,6 +150,7 @@
     </style>
   </head>
   <body>
+    <button id="startCamera" onclick="startAR()">Bắt đầu</button>
     <div class="viking-container">
       <!-- <div id="viking-scanning-overlay" class="hidden">
         <div class="inner">
@@ -157,6 +158,7 @@
         </div>
       </div> -->
       <a-scene
+        mindar="imageTracking: true"
         mindar-image="imageTargetSrc: ./viking.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 1; showStats: false; uiScanning: #viking-scanning-overlay;"
         color-space="sRGB"
         renderer="colorManagement: true, physicallyCorrectLights"
@@ -275,6 +277,15 @@
         </a-entity>
         <a-entity environment="preset: default"></a-entity>
       </a-scene>
+      <script>
+        function startAR() {
+          // Start the MindAR session
+          const scene = document.querySelector("a-scene");
+          if (scene) {
+            scene.enterVR();
+          }
+        }
+      </script>
     </div>
   </body>
 </html>
