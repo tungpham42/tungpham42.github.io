@@ -158,7 +158,9 @@
         </div>
       </div> -->
       <a-scene
-        mindar="imageTracking: true"
+        id="ar-scene"
+        style="display: none"
+        mindar="imageTracking: false"
         mindar-image="imageTargetSrc: ./viking.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 1; showStats: false; uiScanning: #viking-scanning-overlay;"
         color-space="sRGB"
         renderer="colorManagement: true, physicallyCorrectLights"
@@ -279,11 +281,15 @@
       </a-scene>
       <script>
         function startAR() {
-          // Start the MindAR session
-          const scene = document.querySelector("a-scene");
-          if (scene) {
-            scene.enterVR();
-          }
+          // Show the AR scene and start MindAR
+          const scene = document.getElementById("ar-scene");
+          scene.style.display = "block";
+
+          // Initialize MindAR tracking
+          scene.setAttribute("mindar", "imageTracking: true");
+
+          // Enter VR mode to start the AR session
+          scene.enterVR();
         }
       </script>
     </div>
