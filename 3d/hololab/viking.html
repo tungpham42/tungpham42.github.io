@@ -86,21 +86,8 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
-      #startCamera {
-        background-color: #3cade4;
-        border: 0;
-        color: white;
-        padding: 20px 30px;
-        font-size: 25px;
-        line-height: 1em;
-        text-transform: uppercase;
-        border-radius: 10px;
-        font-family: Verdana;
-      }
+
       #viking-scanning-overlay {
         display: flex;
         align-items: center;
@@ -164,17 +151,12 @@
   </head>
   <body>
     <div class="viking-container">
-      <button id="startCamera" onclick="startAR()">Bắt đầu</button>
       <!-- <div id="viking-scanning-overlay" class="hidden">
         <div class="inner">
           <img src="./viking.jpg" />
         </div>
       </div> -->
       <a-scene
-        id="ar-scene"
-        style="display: none"
-        embedded
-        mindar="imageTracking: false"
         mindar-image="imageTargetSrc: ./viking.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 1; showStats: false; uiScanning: #viking-scanning-overlay;"
         color-space="sRGB"
         renderer="colorManagement: true, physicallyCorrectLights"
@@ -293,31 +275,6 @@
         </a-entity>
         <a-entity environment="preset: default"></a-entity>
       </a-scene>
-      <script>
-        function startAR() {
-          // Request camera access
-          navigator.mediaDevices
-            .getUserMedia({ video: true })
-            .then((stream) => {
-              // Stop the camera stream immediately to allow MindAR to take over
-              stream.getTracks().forEach((track) => track.stop());
-
-              // Show the AR scene and start MindAR
-              const scene = document.getElementById("ar-scene");
-              scene.style.display = "block";
-
-              // Initialize MindAR tracking
-              scene.setAttribute("mindar", "imageTracking: true");
-
-              // Enter VR mode to start the AR session
-              scene.enterVR();
-            })
-            .catch((error) => {
-              console.error("Error accessing the camera:", error);
-              alert("Camera permission denied or not available.");
-            });
-        }
-      </script>
     </div>
   </body>
 </html>
