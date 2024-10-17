@@ -37,13 +37,13 @@
           fourButton.setAttribute("visible", true);
         }, 900);
 
-        portfolioLeftButton.setAttribute("visible", false);
-        portfolioRightButton.setAttribute("visible", false);
+        // portfolioLeftButton.setAttribute("visible", false);
+        // portfolioRightButton.setAttribute("visible", false);
 
-        portfolioOne.setAttribute("visible", false);
-        portfolioTwo.setAttribute("visible", false);
-        portfolioThree.setAttribute("visible", false);
-        portfolioFour.setAttribute("visible", false);
+        // portfolioOne.setAttribute("visible", false);
+        // portfolioTwo.setAttribute("visible", false);
+        // portfolioThree.setAttribute("visible", false);
+        // portfolioFour.setAttribute("visible", false);
 
         let currentTab = "";
         oneButton.addEventListener("click", function (evt) {
@@ -220,11 +220,7 @@
         init: function () {
           this.el.addEventListener("targetFound", (event) => {
             console.log("target found");
-            showPortfolioOne(() => {
-              setTimeout(() => {
-                showInfo();
-              }, 300);
-            });
+            showInfo();
           });
           this.el.addEventListener("targetLost", (event) => {
             console.log("target found");
