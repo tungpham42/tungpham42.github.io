@@ -1,0 +1,279 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="icon-one" src="./haian/icons/1.png" />
+        <img id="icon-two" src="./haian/icons/2.png" />
+        <img id="icon-three" src="./haian/icons/3.png" />
+        <img id="icon-four" src="./haian/icons/4.png" />
+
+        <img id="icon-left" src="./haian/icons/left.png" />
+        <img id="icon-right" src="./haian/icons/right.png" />
+
+        <img id="portfolio-one-first-img" src="./haian/portfolios/one/1.jpg" />
+        <img id="portfolio-one-second-img" src="./haian/portfolios/one/2.jpg" />
+        <img id="portfolio-one-third-img" src="./haian/portfolios/one/3.jpg" />
+
+        <img id="portfolio-two-first-img" src="./haian/portfolios/one/1.jpg" />
+        <img id="portfolio-two-second-img" src="./haian/portfolios/two/2.jpg" />
+        <img id="portfolio-two-third-img" src="./haian/portfolios/two/3.jpg" />
+
+        <img
+          id="portfolio-three-first-img"
+          src="./haian/portfolios/three/1.jpg"
+        />
+        <img
+          id="portfolio-three-second-img"
+          src="./haian/portfolios/three/2.jpg"
+        />
+        <img
+          id="portfolio-three-third-img"
+          src="./haian/portfolios/three/3.jpg"
+        />
+
+        <img
+          id="portfolio-four-first-img"
+          src="./haian/portfolios/four/1.jpg"
+        />
+        <img
+          id="portfolio-four-second-img"
+          src="./haian/portfolios/four/2.jpg"
+        />
+        <img
+          id="portfolio-four-third-img"
+          src="./haian/portfolios/four/3.jpg"
+        />
+      </a-assets>
+
+      <a-camera
+        position="0 0 0"
+        look-controls="enabled: false"
+        cursor="fuse: false; rayOrigin: mouse;"
+        raycaster="far: 10000; objects: .clickable"
+      >
+      </a-camera>
+
+      <a-entity visible="false" id="portfolio-panel-one" position="0 0 -0.01">
+        <a-entity id="portfolio-item-one-0" visible="false">
+          <a-image
+            class="clickable"
+            src="#portfolio-one-first-img"
+            alpha-test="0.5"
+            position="0 0 0"
+            height="0.552"
+            width="1"
+          >
+          </a-image>
+        </a-entity>
+        <a-entity id="portfolio-item-one-1" visible="false">
+          <a-image
+            class="clickable"
+            src="#portfolio-one-second-img"
+            alpha-test="0.5"
+            position="0 0 0"
+            height="0.552"
+            width="1"
+          >
+          </a-image>
+        </a-entity>
+        <a-entity id="portfolio-item-one-2" visible="false">
+          <a-image
+            class="clickable"
+            src="#portfolio-one-third-img"
+            alpha-test="0.5"
+            position="0 0 0"
+            height="0.552"
+            width="1"
+          >
+          </a-image>
+        </a-entity>
+      </a-entity>
+
+      <a-entity visible="false" id="portfolio-panel-two" position="0 0 -0.01">
+        <a-entity id="portfolio-item-two-0" visible="false">
+          <a-image
+            class="clickable"
+            src="#portfolio-two-first-img"
+            alpha-test="0.5"
+            position="0 0 0"
+            height="0.552"
+            width="1"
+          >
+          </a-image>
+        </a-entity>
+        <a-entity id="portfolio-item-two-1" visible="false">
+          <a-image
+            class="clickable"
+            src="#portfolio-two-second-img"
+            alpha-test="0.5"
+            position="0 0 0"
+            height="0.552"
+            width="1"
+          >
+          </a-image>
+        </a-entity>
+        <a-entity id="portfolio-item-two-2" visible="false">
+          <a-image
+            class="clickable"
+            src="#portfolio-two-third-img"
+            alpha-test="0.5"
+            position="0 0 0"
+            height="0.552"
+            width="1"
+          >
+          </a-image>
+        </a-entity>
+      </a-entity>
+      <a-entity visible="false" id="portfolio-panel-three" position="0 0 -0.01">
+        <a-entity id="portfolio-item-three-0" visible="false">
+          <a-image
+            class="clickable"
+            src="#portfolio-three-first-img"
+            alpha-test="0.5"
+            position="0 0 0"
+            height="0.552"
+            width="1"
+          >
+          </a-image>
+        </a-entity>
+        <a-entity id="portfolio-item-three-1" visible="false">
+          <a-image
+            class="clickable"
+            src="#portfolio-three-second-img"
+            alpha-test="0.5"
+            position="0 0 0"
+            height="0.552"
+            width="1"
+          >
+          </a-image>
+        </a-entity>
+        <a-entity id="portfolio-item-three-2" visible="false">
+          <a-image
+            class="clickable"
+            src="#portfolio-three-third-img"
+            alpha-test="0.5"
+            position="0 0 0"
+            height="0.552"
+            width="1"
+          >
+          </a-image>
+        </a-entity>
+      </a-entity>
+      <a-entity visible="false" id="portfolio-panel-four" position="0 0 -0.01">
+        <a-entity id="portfolio-item-four-0" visible="false">
+          <a-image
+            class="clickable"
+            src="#portfolio-four-first-img"
+            alpha-test="0.5"
+            position="0 0 0"
+            height="0.552"
+            width="1"
+          >
+          </a-image>
+        </a-entity>
+        <a-entity id="portfolio-item-four-1" visible="false">
+          <a-image
+            class="clickable"
+            src="#portfolio-four-second-img"
+            alpha-test="0.5"
+            position="0 0 0"
+            height="0.552"
+            width="1"
+          >
+          </a-image>
+        </a-entity>
+        <a-entity id="portfolio-item-four-2" visible="false">
+          <a-image
+            class="clickable"
+            src="#portfolio-four-third-img"
+            alpha-test="0.5"
+            position="0 0 0"
+            height="0.552"
+            width="1"
+          >
+          </a-image>
+        </a-entity>
+      </a-entity>
+      <a-image
+        visible="false"
+        id="portfolio-left-button"
+        class="clickable"
+        src="#icon-left"
+        position="-0.7 0 0"
+        height="0.15"
+        width="0.15"
+      ></a-image>
+      <a-image
+        visible="false"
+        id="portfolio-right-button"
+        class="clickable"
+        src="#icon-right"
+        position="0.7 0 0"
+        height="0.15"
+        width="0.15"
+      ></a-image>
+
+      <a-image
+        visible="false"
+        id="one-button"
+        class="clickable"
+        src="#icon-one"
+        position="-0.3 0.05 0"
+        height="0.15"
+        width="0.15"
+        animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+      ></a-image>
+
+      <a-image
+        visible="false"
+        id="two-button"
+        class="clickable"
+        src="#icon-two"
+        alpha-test="0.5"
+        position="-0.1 0.05 0"
+        height="0.15"
+        width="0.15"
+        animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+      ></a-image>
+
+      <a-image
+        visible="false"
+        id="three-button"
+        class="clickable"
+        src="#icon-three"
+        position="0.1 0.05 0"
+        height="0.15"
+        width="0.15"
+        animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+      ></a-image>
+
+      <a-image
+        visible="false"
+        id="four-button"
+        class="clickable"
+        src="#icon-four"
+        position="0.3 0.05 0"
+        height="0.15"
+        width="0.15"
+        animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+      ></a-image>
+
+      <a-text
+        id="text"
+        class="clickable"
+        value=""
+        color="white"
+        align="center"
+        width="2"
+        position="0 -0.25 0"
+        geometry="primitive:plane; height: 0.1; width: 2;"
+        material="opacity: 0"
+      ></a-text>
+      <a-entity environment="preset: default"></a-entity>
+    </a-scene>
+  </body>
+</html>

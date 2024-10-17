@@ -36,6 +36,12 @@
         setTimeout(() => {
           fourButton.setAttribute("visible", true);
         }, 900);
+        setTimeout(() => {
+          portfolioLeftButton.setAttribute("visible", true);
+        }, 1200);
+        setTimeout(() => {
+          portfolioRightButton.setAttribute("visible", true);
+        }, 1500);
 
         let currentTab = "";
         oneButton.addEventListener("click", function (evt) {
@@ -309,9 +315,6 @@
           <img id="icon-three" src="./haian/icons/3.png" />
           <img id="icon-four" src="./haian/icons/4.png" />
 
-          <img id="img-one" src="./haian/images/one.jpg" />
-          <img id="img-two" src="./haian/images/two.jpg" />
-
           <img id="icon-left" src="./haian/icons/left.png" />
           <img id="icon-right" src="./haian/icons/right.png" />
 
@@ -557,27 +560,6 @@
             position="0.7 0 0"
             height="0.15"
             width="0.15"
-          ></a-image>
-
-          <a-image
-            visible="false"
-            id="one-image"
-            class="clickable"
-            src="#img-one"
-            position="0 -0.5 0"
-            height="0.8"
-            width="0.8"
-          ></a-image>
-
-          <a-image
-            visible="false"
-            id="two-image"
-            class="clickable"
-            src="#img-two"
-            alpha-test="0.5"
-            position="0 -0.5 0"
-            height="0.8"
-            width="0.8"
           ></a-image>
 
           <a-image
