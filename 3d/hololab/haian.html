@@ -212,11 +212,7 @@
         init: function () {
           this.el.addEventListener("targetFound", (event) => {
             console.log("target found");
-            showPortfolioOne(() => {
-              setTimeout(() => {
-                showInfo();
-              }, 300);
-            });
+            showInfo();
           });
           this.el.addEventListener("targetLost", (event) => {
             console.log("target found");
