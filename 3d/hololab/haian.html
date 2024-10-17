@@ -57,10 +57,15 @@
           portfolioRightButton.setAttribute("visible", true);
         }, 1500);
 
+        portfolioLeftButton.setAttribute("visible", false);
+        portfolioRightButton.setAttribute("visible", false);
+
         let currentTab = "one";
         oneButton.addEventListener("click", function (evt) {
           portfolioOne.setAttribute("visible", true);
           portfolioOneFirst.setAttribute("visible", true);
+          portfolioLeftButton.setAttribute("visible", true);
+          portfolioRightButton.setAttribute("visible", true);
           showPortfolioOne();
 
           portfolioTwo.setAttribute("visible", false);
@@ -75,6 +80,8 @@
         twoButton.addEventListener("click", function (evt) {
           portfolioTwo.setAttribute("visible", true);
           portfolioTwoFirst.setAttribute("visible", true);
+          portfolioLeftButton.setAttribute("visible", true);
+          portfolioRightButton.setAttribute("visible", true);
           showPortfolioTwo();
 
           portfolioOne.setAttribute("visible", false);
@@ -89,6 +96,8 @@
         threeButton.addEventListener("click", function (evt) {
           portfolioThree.setAttribute("visible", true);
           portfolioThreeFirst.setAttribute("visible", true);
+          portfolioLeftButton.setAttribute("visible", true);
+          portfolioRightButton.setAttribute("visible", true);
           showPortfolioThree();
 
           portfolioOne.setAttribute("visible", false);
@@ -103,6 +112,8 @@
         fourButton.addEventListener("click", function (evt) {
           portfolioFour.setAttribute("visible", true);
           portfolioFourFirst.setAttribute("visible", true);
+          portfolioLeftButton.setAttribute("visible", true);
+          portfolioRightButton.setAttribute("visible", true);
           showPortfolioFour();
 
           portfolioOne.setAttribute("visible", false);
