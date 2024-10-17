@@ -47,6 +47,7 @@
         let currentTab = "one";
         oneButton.addEventListener("click", function (evt) {
           portfolioOne.setAttribute("visible", true);
+          showPortfolioOne();
           portfolioTwo.setAttribute("visible", false);
           portfolioThree.setAttribute("visible", false);
           portfolioFour.setAttribute("visible", false);
@@ -54,6 +55,7 @@
         });
         twoButton.addEventListener("click", function (evt) {
           portfolioTwo.setAttribute("visible", true);
+          showPortfolioTwo();
           portfolioOne.setAttribute("visible", false);
           portfolioThree.setAttribute("visible", false);
           portfolioFour.setAttribute("visible", false);
@@ -61,6 +63,7 @@
         });
         threeButton.addEventListener("click", function (evt) {
           portfolioThree.setAttribute("visible", true);
+          showPortfolioThree();
           portfolioOne.setAttribute("visible", false);
           portfolioTwo.setAttribute("visible", false);
           portfolioFour.setAttribute("visible", false);
@@ -68,6 +71,7 @@
         });
         fourButton.addEventListener("click", function (evt) {
           portfolioFour.setAttribute("visible", true);
+          showPortfolioFour();
           portfolioOne.setAttribute("visible", false);
           portfolioTwo.setAttribute("visible", false);
           portfolioThree.setAttribute("visible", false);
@@ -219,23 +223,7 @@
         init: function () {
           this.el.addEventListener("targetFound", (event) => {
             console.log("target found");
-            showPortfolioOne(() => {
-              setTimeout(() => {
-                showPortfolioTwo(() => {
-                  setTimeout(() => {
-                    showPortfolioThree(() => {
-                      setTimeout(() => {
-                        showPortfolioFour(() => {
-                          setTimeout(() => {
-                            showInfo();
-                          }, 300);
-                        });
-                      }, 300);
-                    });
-                  }, 300);
-                });
-              }, 300);
-            });
+            showInfo();
           });
           this.el.addEventListener("targetLost", (event) => {
             console.log("target found");
