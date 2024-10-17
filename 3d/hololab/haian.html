@@ -5,26 +5,27 @@
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.1.0/dist/aframe-extras.min.js"></script>
     <script>
+      const oneButton = document.querySelector("#one-button");
+      const twoButton = document.querySelector("#two-button");
+      const threeButton = document.querySelector("#three-button");
+      const fourButton = document.querySelector("#four-button");
+
+      const portfolioLeftButton = document.querySelector(
+        "#portfolio-left-button"
+      );
+      const portfolioRightButton = document.querySelector(
+        "#portfolio-right-button"
+      );
+
+      const portfolioOne = document.querySelector("#portfolio-panel-one");
+      const portfolioTwo = document.querySelector("#portfolio-panel-two");
+      const portfolioThree = document.querySelector("#portfolio-panel-three");
+      const portfolioFour = document.querySelector("#portfolio-panel-four");
+
+      const text = document.querySelector("#text");
+
       const showInfo = () => {
         let y = 0;
-        const oneButton = document.querySelector("#one-button");
-        const twoButton = document.querySelector("#two-button");
-        const threeButton = document.querySelector("#three-button");
-        const fourButton = document.querySelector("#four-button");
-
-        const portfolioOne = document.querySelector("#portfolio-panel-one");
-        const portfolioTwo = document.querySelector("#portfolio-panel-two");
-        const portfolioThree = document.querySelector("#portfolio-panel-three");
-        const portfolioFour = document.querySelector("#portfolio-panel-four");
-
-        const text = document.querySelector("#text");
-
-        const portfolioLeftButton = document.querySelector(
-          "#portfolio-left-button"
-        );
-        const portfolioRightButton = document.querySelector(
-          "#portfolio-right-button"
-        );
 
         oneButton.setAttribute("visible", true);
         setTimeout(() => {
@@ -218,7 +219,23 @@
         init: function () {
           this.el.addEventListener("targetFound", (event) => {
             console.log("target found");
-            showInfo();
+            showPortfolioOne(() => {
+              setTimeout(() => {
+                showPortfolioTwo(() => {
+                  setTimeout(() => {
+                    showPortfolioThree(() => {
+                      setTimeout(() => {
+                        showPortfolioFour(() => {
+                          setTimeout(() => {
+                            showInfo();
+                          }, 300);
+                        });
+                      }, 300);
+                    });
+                  }, 300);
+                });
+              }, 300);
+            });
           });
           this.el.addEventListener("targetLost", (event) => {
             console.log("target found");
