@@ -25,6 +25,19 @@
         const portfolioThree = document.querySelector("#portfolio-panel-three");
         const portfolioFour = document.querySelector("#portfolio-panel-four");
 
+        const portfolioOneFirst = document.querySelector(
+          "#portfolio-item-one-0"
+        );
+        const portfolioTwoFirst = document.querySelector(
+          "#portfolio-item-two-0"
+        );
+        const portfolioThreeFirst = document.querySelector(
+          "#portfolio-item-three-0"
+        );
+        const portfolioFourFirst = document.querySelector(
+          "#portfolio-item-four-0"
+        );
+
         const text = document.querySelector("#text");
 
         oneButton.setAttribute("visible", true);
@@ -47,34 +60,58 @@
         let currentTab = "one";
         oneButton.addEventListener("click", function (evt) {
           portfolioOne.setAttribute("visible", true);
+          portfolioOneFirst.setAttribute("visible", true);
           showPortfolioOne();
+
           portfolioTwo.setAttribute("visible", false);
           portfolioThree.setAttribute("visible", false);
           portfolioFour.setAttribute("visible", false);
+
+          portfolioTwoFirst.setAttribute("visible", false);
+          portfolioThreeFirst.setAttribute("visible", false);
+          portfolioFourFirst.setAttribute("visible", false);
           currentTab = "one";
         });
         twoButton.addEventListener("click", function (evt) {
           portfolioTwo.setAttribute("visible", true);
+          portfolioTwoFirst.setAttribute("visible", true);
           showPortfolioTwo();
+
           portfolioOne.setAttribute("visible", false);
           portfolioThree.setAttribute("visible", false);
           portfolioFour.setAttribute("visible", false);
+
+          portfolioOneFirst.setAttribute("visible", false);
+          portfolioThreeFirst.setAttribute("visible", false);
+          portfolioFourFirst.setAttribute("visible", false);
           currentTab = "two";
         });
         threeButton.addEventListener("click", function (evt) {
           portfolioThree.setAttribute("visible", true);
+          portfolioThreeFirst.setAttribute("visible", true);
           showPortfolioThree();
+
           portfolioOne.setAttribute("visible", false);
           portfolioTwo.setAttribute("visible", false);
           portfolioFour.setAttribute("visible", false);
+
+          portfolioOneFirst.setAttribute("visible", false);
+          portfolioTwoFirst.setAttribute("visible", false);
+          portfolioFourFirst.setAttribute("visible", false);
           currentTab = "three";
         });
         fourButton.addEventListener("click", function (evt) {
           portfolioFour.setAttribute("visible", true);
+          portfolioFourFirst.setAttribute("visible", true);
           showPortfolioFour();
+
           portfolioOne.setAttribute("visible", false);
           portfolioTwo.setAttribute("visible", false);
           portfolioThree.setAttribute("visible", false);
+
+          portfolioOneFirst.setAttribute("visible", false);
+          portfolioTwoFirst.setAttribute("visible", false);
+          portfolioThreeFirst.setAttribute("visible", false);
           currentTab = "four";
         });
       };
@@ -428,7 +465,7 @@
                 class="clickable"
                 src="#portfolio-one-first-img"
                 alpha-test="0.5"
-                position="0 -0.75 0"
+                position="0 -1 0"
                 height="0.8"
                 width="0.8"
               >
@@ -439,7 +476,7 @@
                 class="clickable"
                 src="#portfolio-one-second-img"
                 alpha-test="0.5"
-                position="0 -0.75 0"
+                position="0 -1 0"
                 height="0.8"
                 width="0.8"
               >
@@ -450,7 +487,7 @@
                 class="clickable"
                 src="#portfolio-one-third-img"
                 alpha-test="0.5"
-                position="0 -0.75 0"
+                position="0 -1 0"
                 height="0.8"
                 width="0.8"
               >
@@ -468,7 +505,7 @@
                 class="clickable"
                 src="#portfolio-two-first-img"
                 alpha-test="0.5"
-                position="0 -0.75 0"
+                position="0 -1 0"
                 height="0.8"
                 width="0.8"
               >
@@ -479,7 +516,7 @@
                 class="clickable"
                 src="#portfolio-two-second-img"
                 alpha-test="0.5"
-                position="0 -0.75 0"
+                position="0 -1 0"
                 height="0.8"
                 width="0.8"
               >
@@ -490,7 +527,7 @@
                 class="clickable"
                 src="#portfolio-two-third-img"
                 alpha-test="0.5"
-                position="0 -0.75 0"
+                position="0 -1 0"
                 height="0.8"
                 width="0.8"
               >
@@ -507,7 +544,7 @@
                 class="clickable"
                 src="#portfolio-three-first-img"
                 alpha-test="0.5"
-                position="0 -0.75 0"
+                position="0 -1 0"
                 height="0.8"
                 width="0.8"
               >
@@ -518,7 +555,7 @@
                 class="clickable"
                 src="#portfolio-three-second-img"
                 alpha-test="0.5"
-                position="0 -0.75 0"
+                position="0 -1 0"
                 height="0.8"
                 width="0.8"
               >
@@ -529,7 +566,7 @@
                 class="clickable"
                 src="#portfolio-three-third-img"
                 alpha-test="0.5"
-                position="0 -0.75 0"
+                position="0 -1 0"
                 height="0.8"
                 width="0.8"
               >
@@ -546,7 +583,7 @@
                 class="clickable"
                 src="#portfolio-four-first-img"
                 alpha-test="0.5"
-                position="0 -0.75 0"
+                position="0 -1 0"
                 height="0.8"
                 width="0.8"
               >
@@ -557,7 +594,7 @@
                 class="clickable"
                 src="#portfolio-four-second-img"
                 alpha-test="0.5"
-                position="0 -0.75 0"
+                position="0 -1 0"
                 height="0.8"
                 width="0.8"
               >
@@ -568,7 +605,7 @@
                 class="clickable"
                 src="#portfolio-four-third-img"
                 alpha-test="0.5"
-                position="0 -0.75 0"
+                position="0 -1 0"
                 height="0.8"
                 width="0.8"
               >
@@ -599,7 +636,7 @@
             id="one-button"
             class="clickable"
             src="#icon-one"
-            position="-0.3 0.1 0"
+            position="-0.3 0.1 0.1"
             height="0.1"
             width="0.1"
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
@@ -611,7 +648,7 @@
             class="clickable"
             src="#icon-two"
             alpha-test="0.5"
-            position="-0.1 0.12 0"
+            position="-0.1 0.12 0.1"
             height="0.1"
             width="0.1"
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
@@ -622,7 +659,7 @@
             id="three-button"
             class="clickable"
             src="#icon-three"
-            position="0.1 0.12 0"
+            position="0.1 0.12 0.1"
             height="0.1"
             width="0.1"
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
@@ -633,7 +670,7 @@
             id="four-button"
             class="clickable"
             src="#icon-four"
-            position="0.3 0.1 0"
+            position="0.3 0.1 0.1"
             height="0.1"
             width="0.1"
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
@@ -641,7 +678,7 @@
 
           <a-gltf-model
             rotation="0 90 0"
-            position="0 0.15 0"
+            position="0 0.15 -0.01"
             scale="0.25 0.25 0.25"
             src="#avatarModel"
           ></a-gltf-model>
