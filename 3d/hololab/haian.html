@@ -1,0 +1,659 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.1.0/dist/aframe-extras.min.js"></script>
+    <script>
+      const showInfo = () => {
+        let y = 0;
+        const oneButton = document.querySelector("#one-button");
+        const twoButton = document.querySelector("#two-button");
+        const threeButton = document.querySelector("#three-button");
+        const fourButton = document.querySelector("#four-button");
+
+        const portfolioOne = document.querySelector("#portfolio-panel-one");
+        const portfolioTwo = document.querySelector("#portfolio-panel-two");
+        const portfolioThree = document.querySelector("#portfolio-panel-three");
+        const portfolioFour = document.querySelector("#portfolio-panel-four");
+
+        const text = document.querySelector("#text");
+
+        const portfolioLeftButton = document.querySelector(
+          "#portfolio-left-button"
+        );
+        const portfolioRightButton = document.querySelector(
+          "#portfolio-right-button"
+        );
+
+        oneButton.setAttribute("visible", true);
+        setTimeout(() => {
+          twoButton.setAttribute("visible", true);
+        }, 300);
+        setTimeout(() => {
+          threeButton.setAttribute("visible", true);
+        }, 600);
+        setTimeout(() => {
+          fourButton.setAttribute("visible", true);
+        }, 900);
+
+        portfolioLeftButton.setAttribute("visible", false);
+        portfolioRightButton.setAttribute("visible", false);
+
+        portfolioOne.setAttribute("visible", false);
+        portfolioTwo.setAttribute("visible", false);
+        portfolioThree.setAttribute("visible", false);
+        portfolioFour.setAttribute("visible", false);
+
+        let currentTab = "";
+        oneButton.addEventListener("click", function (evt) {
+          portfolioOne.setAttribute("visible", true);
+          portfolioTwo.setAttribute("visible", false);
+          portfolioThree.setAttribute("visible", false);
+          portfolioFour.setAttribute("visible", false);
+          currentTab = "one";
+        });
+        twoButton.addEventListener("click", function (evt) {
+          portfolioTwo.setAttribute("visible", true);
+          portfolioOne.setAttribute("visible", false);
+          portfolioThree.setAttribute("visible", false);
+          portfolioFour.setAttribute("visible", false);
+          currentTab = "two";
+        });
+        threeButton.addEventListener("click", function (evt) {
+          portfolioThree.setAttribute("visible", true);
+          portfolioOne.setAttribute("visible", false);
+          portfolioTwo.setAttribute("visible", false);
+          portfolioFour.setAttribute("visible", false);
+          currentTab = "three";
+        });
+        fourButton.addEventListener("click", function (evt) {
+          portfolioFour.setAttribute("visible", true);
+          portfolioOne.setAttribute("visible", false);
+          portfolioTwo.setAttribute("visible", false);
+          portfolioThree.setAttribute("visible", false);
+          currentTab = "four";
+        });
+      };
+
+      const showPortfolioOne = (done) => {
+        let y = 0;
+        let currentItem = 0;
+
+        portfolioOne.setAttribute("visible", true);
+
+        const showPortfolioOneItem = (item) => {
+          for (let i = 0; i <= 2; i++) {
+            document
+              .querySelector("#portfolio-item-one-" + i)
+              .setAttribute("visible", i === item);
+          }
+        };
+        const id = setInterval(() => {
+          y += 0.008;
+          if (y >= 0.6) {
+            clearInterval(id);
+            portfolioLeftButton.setAttribute("visible", true);
+            portfolioRightButton.setAttribute("visible", true);
+            portfolioLeftButton.addEventListener("click", () => {
+              currentItem = (currentItem + 1) % 3;
+              showPortfolioOneItem(currentItem);
+            });
+            portfolioRightButton.addEventListener("click", () => {
+              currentItem = (currentItem - 1 + 3) % 3;
+              showPortfolioOneItem(currentItem);
+            });
+
+            setTimeout(() => {
+              done();
+            }, 500);
+          }
+          portfolioOne.setAttribute("position", "0 " + y + " -0.01");
+        }, 10);
+      };
+      const showPortfolioTwo = (done) => {
+        let y = 0;
+        let currentItem = 0;
+
+        portfolioTwo.setAttribute("visible", true);
+
+        const showPortfolioTwoItem = (item) => {
+          for (let i = 0; i <= 2; i++) {
+            document
+              .querySelector("#portfolio-item-two-" + i)
+              .setAttribute("visible", i === item);
+          }
+        };
+        const id = setInterval(() => {
+          y += 0.008;
+          if (y >= 0.6) {
+            clearInterval(id);
+            portfolioLeftButton.setAttribute("visible", true);
+            portfolioRightButton.setAttribute("visible", true);
+            portfolioLeftButton.addEventListener("click", () => {
+              currentItem = (currentItem + 1) % 3;
+              showPortfolioTwoItem(currentItem);
+            });
+            portfolioRightButton.addEventListener("click", () => {
+              currentItem = (currentItem - 1 + 3) % 3;
+              showPortfolioTwoItem(currentItem);
+            });
+
+            setTimeout(() => {
+              done();
+            }, 500);
+          }
+          portfolioTwo.setAttribute("position", "0 " + y + " -0.01");
+        }, 10);
+      };
+      const showPortfolioThree = (done) => {
+        let y = 0;
+        let currentItem = 0;
+
+        portfolioThree.setAttribute("visible", true);
+
+        const showPortfolioThreeItem = (item) => {
+          for (let i = 0; i <= 2; i++) {
+            document
+              .querySelector("#portfolio-item-three-" + i)
+              .setAttribute("visible", i === item);
+          }
+        };
+        const id = setInterval(() => {
+          y += 0.008;
+          if (y >= 0.6) {
+            clearInterval(id);
+            portfolioLeftButton.setAttribute("visible", true);
+            portfolioRightButton.setAttribute("visible", true);
+            portfolioLeftButton.addEventListener("click", () => {
+              currentItem = (currentItem + 1) % 3;
+              showPortfolioThreeItem(currentItem);
+            });
+            portfolioRightButton.addEventListener("click", () => {
+              currentItem = (currentItem - 1 + 3) % 3;
+              showPortfolioThreeItem(currentItem);
+            });
+
+            setTimeout(() => {
+              done();
+            }, 500);
+          }
+          portfolioThree.setAttribute("position", "0 " + y + " -0.01");
+        }, 10);
+      };
+      const showPortfolioFour = (done) => {
+        let y = 0;
+        let currentItem = 0;
+
+        portfolioFour.setAttribute("visible", true);
+
+        const showPortfolioFourItem = (item) => {
+          for (let i = 0; i <= 2; i++) {
+            document
+              .querySelector("#portfolio-item-four-" + i)
+              .setAttribute("visible", i === item);
+          }
+        };
+        const id = setInterval(() => {
+          y += 0.008;
+          if (y >= 0.6) {
+            clearInterval(id);
+            portfolioLeftButton.setAttribute("visible", true);
+            portfolioRightButton.setAttribute("visible", true);
+            portfolioLeftButton.addEventListener("click", () => {
+              currentItem = (currentItem + 1) % 3;
+              showPortfolioFourItem(currentItem);
+            });
+            portfolioRightButton.addEventListener("click", () => {
+              currentItem = (currentItem - 1 + 3) % 3;
+              showPortfolioFourItem(currentItem);
+            });
+
+            setTimeout(() => {
+              done();
+            }, 500);
+          }
+          portfolioFour.setAttribute("position", "0 " + y + " -0.01");
+        }, 10);
+      };
+      AFRAME.registerComponent("haiantarget", {
+        init: function () {
+          this.el.addEventListener("targetFound", (event) => {
+            console.log("target found");
+            showInfo();
+          });
+          this.el.addEventListener("targetLost", (event) => {
+            console.log("target found");
+          });
+          //this.el.emit('targetFound');
+        },
+      });
+    </script>
+
+    <style>
+      body {
+        margin: 0;
+      }
+      .haian-container {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      #haian-scanning-overlay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: transparent;
+        z-index: 2;
+      }
+      @media (min-aspect-ratio: 1/1) {
+        #haian-scanning-overlay .inner {
+          width: 50vh;
+          height: 50vh;
+        }
+      }
+      @media (max-aspect-ratio: 1/1) {
+        #haian-scanning-overlay .inner {
+          width: 80vw;
+          height: 80vw;
+        }
+      }
+
+      #haian-scanning-overlay .inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background: white;
+      }
+
+      #haian-scanning-overlay.hidden {
+        display: none;
+      }
+
+      #haian-scanning-overlay img {
+        opacity: 0.6;
+        width: 90%;
+        align-self: center;
+      }
+
+      #haian-scanning-overlay .inner .scanline {
+        position: absolute;
+        width: 100%;
+        height: 10px;
+        background: white;
+        animation: move 2s linear infinite;
+      }
+      @keyframes move {
+        0%,
+        100% {
+          top: 0%;
+        }
+        50% {
+          top: calc(100% - 10px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="haian-container">
+      <a-scene
+        mindar-image="imageTargetSrc: ./haian.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 1; showStats: false; uiScanning: #haian-scanning-overlay;"
+        color-space="sRGB"
+        renderer="colorManagement: true, physicallyCorrectLights"
+        vr-mode-ui="enabled: false"
+        device-orientation-permission-ui="enabled: false"
+      >
+        <a-assets>
+          <img id="icon-one" src="./haian/icons/1.png" />
+          <img id="icon-two" src="./haian/icons/2.png" />
+          <img id="icon-three" src="./haian/icons/3.png" />
+          <img id="icon-four" src="./haian/icons/4.png" />
+
+          <img id="img-one" src="./haian/images/one.jpg" />
+          <img id="img-two" src="./haian/images/two.jpg" />
+
+          <img id="icon-left" src="./haian/icons/left.png" />
+          <img id="icon-right" src="./haian/icons/right.png" />
+
+          <img
+            id="portfolio-one-first-img"
+            src="./haian/portfolios/one/1.jpg"
+          />
+          <img
+            id="portfolio-one-second-img"
+            src="./haian/portfolios/one/2.jpg"
+          />
+          <img
+            id="portfolio-one-third-img"
+            src="./haian/portfolios/one/3.jpg"
+          />
+
+          <img
+            id="portfolio-two-first-img"
+            src="./haian/portfolios/one/1.jpg"
+          />
+          <img
+            id="portfolio-two-second-img"
+            src="./haian/portfolios/two/2.jpg"
+          />
+          <img
+            id="portfolio-two-third-img"
+            src="./haian/portfolios/two/3.jpg"
+          />
+
+          <img
+            id="portfolio-three-first-img"
+            src="./haian/portfolios/three/1.jpg"
+          />
+          <img
+            id="portfolio-three-second-img"
+            src="./haian/portfolios/three/2.jpg"
+          />
+          <img
+            id="portfolio-three-third-img"
+            src="./haian/portfolios/three/3.jpg"
+          />
+
+          <img
+            id="portfolio-four-first-img"
+            src="./haian/portfolios/four/1.jpg"
+          />
+          <img
+            id="portfolio-four-second-img"
+            src="./haian/portfolios/four/2.jpg"
+          />
+          <img
+            id="portfolio-four-third-img"
+            src="./haian/portfolios/four/3.jpg"
+          />
+
+          <a-asset-item id="avatarModel" src="./haian.glb"></a-asset-item>
+        </a-assets>
+
+        <a-camera
+          position="0 0 0"
+          look-controls="enabled: false"
+          cursor="fuse: false; rayOrigin: mouse;"
+          raycaster="far: 10000; objects: .clickable"
+        >
+        </a-camera>
+
+        <a-entity
+          id="haiantarget"
+          haiantarget
+          mindar-image-target="targetIndex: 0"
+        >
+          <a-entity
+            visible="false"
+            id="portfolio-panel-one"
+            position="0 0 -0.01"
+          >
+            <a-entity id="portfolio-item-one-0" visible="false">
+              <a-image
+                class="clickable"
+                src="#portfolio-one-first-img"
+                alpha-test="0.5"
+                position="0 0 0"
+                height="0.552"
+                width="1"
+              >
+              </a-image>
+            </a-entity>
+            <a-entity id="portfolio-item-one-1" visible="false">
+              <a-image
+                class="clickable"
+                src="#portfolio-one-second-img"
+                alpha-test="0.5"
+                position="0 0 0"
+                height="0.552"
+                width="1"
+              >
+              </a-image>
+            </a-entity>
+            <a-entity id="portfolio-item-one-2" visible="false">
+              <a-image
+                class="clickable"
+                src="#portfolio-one-third-img"
+                alpha-test="0.5"
+                position="0 0 0"
+                height="0.552"
+                width="1"
+              >
+              </a-image>
+            </a-entity>
+          </a-entity>
+
+          <a-entity
+            visible="false"
+            id="portfolio-panel-two"
+            position="0 0 -0.01"
+          >
+            <a-entity id="portfolio-item-two-0" visible="false">
+              <a-image
+                class="clickable"
+                src="#portfolio-two-first-img"
+                alpha-test="0.5"
+                position="0 0 0"
+                height="0.552"
+                width="1"
+              >
+              </a-image>
+            </a-entity>
+            <a-entity id="portfolio-item-two-1" visible="false">
+              <a-image
+                class="clickable"
+                src="#portfolio-two-second-img"
+                alpha-test="0.5"
+                position="0 0 0"
+                height="0.552"
+                width="1"
+              >
+              </a-image>
+            </a-entity>
+            <a-entity id="portfolio-item-two-2" visible="false">
+              <a-image
+                class="clickable"
+                src="#portfolio-two-third-img"
+                alpha-test="0.5"
+                position="0 0 0"
+                height="0.552"
+                width="1"
+              >
+              </a-image>
+            </a-entity>
+          </a-entity>
+          <a-entity
+            visible="false"
+            id="portfolio-panel-three"
+            position="0 0 -0.01"
+          >
+            <a-entity id="portfolio-item-three-0" visible="false">
+              <a-image
+                class="clickable"
+                src="#portfolio-three-first-img"
+                alpha-test="0.5"
+                position="0 0 0"
+                height="0.552"
+                width="1"
+              >
+              </a-image>
+            </a-entity>
+            <a-entity id="portfolio-item-three-1" visible="false">
+              <a-image
+                class="clickable"
+                src="#portfolio-three-second-img"
+                alpha-test="0.5"
+                position="0 0 0"
+                height="0.552"
+                width="1"
+              >
+              </a-image>
+            </a-entity>
+            <a-entity id="portfolio-item-three-2" visible="false">
+              <a-image
+                class="clickable"
+                src="#portfolio-three-third-img"
+                alpha-test="0.5"
+                position="0 0 0"
+                height="0.552"
+                width="1"
+              >
+              </a-image>
+            </a-entity>
+          </a-entity>
+          <a-entity
+            visible="false"
+            id="portfolio-panel-four"
+            position="0 0 -0.01"
+          >
+            <a-entity id="portfolio-item-four-0" visible="false">
+              <a-image
+                class="clickable"
+                src="#portfolio-four-first-img"
+                alpha-test="0.5"
+                position="0 0 0"
+                height="0.552"
+                width="1"
+              >
+              </a-image>
+            </a-entity>
+            <a-entity id="portfolio-item-four-1" visible="false">
+              <a-image
+                class="clickable"
+                src="#portfolio-four-second-img"
+                alpha-test="0.5"
+                position="0 0 0"
+                height="0.552"
+                width="1"
+              >
+              </a-image>
+            </a-entity>
+            <a-entity id="portfolio-item-four-2" visible="false">
+              <a-image
+                class="clickable"
+                src="#portfolio-four-third-img"
+                alpha-test="0.5"
+                position="0 0 0"
+                height="0.552"
+                width="1"
+              >
+              </a-image>
+            </a-entity>
+          </a-entity>
+          <a-image
+            visible="false"
+            id="portfolio-left-button"
+            class="clickable"
+            src="#icon-left"
+            position="-0.7 0 0"
+            height="0.15"
+            width="0.15"
+          ></a-image>
+          <a-image
+            visible="false"
+            id="portfolio-right-button"
+            class="clickable"
+            src="#icon-right"
+            position="0.7 0 0"
+            height="0.15"
+            width="0.15"
+          ></a-image>
+
+          <a-image
+            visible="false"
+            id="one-image"
+            class="clickable"
+            src="#img-one"
+            position="0 -0.5 0"
+            height="0.8"
+            width="0.8"
+          ></a-image>
+
+          <a-image
+            visible="false"
+            id="two-image"
+            class="clickable"
+            src="#img-two"
+            alpha-test="0.5"
+            position="0 -0.5 0"
+            height="0.8"
+            width="0.8"
+          ></a-image>
+
+          <a-image
+            visible="false"
+            id="one-button"
+            class="clickable"
+            src="#icon-one"
+            position="-0.3 0.05 0"
+            height="0.15"
+            width="0.15"
+            animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          ></a-image>
+
+          <a-image
+            visible="false"
+            id="two-button"
+            class="clickable"
+            src="#icon-two"
+            alpha-test="0.5"
+            position="-0.1 0.05 0"
+            height="0.15"
+            width="0.15"
+            animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          ></a-image>
+
+          <a-image
+            visible="false"
+            id="three-button"
+            class="clickable"
+            src="#icon-three"
+            position="0.1 0.05 0"
+            height="0.15"
+            width="0.15"
+            animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          ></a-image>
+
+          <a-image
+            visible="false"
+            id="four-button"
+            class="clickable"
+            src="#icon-four"
+            position="0.3 0.05 0"
+            height="0.15"
+            width="0.15"
+            animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          ></a-image>
+
+          <a-gltf-model
+            rotation="0 90 0"
+            position="0 0.15 0"
+            scale="0.25 0.25 0.25"
+            src="#avatarModel"
+          ></a-gltf-model>
+
+          <a-text
+            id="text"
+            class="clickable"
+            value=""
+            color="white"
+            align="center"
+            width="2"
+            position="0 -0.25 0"
+            geometry="primitive:plane; height: 0.1; width: 2;"
+            material="opacity: 0"
+          ></a-text>
+        </a-entity>
+        <a-entity environment="preset: default"></a-entity>
+      </a-scene>
+    </div>
+  </body>
+</html>
