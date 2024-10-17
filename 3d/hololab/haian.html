@@ -218,7 +218,23 @@
         init: function () {
           this.el.addEventListener("targetFound", (event) => {
             console.log("target found");
-            showInfo();
+            showPortfolioOne(() => {
+              setTimeout(() => {
+                showPortfolioTwo(() => {
+                  setTimeout(() => {
+                    showPortfolioThree(() => {
+                      setTimeout(() => {
+                        showPortfolioFour(() => {
+                          setTimeout(() => {
+                            showInfo();
+                          }, 300);
+                        });
+                      }, 300);
+                    });
+                  }, 300);
+                });
+              }, 300);
+            });
           });
           this.el.addEventListener("targetLost", (event) => {
             console.log("target found");
@@ -387,7 +403,7 @@
           mindar-image-target="targetIndex: 0"
         >
           <a-entity
-            visible="true"
+            visible="false"
             id="portfolio-panel-one"
             position="0 0 -0.01"
           >
@@ -427,7 +443,7 @@
           </a-entity>
 
           <a-entity
-            visible="true"
+            visible="false"
             id="portfolio-panel-two"
             position="0 0 -0.01"
           >
@@ -466,7 +482,7 @@
             </a-entity>
           </a-entity>
           <a-entity
-            visible="true"
+            visible="false"
             id="portfolio-panel-three"
             position="0 0 -0.01"
           >
@@ -505,7 +521,7 @@
             </a-entity>
           </a-entity>
           <a-entity
-            visible="true"
+            visible="false"
             id="portfolio-panel-four"
             position="0 0 -0.01"
           >
