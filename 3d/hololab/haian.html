@@ -5,27 +5,27 @@
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.1.0/dist/aframe-extras.min.js"></script>
     <script>
-      const oneButton = document.querySelector("#one-button");
-      const twoButton = document.querySelector("#two-button");
-      const threeButton = document.querySelector("#three-button");
-      const fourButton = document.querySelector("#four-button");
-
-      const portfolioLeftButton = document.querySelector(
-        "#portfolio-left-button"
-      );
-      const portfolioRightButton = document.querySelector(
-        "#portfolio-right-button"
-      );
-
-      const portfolioOne = document.querySelector("#portfolio-panel-one");
-      const portfolioTwo = document.querySelector("#portfolio-panel-two");
-      const portfolioThree = document.querySelector("#portfolio-panel-three");
-      const portfolioFour = document.querySelector("#portfolio-panel-four");
-
-      const text = document.querySelector("#text");
-
       const showInfo = () => {
         let y = 0;
+
+        const oneButton = document.querySelector("#one-button");
+        const twoButton = document.querySelector("#two-button");
+        const threeButton = document.querySelector("#three-button");
+        const fourButton = document.querySelector("#four-button");
+
+        const portfolioLeftButton = document.querySelector(
+          "#portfolio-left-button"
+        );
+        const portfolioRightButton = document.querySelector(
+          "#portfolio-right-button"
+        );
+
+        const portfolioOne = document.querySelector("#portfolio-panel-one");
+        const portfolioTwo = document.querySelector("#portfolio-panel-two");
+        const portfolioThree = document.querySelector("#portfolio-panel-three");
+        const portfolioFour = document.querySelector("#portfolio-panel-four");
+
+        const text = document.querySelector("#text");
 
         oneButton.setAttribute("visible", true);
         setTimeout(() => {
@@ -82,7 +82,13 @@
       const showPortfolioOne = (done) => {
         let y = 0;
         let currentItem = 0;
-
+        const portfolioOne = document.querySelector("#portfolio-panel-one");
+        const portfolioLeftButton = document.querySelector(
+          "#portfolio-left-button"
+        );
+        const portfolioRightButton = document.querySelector(
+          "#portfolio-right-button"
+        );
         portfolioOne.setAttribute("visible", true);
 
         const showPortfolioOneItem = (item) => {
@@ -117,6 +123,13 @@
       const showPortfolioTwo = (done) => {
         let y = 0;
         let currentItem = 0;
+        const portfolioTwo = document.querySelector("#portfolio-panel-two");
+        const portfolioLeftButton = document.querySelector(
+          "#portfolio-left-button"
+        );
+        const portfolioRightButton = document.querySelector(
+          "#portfolio-right-button"
+        );
 
         portfolioTwo.setAttribute("visible", true);
 
@@ -152,6 +165,13 @@
       const showPortfolioThree = (done) => {
         let y = 0;
         let currentItem = 0;
+        const portfolioThree = document.querySelector("#portfolio-panel-three");
+        const portfolioLeftButton = document.querySelector(
+          "#portfolio-left-button"
+        );
+        const portfolioRightButton = document.querySelector(
+          "#portfolio-right-button"
+        );
 
         portfolioThree.setAttribute("visible", true);
 
@@ -187,6 +207,13 @@
       const showPortfolioFour = (done) => {
         let y = 0;
         let currentItem = 0;
+        const portfolioFour = document.querySelector("#portfolio-panel-four");
+        const portfolioLeftButton = document.querySelector(
+          "#portfolio-left-button"
+        );
+        const portfolioRightButton = document.querySelector(
+          "#portfolio-right-button"
+        );
 
         portfolioFour.setAttribute("visible", true);
 
